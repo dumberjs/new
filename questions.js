@@ -1,0 +1,35 @@
+module.exports = [
+  {
+    message: 'Choose a front-end framework',
+    choices: [
+      {value: 'aurelia', title: 'Aurelia'},
+      {value: 'vue', title: 'Vue v2'},
+      {value: 'react', title: 'React', hint: ''}
+    ]
+  },
+  {
+    if: 'vue',
+    message: 'Do you want to use Single File Components (.vue files)?',
+    choices: [
+      {title: 'No'},
+      {title: 'Yes', hint: '.vue file contains html template, scoped css, and JavaScript component'}
+    ]
+  },
+  {
+    message: 'What JavaScript transpiler to use?',
+    choices: [
+      {value: 'babel', title: 'ESNext (babel)', hint: 'Use next generation JavaScript, today.'},
+      {value: 'typescript', title: 'TypeScript', hint: 'TypeScript is a typed superset of Javascript that compiles to plain JavaScript.'}
+    ]
+  },
+  {
+    message: 'What unit testing framework to use?',
+    choices: [
+      {value: 'jest', title: 'Jest', hint: 'Runs in Node.js, simulates browser, with a focus on simplicity.'},
+      {value: 'jasmine', title: 'Jasmine', hint: 'Runs in browser, a behavior-driven testing framework.'},
+      {value: 'mocha', title: 'Mocha + Chai', hint: 'Runs in browser, a feature-rich JavaScript test framework. Chai is an assertion library.'},
+      {value: 'tape', title: 'Tape', hint: 'Runs in browser, tap-producing test harness for node and browsers.'},
+      {value: 'ava', title: 'Ava + browser-env', hint: 'Runs in Node.js, simulates browser (browser-env), a test runner for Node.js with a concise API, detailed error output, embrace of new language features and process isolation that let you write tests more effectively.'}
+    ]
+  }
+];
