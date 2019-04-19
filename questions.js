@@ -12,7 +12,7 @@ module.exports = [
     message: 'Do you want to use Single File Components (.vue files)?',
     choices: [
       {title: 'No'},
-      {title: 'Yes', hint: '.vue file contains html template, scoped css, and JavaScript component'}
+      {value: 'sfc', title: 'Yes', hint: '.vue file contains html template, scoped css, and JavaScript component'}
     ]
   },
   {
