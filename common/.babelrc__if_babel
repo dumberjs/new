@@ -1,0 +1,13 @@
+{
+  "presets": [
+    ["@babel/preset-env", {"loose": true}]/* @if react */,
+    "@babel/preset-react"
+/* @endif */
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import"/* @if aurelia */,
+    ["@babel/plugin-proposal-decorators", { legacy: true }],
+    ["@babel/plugin-proposal-class-properties", { loose: true }]
+/* @endif */
+  ]
+}

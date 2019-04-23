@@ -3,15 +3,15 @@ module.exports = [
     message: 'Choose a front-end framework',
     choices: [
       {value: 'aurelia', title: 'Aurelia'},
-      {value: 'vue', title: 'Vue v2'},
-      {value: 'react', title: 'React', hint: ''}
+      {value: 'react', title: 'React'},
+      {value: 'vue', title: 'Vue v2'}
     ]
   },
   {
     if: 'vue',
     message: 'Do you want to use Single File Components (.vue files)?',
     choices: [
-      {title: 'No'},
+      {title: 'No', hint: 'string template + runtime template compiler'},
       {value: 'sfc', title: 'Yes', hint: '.vue file contains html template, scoped css, and JavaScript component'}
     ]
   },
@@ -19,7 +19,15 @@ module.exports = [
     message: 'What JavaScript transpiler to use?',
     choices: [
       {value: 'babel', title: 'ESNext (babel)', hint: 'Use next generation JavaScript, today.'},
-      {value: 'typescript', title: 'TypeScript', hint: 'TypeScript is a typed superset of Javascript that compiles to plain JavaScript.'}
+      {if: '!sfc', value: 'typescript', title: 'TypeScript', hint: 'TypeScript is a typed superset of Javascript that compiles to plain JavaScript.'}
+    ]
+  },
+  {
+    message: 'What CSS preprocessor to use?',
+    choices: [
+      {value: 'css', title: 'Plain CSS'},
+      {value: 'less', title: 'Less'},
+      {value: 'sass', title: 'Sass (.scss)'}
     ]
   },
   {

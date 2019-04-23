@@ -1,0 +1,8 @@
+// @if babel
+import 'regenerator-runtime/runtime';
+// @endif
+import 'aurelia-polyfills';
+import {Options} from 'aurelia-loader-nodejs';
+Options.relativeToDir = __dirname;
+import {globalize} from 'aurelia-pal-nodejs';
+globalize();

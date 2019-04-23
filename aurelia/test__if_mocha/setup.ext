@@ -1,0 +1,8 @@
+// @if babel
+import 'regenerator-runtime/runtime';
+// @endif
+import 'aurelia-polyfills';
+import {initialize} from 'aurelia-pal-browser';
+initialize();
+mocha.setup('bdd');
+mocha.run();

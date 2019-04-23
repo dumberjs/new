@@ -1,0 +1,14 @@
+# OS
+.DS_STORE
+Thumbs.db
+
+# Editors
+.idea
+.vscode
+
+# Dependencies
+/node_modules
+
+# Compiled files
+/dist
+/index.html

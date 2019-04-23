@@ -1,0 +1,23 @@
+// @if babel
+// To support async/await
+import 'regenerator-runtime/runtime';
+
+// @endif
+// @if typescript
+import {Aurelia} from 'aurelia-framework';
+
+// @endif
+export function configure(aurelia/* @if typescript */: Aurelia/* @endif */) {
+  aurelia.use.feature('resources');
+  aurelia.use.standardConfiguration();
+  // @if isProduction
+  aurelia.use.developmentLogging('warn');
+  // @endif
+  // @if !isProduction
+  aurelia.use.developmentLogging('info');
+  // @endif
+  // @if isTest
+  aurelia.use.plugin('aurelia-testing');
+  // @endif
+  aurelia.start().then(() => aurelia.setRoot());
+}

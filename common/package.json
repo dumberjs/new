@@ -1,0 +1,120 @@
+{
+  "name": "/* @echo name */",
+  "private": true,
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    // @if babel
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/plugin-syntax-dynamic-import": "7.2.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "gulp-babel": "^8.0.0",
+    "regenerator-runtime": "0.13.2",
+    // @endif
+
+    // @if typescript
+    "typescript": "^3.4.3",
+    "gulp-typescript": "^5.0.1",
+    "tslint": "5.16.0",
+    // @endif
+
+    // @if sass
+    "gulp-sass": "^4.0.2",
+    "sass-lint": "^1.12.1",
+    // @endif
+
+    // @if less
+    "gulp-less": "^4.0.1",
+    "lesshint": "^6.3.6",
+    // @endif
+
+    // @if jasmine
+    "jasmine-core": "^3.4.0",
+    "jasmine-reporters": "^2.3.2",
+    // @endif
+
+    // @if jasmine || mocha || tape
+    "tap-dot": "^2.0.0",
+    "tape-run": "^5.0.0",
+    // @endif
+
+    // @if mocha
+    "mocha": "^6.1.4",
+    "chai": "^4.2.0",
+    // @endif
+
+    // @if tape
+    "tape": "^4.10.1",
+    // @endif
+
+    // @if jest
+    "jest": "^24.7.1",
+    // @endif
+
+    // @if ava
+    "ava": "^1.4.1",
+    // @endif
+
+    // @if !sfc
+    "merge2": "^1.2.3",
+    // @endif
+
+    "gulp-postcss": "^8.0.0",
+    "autoprefixer": "^9.5.1",
+    "postcss-url": "^8.0.0",
+
+    "browser-sync": "^2.26.3",
+    "connect-history-api-fallback": "^1.6.0",
+    "cross-env": "^5.2.0",
+    "del": "^4.1.0",
+    "gulp": "^4.0.0",
+    "gulp-cache": "^1.1.1",
+    "gulp-dumber": "^0.10.3",
+    "gulp-if": "^2.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-terser": "^1.1.7",
+    "promise-polyfill": "^8.1.0",
+  },
+  "scripts": {
+    // @if sass
+    "css-lint": "sass-lint -c .sass-lint.yml 'src/**/*.scss'",
+    // @endif
+    // @if less
+    "css-lint": "lesshint 'src/**/*.less'",
+    // @endif
+    // @if babel
+    "js-lint": "eslint src test",
+    // @endif
+    // @if typescript
+    "js-lint": "tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
+    // @endif
+    // @if aurelia
+    "html-lint": "htmlhint -c .htmlhintrc src",
+    // @endif
+    "lint": "npm run js-lint/* @if sass || less */ && npm run sass-lint/* @endif *//* @if aurelia */ && npm run html-lint/* @endif */",
+
+    // @if jasmine || mocha || tape
+    "pretest": "npm run lint && npm run test-build",
+    "test-build": "cross-env NODE_ENV=test gulp build",
+    "test": "tape-run < dist/entry-bundle.js | tap-dot",
+    // @if jasmine
+    "browser-test": "npm run test-build && browser-run --input html --static . --browser chrome < SpecRunner.html"
+    // @endif
+    // @if !jasmine
+    "browser-test": "npm run test-build && browser-run --browser chrome < dist/entry-bundle.js"
+    // @endif
+    // @endif
+
+    // @if jest
+    "pretest": "npm run lint",
+    "test": "jest"
+    // @endif
+
+    // @if ava
+    "pretest": "npm run lint",
+    "test": "ava"
+    // @endif
+  }
+}

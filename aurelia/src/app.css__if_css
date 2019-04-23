@@ -1,0 +1,7 @@
+.menu-link {
+  margin: 1rem;
+}
+
+.menu-link .active {
+  font-weight: bold;
+}

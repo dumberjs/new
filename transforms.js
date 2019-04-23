@@ -11,4 +11,4 @@ exports.append = function(properties, features) {
       cb(null, file);
     }
   });
-}
+};
