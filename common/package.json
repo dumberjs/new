@@ -33,24 +33,28 @@
     // @if jasmine
     "jasmine-core": "^3.4.0",
     "jasmine-reporters": "^2.3.2",
+    // @if typescript
+    "@types/jasmine": "^3.3.12",
+    // @endif
     // @endif
 
-    // @if jasmine || mocha || tape
+    // @if jasmine || tape
     "tap-dot": "^2.0.0",
     "tape-run": "^5.0.0",
     // @endif
 
-    // @if mocha
-    "mocha": "^6.1.4",
-    "chai": "^4.2.0",
-    // @endif
-
     // @if tape
     "tape": "^4.10.1",
+    // @if typescript
+    "@types/tape": "4.2.33"
+    // @endif
     // @endif
 
     // @if jest
     "jest": "^24.7.1",
+    // @if typescript
+    "@types/jest": "^24.0.11"
+    // @endif
     // @endif
 
     // @if ava
@@ -93,18 +97,20 @@
     // @if aurelia
     "html-lint": "htmlhint -c .htmlhintrc src",
     // @endif
-    "lint": "npm run js-lint/* @if sass || less */ && npm run sass-lint/* @endif *//* @if aurelia */ && npm run html-lint/* @endif */",
+    "lint": "npm run js-lint/* @if sass || less */ && npm run css-lint/* @endif *//* @if aurelia */ && npm run html-lint/* @endif */",
 
-    // @if jasmine || mocha || tape
+    // @if jasmine || tape
     "pretest": "npm run lint && npm run test-build",
     "test-build": "cross-env NODE_ENV=test gulp build",
     "test": "tape-run < dist/entry-bundle.js | tap-dot",
+    // @endif
+
     // @if jasmine
     "browser-test": "npm run test-build && browser-run --input html --static . --browser chrome < SpecRunner.html"
     // @endif
-    // @if !jasmine
+
+    // @if tape
     "browser-test": "npm run test-build && browser-run --browser chrome < dist/entry-bundle.js"
-    // @endif
     // @endif
 
     // @if jest

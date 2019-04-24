@@ -24,8 +24,5 @@
     // @if jest
     "jest": true,
     // @endif
-    // @if mocha
-    "mocha": true,
-    // @endif
   }
 }

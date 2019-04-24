@@ -40,7 +40,7 @@ npx gulp clear-cache
 If you touch `.babelrc` file, you'd better do clear cache.
 // @endif
 
-// @if jasmine || mocha || tape
+// @if jasmine || tape
 ## Headless browser (electron) test
 ```
 npm test

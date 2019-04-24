@@ -45,24 +45,17 @@ module.exports = dumber({
     // Note prepend accepts direct JavaScript content.
     isTest && "jasmine.getEnv().addReporter(new jasmineReporters.TapReporter());",
     // @endif
-    // @if mocha
-    isTest && "node_modules/chai/chai.js",
-    isTest && "node_modules/mocha/mocha.js",
-    // @endif
     // Promise polyfill for IE
     "node_modules/promise-polyfill/dist/polyfill.min.js"
   ],
 
   // append after amd loader and all module definitions in entry bundle.
   append: [
-    // @if jasmine || mocha || tape
+    // @if jasmine || tape
     // Kick off all test files.
     // Note dumber-module-loader requirejs call accepts regex which loads all matched module ids!
     // Note all module ids are relative to dumber option "src" (default to 'src') folder.
     isTest && "requirejs(['../test/setup', /^\\.\\.\\/test\\/.+\\.spec$/]);"
-    // @endif
-    // @if mocha
-    isTest && "requirejs(['../test/setup']);
     // @endif
   ],
 
@@ -116,10 +109,10 @@ module.exports = dumber({
   // }
   // If you turned on hash, you need this callback to update index.html
   onManifest: isTest ? undefined : function(filenameMap) {
-    // Update index.html vendor-bundle.js with vendor-bundle.hash...js
-    console.log('Update index.html with ' + filenameMap['vendor-bundle.js']);
+    // Update index.html entry-bundle.js with entry-bundle.hash...js
+    console.log('Update index.html with ' + filenameMap['entry-bundle.js']);
     const indexHtml = fs.readFileSync('_index.html').toString()
-      .replace('vendor-bundle.js', filenameMap['vendor-bundle.js']);
+      .replace('entry-bundle.js', filenameMap['entry-bundle.js']);
 
     fs.writeFileSync('index.html', indexHtml);
   }
