@@ -33,10 +33,12 @@ module.exports = [
   {
     message: 'What unit testing framework to use?',
     choices: [
-      {value: 'jest', title: 'Jest', hint: 'Runs in Node.js, simulates browser, with a focus on simplicity.'},
+      {if: '!aurelia', value: 'jest', title: 'Jest', hint: 'Runs in Node.js, simulates browser, with a focus on simplicity.'},
+      {if: 'aurelia',  value: 'jest', title: 'Jest', hint: 'Runs in Node.js, simulates browser (aurelia-pal-nodejs), with a focus on simplicity.'},
       {value: 'jasmine', title: 'Jasmine', hint: 'Runs in browser, a behavior-driven testing framework.'},
       {value: 'tape', title: 'Tape', hint: 'Runs in browser, tap-producing test harness for node and browsers.'},
-      {value: 'ava', title: 'Ava + browser-env', hint: 'Runs in Node.js, simulates browser (browser-env), a test runner for Node.js with a concise API, detailed error output, embrace of new language features and process isolation that let you write tests more effectively.'}
+      {if: '!aurelia', value: 'ava', title: 'Ava + browser-env', hint: 'Runs in Node.js, simulates browser (browser-env). A test runner for Node.js with a concise API, detailed error output, embrace of new language features and process isolation that let you write tests more effectively.'}
+      {if: 'aurelia',  value: 'ava', title: 'Ava', hint: 'Runs in Node.js, simulates browser (aurelia-pal-nodejs). A test runner for Node.js with a concise API, detailed error output, embrace of new language features and process isolation that let you write tests more effectively.'}
     ]
   }
 ];

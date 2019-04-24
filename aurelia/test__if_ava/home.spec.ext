@@ -8,10 +8,12 @@ test('should render message', async t => {
       .inView('<home></home>')
       .boundTo({});
 
-  await component.create(bootstrap)
+  await component.create(bootstrap);
 
   const view = component.element;
   t.is(view.textContent.trim(), 'Home!');
 
-  if (component) component.dispose();
+  if (component) {
+    component.dispose();
+  }
 });

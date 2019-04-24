@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "tape": "^4.10.1",
+    // @if typescript
+    "@types/tape": "4.2.33"
+    // @endif
+  },
+  "scripts": {
+    // @if tape
+    "browser-test": "npm run test-build && browser-run --browser chrome < dist/entry-bundle.js"
+    // @endif
+  }
+}

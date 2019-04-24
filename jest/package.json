@@ -1,5 +1,12 @@
 {
   "devDependencies": {
-
+    "jest": "^24.7.1",
+    // @if typescript
+    "@types/jest": "^24.0.11"
+    // @endif
+  },
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "jest"
   }
 }
