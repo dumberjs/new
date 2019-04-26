@@ -4,7 +4,7 @@ module.exports = [
     choices: [
       {value: 'aurelia', title: 'Aurelia'},
       {value: 'react', title: 'React'},
-      {value: 'vue', title: 'Vue v2'}
+      {value: 'vue', title: 'Vue'}
     ]
   },
   {
