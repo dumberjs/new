@@ -97,10 +97,10 @@ function build() {
     gulp.src('src/**/*.html', {since: gulp.lastRun(build)}),
     // @endif
     // @if babel
-    buildJs(isTest ? ['src/**/*.js', 'test/**/*.js'] : 'src/**/*.js'),
+    buildJs(/* @if jasmine || tape */isTest ? ['src/**/*.js', 'test/**/*.js'] : /* @endif */'src/**/*.js'),
     // @endif
     // @if typescript
-    buildJs(isTest ? ['src/**/*.ts', 'test/**/*.ts'] : 'src/**/*.ts'),
+    buildJs(/* @if jasmine || tape */isTest ? ['src/**/*.ts', 'test/**/*.ts'] : /* @endif */'src/**/*.ts'),
     // @endif
     // @if css
     buildCss('src/**/*.css')

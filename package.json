@@ -1,0 +1,14 @@
+{
+  "name": "dumberjs-new",
+  "version": "0.0.1",
+  "description": "'makes' skeleton for creating app using dumber bundler",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "ava -v test.js"
+  },
+  "devDependencies": {
+    "del": "^4.1.0",
+    "ava": "^1.4.1"
+  }
+}

@@ -12,7 +12,7 @@ const serve = gulp.series(
     bs.init({
       ghostMode: false,
       online: false,
-      open: true,
+      open: !process.env.CI,
       logLevel: 'silent', // or 'debug'
       server: {
         baseDir: ['.'],
