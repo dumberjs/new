@@ -1,5 +1,5 @@
-var del = require('del');
-var {outputDir} = require('./_env');
+const del = require('del');
+const {outputDir} = require('./_env');
 
 module.exports = function() {
   return del([outputDir]);

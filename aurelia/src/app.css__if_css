@@ -2,6 +2,6 @@
   margin: 1rem;
 }
 
-.menu-link .active {
+.menu-link.active {
   font-weight: bold;
 }

@@ -1,16 +1,16 @@
-var gulp = require('gulp');
-var babel = require('gulp-babel');
-var plumber = require('gulp-plumber');
-var terser = require('gulp-terser');
-var gulpCache = require('gulp-cache');
-var gulpif = require('gulp-if');
-var autoprefixer = require('autoprefixer');
-var postcssUrl = require('postcss-url');
-var vue = require('gulp-vue-file');
-var projectName = require('../package.json').name;
+const gulp = require('gulp');
+const babel = require('gulp-babel');
+const plumber = require('gulp-plumber');
+const terser = require('gulp-terser');
+const gulpCache = require('gulp-cache');
+const gulpif = require('gulp-if');
+const autoprefixer = require('autoprefixer');
+const postcssUrl = require('postcss-url');
+const vue = require('gulp-vue-file');
+const projectName = require('../package.json').name;
 
-var {isProduction} = require('./_env');
-var dr = require('./_dumber');
+const {isProduction} = require('./_env');
+const dr = require('./_dumber');
 
 function build() {
   // see https://github.com/dumberjs/gulp-vue-file

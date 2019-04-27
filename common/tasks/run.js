@@ -1,9 +1,8 @@
-var gulp = require('gulp');
-var bs = require('browser-sync').create();
-var historyApiFallback = require('connect-history-api-fallback/lib');
-
-var clean = require('./clean');
-var build = require('./build');
+const gulp = require('gulp');
+const bs = require('browser-sync').create();
+const historyApiFallback = require('connect-history-api-fallback/lib');
+const clean = require('./clean');
+const build = require('./build');
 
 // Use browserSync as dev server
 const serve = gulp.series(

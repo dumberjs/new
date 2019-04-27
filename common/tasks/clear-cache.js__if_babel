@@ -1,5 +1,5 @@
-var gulpCache = require('gulp-cache');
-var dr = require('./_dumber');
+const gulpCache = require('gulp-cache');
+const dr = require('./_dumber');
 
 // clear both dumber (tracing) cache, and gulp-cache
 module.exports = function () {

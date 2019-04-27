@@ -1,9 +1,9 @@
-var dumber = require('gulp-dumber');
+const dumber = require('gulp-dumber');
 // @if aurelia
-var auDepsFinder = require('aurelia-deps-finder');
+const auDepsFinder = require('aurelia-deps-finder');
 // @endif
-var fs = require('fs');
-var {isProduction, isTest, outputDir} = require('./_env');
+const fs = require('fs');
+const {isProduction, isTest, outputDir} = require('./_env');
 
 module.exports = dumber({
   // src folder is by default "src".
