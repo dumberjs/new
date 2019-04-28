@@ -1,6 +1,5 @@
-# "makes" skeleton for creating app using dumber bundler
+# ["makes"](https://github.com/huochunpeng/makes) skeleton for creating app using dumber bundler
 
-WIP
 
 To generate app, run
 ```sh
@@ -9,3 +8,9 @@ npx makes dumberjs
 npx makes dumberjs app-name
 ```
 Then follow the prompts.
+
+WIP
+- [x] Aurelia skeletons
+- [ ] Inferno skeletons
+- [ ] React skeletons
+- [ ] Vue skeletons

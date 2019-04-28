@@ -3,8 +3,9 @@ module.exports = [
     message: 'Choose a front-end framework',
     choices: [
       {value: 'aurelia', title: 'Aurelia'},
-      {value: 'react', title: 'React'},
-      {value: 'vue', title: 'Vue'}
+      {value: 'inferno', title: 'Inferno (TBD)'},
+      {value: 'react', title: 'React (TBD)'},
+      {value: 'vue', title: 'Vue (TBD)'}
     ]
   },
   {
