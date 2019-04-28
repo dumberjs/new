@@ -7,7 +7,7 @@
   "scripts": {
     "test": "ava -v test.js",
     "version": "standard-changelog && git add CHANGELOG.md",
-    "postversion": "git push && git push --tags && npm publish"
+    "postversion": "git push && git push --tags"
   },
   "devDependencies": {
     "ava": "^1.4.1",
