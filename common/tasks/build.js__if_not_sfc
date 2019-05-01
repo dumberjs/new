@@ -97,10 +97,20 @@ function build() {
     gulp.src('src/**/*.html', {since: gulp.lastRun(build)}),
     // @endif
     // @if babel
+    // @if !react
     buildJs(/* @if jasmine || tape */isTest ? ['src/**/*.js', 'test/**/*.js'] : /* @endif */'src/**/*.js'),
     // @endif
+    // @if react
+    buildJs(/* @if jasmine || tape */isTest ? ['src/**/*.js{,x}', 'test/**/*.js{,x}'] : /* @endif */'src/**/*.js{,x}'),
+    // @endif
+    // @endif
     // @if typescript
+    // @if !react
     buildJs(/* @if jasmine || tape */isTest ? ['src/**/*.ts', 'test/**/*.ts'] : /* @endif */'src/**/*.ts'),
+    // @endif
+    // @if react
+    buildJs(/* @if jasmine || tape */isTest ? ['src/**/*.ts{,x}', 'test/**/*.ts{,x}'] : /* @endif */'src/**/*.ts{,x}'),
+    // @endif
     // @endif
     // @if css
     buildCss('src/**/*.css')

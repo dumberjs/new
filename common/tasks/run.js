@@ -50,10 +50,10 @@ function watch() {
     'vue',
     // @endif
     // @if babel
-    'js',
+    'js/* @if react */x/* @endif */',
     // @endif
     // @if typescript
-    'ts',
+    'ts/* @if react */x/* @endif */',
     // @endif
     // @if !sfc
     // @if aurelia

@@ -1,8 +1,0 @@
-export class Foo {
-  // @if typescript
-  private message: string = 'Foo!';
-  // @endif
-  // @if babel
-  message = 'Foo!';
-  // @endif
-}

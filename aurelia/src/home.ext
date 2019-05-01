@@ -1,8 +1,0 @@
-export class Home {
-  // @if typescript
-  private message: string = 'Home!';
-  // @endif
-  // @if babel
-  message = 'Home!';
-  // @endif
-}

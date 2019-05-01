@@ -1,5 +1,8 @@
 ## Cypress e2e test
 All e2e tests are in `cypress/integration/`.
+// @if typescript
+Note the source code of the app and unit tests is in TypeScript, but e2e tests are in plain ESNext JavaScript. You can however [write e2e tests in TypeScript too for Cypress](https://docs.cypress.io/guides/tooling/typescript-support.html#Transpiling-TypeScript-test-files).
+// @endif
 
 First, run the app in dev mode
 ```

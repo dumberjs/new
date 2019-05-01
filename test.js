@@ -36,9 +36,9 @@ function run(command, dataCB, errorCB) {
     // test is running in NODE_ENV=test which will affect gulp build
     env.NODE_ENV = 'development';
     const proc = spawn(cmd, args, {env});
-    proc.on('exit', code => {
-      if (code) {
-        reject(new Error('process exit code: ' + code));
+    proc.on('exit', (code, signal) => {
+      if (code && signal !== 'SIGTERM') {
+        reject(new Error('process exit code: ' + code + ' signal: ' + signal));
       } else {
         resolve();
       }
@@ -76,28 +76,42 @@ const skeletons = [
   'aurelia babel css jest cypress',
   'aurelia babel css jasmine cypress',
   'aurelia babel css tape cypress',
-  'aurelia babel css ava cypress',
   'aurelia babel less jest cypress',
   'aurelia babel less jasmine cypress',
   'aurelia babel less tape cypress',
-  'aurelia babel less ava cypress',
   'aurelia babel sass jest cypress',
   'aurelia babel sass jasmine cypress',
   'aurelia babel sass tape cypress',
-  'aurelia babel sass ava cypress',
 
   'aurelia typescript css jest cypress',
   'aurelia typescript css jasmine cypress',
   'aurelia typescript css tape cypress',
-  'aurelia typescript css ava cypress',
   'aurelia typescript less jest cypress',
   'aurelia typescript less jasmine cypress',
   'aurelia typescript less tape cypress',
-  'aurelia typescript less ava cypress',
   'aurelia typescript sass jest cypress',
   'aurelia typescript sass jasmine cypress',
   'aurelia typescript sass tape cypress',
-  'aurelia typescript sass ava cypress',
+
+  // 'react babel css jest cypress',
+  // 'react babel css jasmine cypress',
+  // 'react babel css tape cypress',
+  // 'react babel less jest cypress',
+  // 'react babel less jasmine cypress',
+  // 'react babel less tape cypress',
+  // 'react babel sass jest cypress',
+  // 'react babel sass jasmine cypress',
+  // 'react babel sass tape cypress',
+
+  // 'react typescript css jest cypress',
+  // 'react typescript css jasmine cypress',
+  // 'react typescript css tape cypress',
+  // 'react typescript less jest cypress',
+  // 'react typescript less jasmine cypress',
+  // 'react typescript less tape cypress',
+  // 'react typescript sass jest cypress',
+  // 'react typescript sass jasmine cypress',
+  // 'react typescript sass tape cypress',
 ];
 
 skeletons.forEach((_f, i) => {
@@ -153,8 +167,8 @@ skeletons.forEach((_f, i) => {
           await run(`npx cypress run`);
           kill();
         } catch (e) {
+          t.fail(e);
           kill();
-          throw e;
         }
       },
       (data, kill) => {

@@ -1,14 +1,14 @@
 import {StageComponent} from 'aurelia-testing';
 import {bootstrap} from 'aurelia-bootstrapper';
 
-describe('Component home', () => {
+describe('Component app', () => {
   let component;
   let model = {};
 
   beforeEach(() => {
     component = StageComponent
-      .withResources('home')
-      .inView('<home></home>')
+      .withResources('app')
+      .inView('<app></app>')
       .boundTo(model);
   });
 
@@ -22,7 +22,7 @@ describe('Component home', () => {
   it('should render message', done => {
     component.create(bootstrap).then(() => {
       const view = component.element;
-      expect(view.textContent.trim()).toBe('Home!');
+      expect(view.textContent.trim()).toBe('Hello Aurelia!');
       done();
     }).catch(e => {
       fail(e);

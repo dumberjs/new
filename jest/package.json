@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "jest": "^24.7.1",
+    "jest-transform-stub": "^2.0.0",
     // @if babel
     "babel-jest": "^24.7.1",
     // @endif
@@ -12,5 +13,46 @@
   "scripts": {
     "pretest": "npm run lint",
     "test": "jest"
+  },
+  "jest": {
+    // @if aurelia
+    // This is to teach jest(actually NODE_PATH) where to load an aurelia module,
+    // when aurelia-loader requests module "a/b",
+    // jest will try src/a/b.js.
+    "modulePaths": [
+      "<rootDir>/src",
+      "<rootDir>/node_modules"
+    ],
+    "testEnvironment": "node",
+    // @endif
+
+    "setupFiles": [
+      "<rootDir>/test/setup./* @if babel */js/* @endif *//* @if typescript */ts/* @endif */"
+    ],
+
+    "moduleNameMapper": {
+      // @if aurelia
+      // avoid aurelia-bindings v1+v2 conflict
+      "^aurelia-binding$": "<rootDir>/node_modules/aurelia-binding",
+      // @endif
+
+      // @if less || sass
+      "^.+\\.css$": "<rootDir>/test/mock-css"
+      // @endif
+    },
+
+    "transform": {
+      "^.+\\.(css|less|sass|scss|styl|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "jest-transform-stub",
+      // @if babel
+      "^.+\\.jsx?$": "babel-jest",
+      // @endif
+    },
+
+    // @if typescript
+    "preset": 'ts-jest',
+    // @endif
+
+    "collectCoverage": true,
+    "collectCoverageFrom": ['src/**/*./* @if babel */js{,x}/* @endif *//* @if typescript */ts{,x}/* @endif */']
   }
 }

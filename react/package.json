@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "react-test-renderer": "^16.8.6",
+    // @if babel
+    "@babel/preset-react": "^7.0.0",
+    "eslint-plugin-react": "^7.12.4",
+    // @endif
+  },
+  "scripts": {
+    // @if babel
+    "js-lint": "eslint 'src/**/*.js{,x}' 'test/**/*.js{,x}'",
+    // @endif
+    // @if typescript
+    "js-lint": "tslint -c tslint.json 'src/**/*.ts{,x}' 'test/**/*.ts{,x}'",
+    // @endif
+  }
+}

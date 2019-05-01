@@ -1,4 +1,12 @@
 export default {
+  // @if react
+  files: ['test/**/*.spec.js{,x}'],
+  babel: {
+    extensions: ['jsx', 'js'],
+  },
+  // @endif
+  // @if !react
   files: ['test/**/*.spec.js'],
+  // @endif
   'require': ['@babel/register', './test/setup.js']
 }

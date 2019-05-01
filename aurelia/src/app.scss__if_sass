@@ -1,7 +1,10 @@
-.menu-link {
-  margin: 1rem;
+.app {
+  background-image: url('./aurelia-icon.svg');
+  background-repeat: no-repeat;
+  background-size: 4rem 4rem;
 
-  &.active {
-    font-weight: bold;
-  }
+  color: #333333;
+  font-family: --apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif;
+  line-height: 4rem;
+  padding-left: 5rem;
 }

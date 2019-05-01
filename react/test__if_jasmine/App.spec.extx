@@ -1,0 +1,16 @@
+/* eslint react/jsx-key: 0 */
+import React from 'react';
+import App from '../src/App';
+import ShallowRenderer from 'react-test-renderer/shallow';
+
+describe('Component App', () => {
+  it('should render message', () => {
+    const renderer = new ShallowRenderer();
+    renderer.render(<App />);
+    let result = renderer.getRenderOutput();
+    expect(result.type).toBe('div');
+    expect(result.props.children).toEqual(
+      <h1>Hello React!</h1>
+    );
+  });
+});
