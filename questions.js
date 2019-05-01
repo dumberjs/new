@@ -41,5 +41,12 @@ module.exports = [
       {if: '!aurelia', value: 'ava', title: 'Ava + browser-env', hint: 'Runs in Node.js, simulates browser (browser-env). A test runner for Node.js with a concise API, detailed error output, embrace of new language features and process isolation that let you write tests more effectively.'},
       {if: 'aurelia',  value: 'ava', title: 'Ava', hint: 'Runs in Node.js, simulates browser (aurelia-pal-nodejs). A test runner for Node.js with a concise API, detailed error output, embrace of new language features and process isolation that let you write tests more effectively.'}
     ]
+  },
+  {
+    message: 'Do you want to setup e2e test?',
+    choices: [
+      {title: 'No'},
+      {value: 'cypress', title: 'Yes (Cypress)', hint: 'Cypress offers fast, easy and reliable testing for anything that runs in a browser.'}
+    ]
   }
 ];

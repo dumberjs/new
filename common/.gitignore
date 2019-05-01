@@ -12,3 +12,8 @@ Thumbs.db
 # Compiled files
 /dist
 /index.html
+
+// @if cypress
+/cypress/videos
+/cypress/screenshots
+// @endif

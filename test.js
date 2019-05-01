@@ -53,6 +53,7 @@ function run(command, dataCB, errorCB) {
       }
     });
     proc.stderr.on('data', data => {
+      process.stderr.write(data);
       if (errorCB) {
         errorCB(data, () => {
           killProc(proc);
@@ -72,31 +73,31 @@ async function takeScreenshot(url, filePath) {
 }
 
 const skeletons = [
-  'aurelia babel css jest',
-  'aurelia babel css jasmine',
-  'aurelia babel css tape',
-  'aurelia babel css ava',
-  'aurelia babel less jest',
-  'aurelia babel less jasmine',
-  'aurelia babel less tape',
-  'aurelia babel less ava',
-  'aurelia babel sass jest',
-  'aurelia babel sass jasmine',
-  'aurelia babel sass tape',
-  'aurelia babel sass ava',
+  'aurelia babel css jest cypress',
+  'aurelia babel css jasmine cypress',
+  'aurelia babel css tape cypress',
+  'aurelia babel css ava cypress',
+  'aurelia babel less jest cypress',
+  'aurelia babel less jasmine cypress',
+  'aurelia babel less tape cypress',
+  'aurelia babel less ava cypress',
+  'aurelia babel sass jest cypress',
+  'aurelia babel sass jasmine cypress',
+  'aurelia babel sass tape cypress',
+  'aurelia babel sass ava cypress',
 
-  'aurelia typescript css jest',
-  'aurelia typescript css jasmine',
-  'aurelia typescript css tape',
-  'aurelia typescript css ava',
-  'aurelia typescript less jest',
-  'aurelia typescript less jasmine',
-  'aurelia typescript less tape',
-  'aurelia typescript less ava',
-  'aurelia typescript sass jest',
-  'aurelia typescript sass jasmine',
-  'aurelia typescript sass tape',
-  'aurelia typescript sass ava',
+  'aurelia typescript css jest cypress',
+  'aurelia typescript css jasmine cypress',
+  'aurelia typescript css tape cypress',
+  'aurelia typescript css ava cypress',
+  'aurelia typescript less jest cypress',
+  'aurelia typescript less jasmine cypress',
+  'aurelia typescript less tape cypress',
+  'aurelia typescript less ava cypress',
+  'aurelia typescript sass jest cypress',
+  'aurelia typescript sass jasmine cypress',
+  'aurelia typescript sass tape cypress',
+  'aurelia typescript sass ava cypress',
 ];
 
 skeletons.forEach((_f, i) => {
@@ -118,11 +119,7 @@ skeletons.forEach((_f, i) => {
     await run('npm i');
 
     console.log('-npm test');
-    await run('npm test', null,
-      (data, kill) => {
-        process.stderr.write(data);
-      }
-    );
+    await run('npm test');
 
     console.log('-npx gulp build');
     await run('npx gulp build', null,
@@ -148,18 +145,27 @@ skeletons.forEach((_f, i) => {
         const message = 'Dev app booted at ' + url;
         console.log(message);
         t.pass(message);
-        console.log('-take screenshot');
-        await takeScreenshot(url, path.join(folder, appName + '.png'));
-        kill();
+
+        try {
+          console.log('-take screenshot');
+          await takeScreenshot(url, path.join(folder, appName + '.png'));
+          console.log('-npx cypress run');
+          await run(`npx cypress run`);
+          kill();
+        } catch (e) {
+          kill();
+          throw e;
+        }
       },
       (data, kill) => {
-        t.fail('gulp run failed: ' + data.toString());
-        kill();
+        const str = data.toString();
+        // ignore nodejs v12 [DEP0066] DeprecationWarning: OutgoingMessage.prototype._headers is deprecated
+        if (!str.includes('DeprecationWarning')) {
+          t.fail('gulp run failed: ' + data.toString());
+          kill();
+        }
       }
     );
-
-    // TODO the skeleton app needs to offer e2e testing setup protractor/cypress.
-    // That would enable proper screening here.
 
     console.log('-remove folder ' + appName);
     process.chdir(folder);
