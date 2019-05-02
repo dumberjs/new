@@ -5,9 +5,10 @@
 /* @endif */
   ],
   "plugins": [
-    "@babel/plugin-syntax-dynamic-import",
-    ["@babel/plugin-proposal-class-properties", { loose: true }]/* @if aurelia */,
-    ["@babel/plugin-proposal-decorators", { legacy: true }]
-/* @endif */
+    // @if aurelia
+    ["@babel/plugin-proposal-decorators", { legacy: true }],
+    // @endif
+    ["@babel/plugin-proposal-class-properties", { loose: true }],
+    "@babel/plugin-syntax-dynamic-import"
   ]
 }
