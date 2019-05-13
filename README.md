@@ -11,7 +11,7 @@ Then follow the prompts.
 WIP
 - [x] Aurelia skeletons
 - [ ] Inferno skeletons
-- [ ] React skeletons
+- [x] React skeletons
 - [ ] Vue skeletons
 
 ## Notes on "makes"
