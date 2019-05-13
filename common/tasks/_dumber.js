@@ -10,7 +10,7 @@ module.exports = dumber({
   // src: 'src',
 
   // requirejs baseUrl, dumber default is "/dist"
-  baseUrl: outputDir,
+  baseUrl: '/' + outputDir,
 
   // can turn off cache for production build
   // cache: !isProduction,
