@@ -1,8 +1,9 @@
-const which = require('npm-which')(process.cwd());
+const {execSync} = require('child_process');
 
 function isAvailable(bin) {
   try {
-    return which.sync(bin);
+    execSync(bin + ' -v')
+    return true;
   } catch (e) {
     return false;
   }
@@ -18,11 +19,11 @@ module.exports = async function({
   ];
 
   if (isAvailable('yarn')) {
-    choices.unshift({value: 'yarn', title: 'Yes, use yarn'});
+    choices.push({value: 'yarn', title: 'Yes, use yarn'});
   }
 
   if (isAvailable('pnpm')) {
-    choices.unshift({value: 'pnpm i', title: 'Yes, use pnpm'});
+    choices.push({value: 'pnpm i', title: 'Yes, use pnpm'});
   }
 
   choices.unshift({title: 'No'});
