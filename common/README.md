@@ -40,6 +40,14 @@ npx gulp clear-cache
 If you touch `.babelrc` file, you'd better do clear cache.
 // @endif
 
+// @if jest || ava
+## Nodejs test
+```
+npm test
+```
+
+Details in package.json -> scripts -> pretest & test.
+// @endif
 // @if jasmine || tape
 ## Headless browser (electron) test
 ```
@@ -49,8 +57,10 @@ npm test
 Details in package.json -> scripts -> pretest & test.
 
 1. no karma, no hacking, just browser-run (tape-run wraps browser-run).
-2. uses jasmine tap reporter so we can pipe the result to tape-run to return proper return-code to terminal.
-3. note `| tap-dot` is optional, `tap-dot` is just a tap result formatter to please the eyes.
+2. note `| tap-dot` is optional, `tap-dot` is just a tap result formatter to please the eyes.
+// @if jasmine
+3. uses jasmine tap reporter so we can pipe the result to tape-run to return proper return-code to terminal.
+// @endif
 
 Read more in `tasks/build.js`.
 
