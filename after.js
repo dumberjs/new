@@ -15,7 +15,7 @@ module.exports = async function({
   if (unattended) return;
 
   const choices = [
-    {title: 'No'}
+    {title: 'No'},
     {value: 'npm i', title: 'Yes, use npm'}
   ];
 
