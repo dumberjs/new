@@ -9,7 +9,7 @@ const postcssUrl = require('postcss-url');
 const vue = require('gulp-vue-file');
 const projectName = require('../package.json').name;
 
-const {isProduction} = require('./_env');
+const {isProduction, isTest, outputDir} = require('./_env');
 const dr = require('./_dumber');
 
 function build() {
@@ -39,7 +39,7 @@ function build() {
   // dumber knows nothing about .ts/.less/.scss/.md files,
   // gulp-* plugins transpiled them into js/css/html before
   // sending to dumber.
-  return gulp.src('src/**/*.{js,vue}', {sourcemaps: !isProduction, since: gulp.lastRun(build)})
+  return gulp.src(/* @if jasmine || tape */isTest ? ['test/**/*.js', 'src/**/*.{json,js,vue}'] : /* @endif */'src/**/*.{json,js,vue}', {sourcemaps: !isProduction, since: gulp.lastRun(build)})
   // plumber does continue on failure for dev mode
   .pipe(gulpif(!isProduction, plumber()))
   .pipe(compileVue)
@@ -58,7 +58,7 @@ function build() {
   .pipe(gulpif(isProduction, terser({compress: false})))
 
   // Want to write bundle files? Sure, gulp can do it, dumber is too dumb to do it.
-  .pipe(gulp.dest('dist', {sourcemaps: isProduction ? false : '.'}));
+  .pipe(gulp.dest(outputDir, {sourcemaps: isProduction ? false : '.'}));
 }
 
 module.exports = build;

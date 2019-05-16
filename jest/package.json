@@ -46,13 +46,29 @@
       // @if babel
       "^.+\\.jsx?$": "babel-jest",
       // @endif
+      // @if sfc
+      "^.+\\.vue$": "vue-jest",
+      // @endif
     },
+
+    // @if sfc
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    // @endif
 
     // @if typescript
     "preset": 'ts-jest',
     // @endif
 
     "collectCoverage": true,
-    "collectCoverageFrom": ['src/**/*./* @if babel */js{,x}/* @endif *//* @if typescript */ts{,x}/* @endif */']
+    "collectCoverageFrom": [
+      'src/**/*./* @if babel */js{,x}/* @endif *//* @if typescript */ts{,x}/* @endif */',
+      // @if sfc
+      'src/**/*.vue',
+      // @endif
+    ]
   }
 }

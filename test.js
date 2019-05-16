@@ -68,30 +68,31 @@ async function takeScreenshot(url, filePath) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(url);
+  await new Promise(r => setTimeout(r, 1000));
   await page.screenshot({path: filePath});
   await browser.close();
 }
 
 const skeletons = [
-  'aurelia babel css jest cypress',
-  'aurelia babel css jasmine cypress',
-  'aurelia babel css tape cypress',
-  'aurelia babel less jest cypress',
-  'aurelia babel less jasmine cypress',
-  'aurelia babel less tape cypress',
-  'aurelia babel sass jest cypress',
-  'aurelia babel sass jasmine cypress',
-  'aurelia babel sass tape cypress',
+  // 'aurelia babel css jest cypress',
+  // 'aurelia babel css jasmine cypress',
+  // 'aurelia babel css tape cypress',
+  // 'aurelia babel less jest cypress',
+  // 'aurelia babel less jasmine cypress',
+  // 'aurelia babel less tape cypress',
+  // 'aurelia babel sass jest cypress',
+  // 'aurelia babel sass jasmine cypress',
+  // 'aurelia babel sass tape cypress',
 
-  'aurelia typescript css jest cypress',
-  'aurelia typescript css jasmine cypress',
-  'aurelia typescript css tape cypress',
-  'aurelia typescript less jest cypress',
-  'aurelia typescript less jasmine cypress',
-  'aurelia typescript less tape cypress',
-  'aurelia typescript sass jest cypress',
-  'aurelia typescript sass jasmine cypress',
-  'aurelia typescript sass tape cypress',
+  // 'aurelia typescript css jest cypress',
+  // 'aurelia typescript css jasmine cypress',
+  // 'aurelia typescript css tape cypress',
+  // 'aurelia typescript less jest cypress',
+  // 'aurelia typescript less jasmine cypress',
+  // 'aurelia typescript less tape cypress',
+  // 'aurelia typescript sass jest cypress',
+  // 'aurelia typescript sass jasmine cypress',
+  // 'aurelia typescript sass tape cypress',
 
   // 'react babel css jest cypress',
   // 'react babel css jasmine cypress',
@@ -112,6 +113,37 @@ const skeletons = [
   // 'react typescript sass jest cypress',
   // 'react typescript sass jasmine cypress',
   // 'react typescript sass tape cypress',
+
+  // 'vue babel css jest cypress',
+  // 'vue babel css jasmine cypress',
+  // 'vue babel css tape cypress',
+  // 'vue babel less jest cypress',
+  // 'vue babel less jasmine cypress',
+  // 'vue babel less tape cypress',
+  // 'vue babel sass jest cypress',
+  // 'vue babel sass jasmine cypress',
+  // 'vue babel sass tape cypress',
+
+  // 'vue typescript css jest cypress',
+  // 'vue typescript css jasmine cypress',
+  // 'vue typescript css tape cypress',
+  // 'vue typescript less jest cypress',
+  // 'vue typescript less jasmine cypress',
+  // 'vue typescript less tape cypress',
+  // 'vue typescript sass jest cypress',
+  // 'vue typescript sass jasmine cypress',
+  // 'vue typescript sass tape cypress',
+
+  // 'vue sfc babel css jest cypress',
+  // 'vue sfc babel css jasmine cypress',
+  // 'vue sfc babel css tape cypress',
+  // 'vue sfc babel less jest cypress',
+  // 'vue sfc babel less jasmine cypress',
+  // 'vue sfc babel less tape cypress',
+  // 'vue sfc babel sass jest cypress',
+  // 'vue sfc babel sass jasmine cypress',
+  // 'vue sfc babel sass tape cypress',
+
 ];
 
 skeletons.forEach((_f, i) => {

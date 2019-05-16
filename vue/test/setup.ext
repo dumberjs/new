@@ -1,0 +1,7 @@
+// @if babel
+import 'regenerator-runtime/runtime';
+// @endif
+// @if ava
+// ignore css modules
+require.extensions['.css'] = () => '';
+// @endif

@@ -46,6 +46,7 @@ function reload(done) {
 // Watch all js/html/scss files for rebuild and reload browserSync.
 function watch() {
   const exts = [
+    'json',
     // @if sfc
     'vue',
     // @endif

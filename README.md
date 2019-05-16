@@ -12,7 +12,7 @@ WIP
 - [x] Aurelia skeletons
 - [ ] Inferno skeletons
 - [x] React skeletons
-- [ ] Vue skeletons
+- [x] Vue skeletons
 
 ## Notes on "makes"
 

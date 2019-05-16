@@ -93,6 +93,7 @@ function build() {
   // gulp-* plugins transpiled them into js/css/html before
   // sending to dumber.
   return merge2(
+    gulp.src('src/**/*.json', {since: gulp.lastRun(build)}),
     // @if aurelia
     gulp.src('src/**/*.html', {since: gulp.lastRun(build)}),
     // @endif

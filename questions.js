@@ -4,7 +4,7 @@ module.exports = [
     choices: [
       {value: 'aurelia', title: 'Aurelia'},
       {value: 'react', title: 'React'},
-      {value: 'vue', title: 'Vue (TBD)'}
+      {value: 'vue', title: 'Vue'}
     ]
   },
   {
@@ -19,6 +19,7 @@ module.exports = [
     message: 'What JavaScript transpiler to use?',
     choices: [
       {value: 'babel', title: 'ESNext (babel)', hint: 'Use next generation JavaScript, today.'},
+      // have trouble to support TS in .vue file (gulp-vue-file) due to handling of decorator.
       {if: '!sfc', value: 'typescript', title: 'TypeScript', hint: 'TypeScript is a typed superset of Javascript that compiles to plain JavaScript.'}
     ]
   },
