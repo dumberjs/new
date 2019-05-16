@@ -1,3 +1,20 @@
+# [0.3.0](https://github.com/dumberjs/new/compare/v0.2.0...v0.3.0) (2019-05-16)
+
+
+### Bug Fixes
+
+* fix syntax ([c59b674](https://github.com/dumberjs/new/commit/c59b674))
+* use absolute path for requirejs baseUrl ([d1e2d2d](https://github.com/dumberjs/new/commit/d1e2d2d))
+
+
+### Features
+
+* "after" task to optionally install deps ([2e53df3](https://github.com/dumberjs/new/commit/2e53df3))
+* make gulpfile more adaptive ([dfddf94](https://github.com/dumberjs/new/commit/dfddf94))
+* vue skeleton ([0439a9d](https://github.com/dumberjs/new/commit/0439a9d))
+
+
+
 # [0.2.0](https://github.com/dumberjs/new/compare/v0.1.0...v0.2.0) (2019-05-13)
 
 
