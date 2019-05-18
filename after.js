@@ -28,7 +28,7 @@ module.exports = async function({
   }
 
   const result = await prompts.select({
-    message: 'Do you want to install dependencies?',
+    message: 'Do you want to install npm dependencies now?',
     choices
   });
 
