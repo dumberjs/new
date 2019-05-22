@@ -38,5 +38,5 @@ module.exports = async function({
 
   const c = ansiColors;
   console.log(`\nNext time, you can try create similar project in silent mode:`);
-  console.log(c.inverse(` npx makes dumberjs ${properties.name}${here ? ' --here' : ''} -s ${notDefaultFeatures.length ? (notDefaultFeatures.join(',') + ' ') : ''}`));
+  console.log(c.inverse(` npx makes dumberjs new-project-name${here ? ' --here' : ''} -s ${notDefaultFeatures.length ? (notDefaultFeatures.join(',') + ' ') : ''}`));
 };
