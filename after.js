@@ -10,7 +10,7 @@ function isAvailable(bin) {
 }
 
 module.exports = async function({
-  unattended, prompts, run
+  unattended, here, prompts, run, properties, features, notDefaultFeatures, ansiColors
 }) {
   if (unattended) return;
 
@@ -35,4 +35,8 @@ module.exports = async function({
   if (result) {
     await run(result);
   }
+
+  const c = ansiColors;
+  console.log(`\nNext time, you can try create similar project in silent mode:`);
+  console.log(c.inverse(` npx makes dumberjs ${properties.name}${here ? ' --here' : ''} -s ${notDefaultFeatures.length ? (notDefaultFeatures.join(',') + ' ') : ''}`));
 };
