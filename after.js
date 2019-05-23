@@ -16,7 +16,7 @@ module.exports = async function({
 
   const choices = [
     {title: 'No'},
-    {value: 'npm i', title: 'Yes, use npm'}
+    {value: 'npm', title: 'Yes, use npm'}
   ];
 
   if (isAvailable('yarn')) {
@@ -24,7 +24,7 @@ module.exports = async function({
   }
 
   if (isAvailable('pnpm')) {
-    choices.push({value: 'pnpm i', title: 'Yes, use pnpm'});
+    choices.push({value: 'pnpm', title: 'Yes, use pnpm'});
   }
 
   const result = await prompts.select({
@@ -33,7 +33,7 @@ module.exports = async function({
   });
 
   if (result) {
-    await run(result);
+    await run(result, ['install']);
   }
 
   const c = ansiColors;
