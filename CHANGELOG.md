@@ -1,3 +1,18 @@
+# [0.4.0](https://github.com/dumberjs/new/compare/v0.3.0...v0.4.0) (2019-05-24)
+
+
+### Bug Fixes
+
+* update to latest makes 0.7.0 run() ([feb41e8](https://github.com/dumberjs/new/commit/feb41e8))
+
+
+### Features
+
+* normalise common tasks to npm scripts ([0c61b04](https://github.com/dumberjs/new/commit/0c61b04))
+* print hint of silent mode ([9a067ae](https://github.com/dumberjs/new/commit/9a067ae))
+
+
+
 # [0.3.0](https://github.com/dumberjs/new/compare/v0.2.0...v0.3.0) (2019-05-16)
 
 
