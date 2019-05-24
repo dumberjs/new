@@ -167,8 +167,8 @@ skeletons.forEach((_f, i) => {
     console.log('-npm test');
     await run('npm test');
 
-    console.log('-npx gulp build');
-    await run('npx gulp build', null,
+    console.log('-npm run build:dev');
+    await run('npm run build:dev', null,
       (data, kill) => {
         t.fail('gulp build failed: ' + data.toString());
       }
@@ -182,8 +182,8 @@ skeletons.forEach((_f, i) => {
     await run('npx gulp clean');
     t.throws(() => fs.statSync(entryPath), null, 'cleaned bundle files');
 
-    console.log('-npx gulp');
-    await run(`npx gulp`,
+    console.log('-npm run start');
+    await run(`npm run start`,
       async (data, kill) => {
         const m = data.toString().match(/Application Available At: (\S+)/);
         if (!m) return;
@@ -195,8 +195,8 @@ skeletons.forEach((_f, i) => {
         try {
           console.log('-take screenshot');
           await takeScreenshot(url, path.join(folder, appName + '.png'));
-          console.log('-npx cypress run');
-          await run(`npx cypress run`);
+          console.log('-npm run test:e2e');
+          await run(`npm run test:e2e`);
           kill();
         } catch (e) {
           t.fail(e);

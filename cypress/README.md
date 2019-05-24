@@ -6,13 +6,13 @@ Note the source code of the app and unit tests is in TypeScript, but e2e tests a
 
 First, run the app in dev mode
 ```
-npx gulp
+npm run start
 ```
 
 Then run e2e tests with
 
 ```
-npx cypress run
+npm run test:e2e
 ```
 
 Note if your dev app is not running on port 3000, you need to modify `cypress.json` to update dev app port.

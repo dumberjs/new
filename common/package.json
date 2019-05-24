@@ -80,9 +80,14 @@
     "lint": "npm run js-lint/* @if sass || less */ && npm run css-lint/* @endif *//* @if aurelia */ && npm run html-lint/* @endif */",
 
     // @if jasmine || tape
-    "pretest": "npm run lint && npm run test-build",
-    "test-build": "cross-env NODE_ENV=test gulp build",
+    "pretest": "npm run lint && npm run build:test",
+    "build:test": "gulp clean && cross-env NODE_ENV=test gulp build",
     "test": "tape-run < dist/entry-bundle.js | tap-dot",
     // @endif
+    "start": "gulp",
+    "start:prod": "cross-env NODE_ENV=production gulp",
+    "build:dev": "gulp clean && gulp build",
+    "build": "gulp clean && cross-env NODE_ENV=production gulp build",
+    "clear-cache": "gulp clear-cache"
   }
 }
