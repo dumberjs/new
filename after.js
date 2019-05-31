@@ -46,5 +46,5 @@ module.exports = async function({
   console.log(`\n${c.underline.bold('Get Started')}`);
   console.log('cd ' + properties.name);
   if (!depsInstalled) console.log('npm install');
-  console.log('npm run start\n');
+  console.log('npm start\n');
 };

@@ -4,7 +4,7 @@ An app using dumber bundler to build. More details in `tasks/*.js` (loaded by `g
 
 ## Run in dev mode, plus watch
 ```
-npm run start
+npm start
 ```
 
 ## Run in production mode, plus watch

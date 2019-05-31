@@ -182,8 +182,8 @@ skeletons.forEach((_f, i) => {
     await run('npx gulp clean');
     t.throws(() => fs.statSync(entryPath), null, 'cleaned bundle files');
 
-    console.log('-npm run start');
-    await run(`npm run start`,
+    console.log('-npm start');
+    await run(`npm start`,
       async (data, kill) => {
         const m = data.toString().match(/Application Available At: (\S+)/);
         if (!m) return;

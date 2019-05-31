@@ -6,7 +6,7 @@ Note the source code of the app and unit tests is in TypeScript, but e2e tests a
 
 First, run the app in dev mode
 ```
-npm run start
+npm start
 ```
 
 Then run e2e tests with
