@@ -7,6 +7,6 @@
     // @endif
   },
   "scripts": {
-    "browser-test": "npm run test-build && browser-run --input html --static . --browser chrome < SpecRunner.html"
+    "browser-test": "npm run build:test && browser-run --input html --static . --browser chrome < SpecRunner.html"
   }
 }

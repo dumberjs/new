@@ -7,7 +7,7 @@
   },
   "scripts": {
     // @if tape
-    "browser-test": "npm run test-build && browser-run --browser chrome < dist/entry-bundle.js"
+    "browser-test": "npm run build:test && browser-run --browser chrome < dist/entry-bundle.js"
     // @endif
   }
 }
