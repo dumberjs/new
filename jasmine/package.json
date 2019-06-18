@@ -1,12 +1,12 @@
 {
   "devDependencies": {
     "jasmine-core": "^3.4.0",
-    "jasmine-reporters": "^2.3.2",
     // @if typescript
     "@types/jasmine": "^3.3.12",
     // @endif
   },
   "scripts": {
-    "browser-test": "npm run build:test && browser-run --input html --static . --browser chrome < SpecRunner.html"
+    "test": "browser-do --jasmine < dist/entry-bundle.js | tap-dot",
+    "browser-test": "npm run build:test && browser-do --jasmine --browser chrome < dist/entry-bundle.js"
   }
 }

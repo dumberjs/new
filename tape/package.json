@@ -6,8 +6,7 @@
     // @endif
   },
   "scripts": {
-    // @if tape
-    "browser-test": "npm run build:test && browser-run --browser chrome < dist/entry-bundle.js"
-    // @endif
+    "test": "browser-do --tap < dist/entry-bundle.js | tap-dot",
+    "browser-test": "npm run build:test && browser-do --tap --browser chrome < dist/entry-bundle.js"
   }
 }

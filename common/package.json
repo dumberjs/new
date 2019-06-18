@@ -36,9 +36,9 @@
     "lesshint": "^6.3.6",
     // @endif
 
-    // @if jasmine || tape
+    // @if jasmine || tape || mocha
     "tap-dot": "^2.0.0",
-    "tape-run": "^5.0.0",
+    "browser-do": "^0.1.0",
     // @endif
 
     // @if !sfc
@@ -79,10 +79,9 @@
     // @endif
     "lint": "npm run js-lint/* @if sass || less */ && npm run css-lint/* @endif *//* @if aurelia */ && npm run html-lint/* @endif */",
 
-    // @if jasmine || tape
+    // @if jasmine || tape || mocha
     "pretest": "npm run lint && npm run build:test",
     "build:test": "gulp clean && cross-env NODE_ENV=test gulp build",
-    "test": "tape-run < dist/entry-bundle.js | tap-dot",
     // @endif
     "start": "gulp",
     "start:prod": "cross-env NODE_ENV=production gulp",

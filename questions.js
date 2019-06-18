@@ -37,6 +37,7 @@ module.exports = [
       {if: '!aurelia', value: 'jest', title: 'Jest', hint: 'Runs in Node.js, simulates browser, with a focus on simplicity.'},
       {if: 'aurelia',  value: 'jest', title: 'Jest', hint: 'Runs in Node.js, simulates browser (aurelia-pal-nodejs), with a focus on simplicity.'},
       {value: 'jasmine', title: 'Jasmine', hint: 'Runs in browser, a behavior-driven testing framework.'},
+      {value: 'mocha', title: 'Mocha + Chai', hint: 'Runs in browser, a feature-rich JavaScript test framework for node and browsers.'},
       {value: 'tape', title: 'Tape', hint: 'Runs in browser, tap-producing test harness for node and browsers.'},
 
       // Disable ava for now, there is one small issue I got no solution so far.

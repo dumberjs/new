@@ -42,6 +42,9 @@
     // @if jasmine
     "jasmine": true,
     // @endif
+    // @if mocha
+    "mocha": true,
+    // @endif
     // @if jest
     "jest": true,
     // @endif

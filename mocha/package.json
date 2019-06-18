@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "mocha": "^6.1.4",
+    "chai": "^4.2.0",
+    // @if typescript
+    "@types/mocha": "^5.2.7",
+    // @endif
+  },
+  "scripts": {
+    "test": "browser-do --mocha < dist/entry-bundle.js | tap-dot",
+    "browser-test": "npm run build:test && browser-do --mocha --browser chrome < dist/entry-bundle.js"
+  }
+}
