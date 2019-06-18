@@ -5,22 +5,17 @@ Note the source code of the app and unit tests is in TypeScript, but e2e tests a
 // @endif
 
 First, run the app in dev mode
-```
-npm start
-```
+
+    npm start
 
 Then run e2e tests with
 
-```
-npm run test:e2e
-```
+    npm run test:e2e
 
 Note if your dev app is not running on port 3000, you need to modify `cypress.json` to update dev app port.
 
 To run Cypress interactively, do
 
-```
-npx cypress open
-```
+    npx cypress open
 
 For more information, visit https://www.cypress.io

@@ -12,20 +12,17 @@ It updates index.html with hashed file name.
 
     npm run start:prod
 
-
 ## Build in dev mode
 
 Generates `scripts/*-bundle.js`
 
     npm run build:dev
 
-
 ## Build in production mode
 
 Generates `scripts/*-bundle.[hash].js`, update index.html with hashed file name.
 
     npm run build
-
 
 ## To clear cache
 
