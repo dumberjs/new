@@ -5,6 +5,6 @@ import App from '../src/App';
 describe('Component App', () => {
   it('should render message', () => {
     const wrapper = mount(App);
-    expect(wrapper.text()).to.be('Hello Vue!');
+    expect(wrapper.text()).to.equal('Hello Vue!');
   });
 });

@@ -37,7 +37,6 @@
     // @endif
 
     // @if jasmine || tape || mocha
-    "tap-dot": "^2.0.0",
     "browser-do": "^0.1.0",
     // @endif
 

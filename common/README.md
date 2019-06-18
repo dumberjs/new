@@ -48,12 +48,11 @@ Details in package.json -> scripts -> pretest & test.
 
 Details in package.json -> scripts -> pretest & test.
 
-1. no karma, no hacking, just [browser-do](https://github.com/3cp/browser-do).
-2. note `| tap-dot` is optional, `tap-dot` is just a tap result formatter to please the eyes.
-
 ## Visible browser (chrome) test
 
     npm run browser-test
 
 This runs in Chrome, if you want to use other browser, update package.json "browser-test" script. Read [browser-do](https://github.com/3cp/browser-do) for available browsers.
+
+By default, browser-do closes the browser after tests finish, to keep browser running, use `--keep-open` option on browser-do command.
 // @endif

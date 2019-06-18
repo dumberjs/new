@@ -23,7 +23,7 @@ describe('Component app', () => {
   it('should render message', done => {
     component.create(bootstrap).then(() => {
       const view = component.element;
-      expect(view.textContent.trim()).to.be('Hello Aurelia!');
+      expect(view.textContent.trim()).to.equal('Hello Aurelia!');
       done();
     }).catch(e => {
       done(e);
