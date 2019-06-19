@@ -4,7 +4,7 @@
 // it's not automatically triggered by "npm version patch".
 // Have to run "npm test" manually before a release.
 
-import {spawn, spawnSync} from 'child_process';
+import spawn from 'cross-spawn';
 import fs from 'fs';
 import path from 'path';
 import del from 'del';
@@ -13,7 +13,7 @@ import puppeteer from 'puppeteer';
 
 function killProc(proc) {
   if (process.platform === 'win32') {
-    spawnSync('taskkill', ["/pid", proc.pid, '/f', '/t']);
+    spawn.sync('taskkill', ["/pid", proc.pid, '/f', '/t']);
   } else {
     proc.stdin.pause();
     proc.kill();
