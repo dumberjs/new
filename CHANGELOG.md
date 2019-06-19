@@ -1,3 +1,19 @@
+# [0.5.0](https://github.com/dumberjs/new/compare/v0.4.0...v0.5.0) (2019-06-19)
+
+
+### Bug Fixes
+
+* fix mocha tests, remove tap-dot ([bbbed7b](https://github.com/dumberjs/new/commit/bbbed7b))
+* fix wrong browser-test script ([5a28223](https://github.com/dumberjs/new/commit/5a28223))
+
+
+### Features
+
+* display "Get Started" guide in after task ([c1f19b6](https://github.com/dumberjs/new/commit/c1f19b6))
+* use browser-do, add mocha support ([d332318](https://github.com/dumberjs/new/commit/d332318))
+
+
+
 # [0.4.0](https://github.com/dumberjs/new/compare/v0.3.0...v0.4.0) (2019-05-24)
 
 
