@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const plumber = require('gulp-plumber');
 const terser = require('gulp-terser');
-const gulpCache = require('gulp-cache');
 const gulpif = require('gulp-if');
 const autoprefixer = require('autoprefixer');
 const postcssUrl = require('postcss-url');
@@ -15,7 +14,7 @@ const dr = require('./_dumber');
 function build() {
   // see https://github.com/dumberjs/gulp-vue-file
   // for how to use gulp-vue-file plugin
-  let compileVue = vue({
+  const compileVue = vue({
     style: {
       postcssPlugins: [
         autoprefixer(),
@@ -29,10 +28,6 @@ function build() {
       ]
     }
   });
-  // Use gulp-cache if not in production mode
-  if (!isProduction) {
-    compileVue = gulpCache(compileVue, {name: projectName});
-  }
 
   // Merge all js/css/html file streams to feed greedy dumber.
   // Note scss was transpiled to css file by gulp-sass.

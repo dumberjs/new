@@ -26,13 +26,9 @@ Generates `scripts/*-bundle.[hash].js`, update index.html with hashed file name.
 
 ## To clear cache
 
-Clear tracing cache by dumber/* @if babel */, and transpiling cache by gulp-cache/* @endif */.
+Clear tracing cache.
 
     npm run clear-cache
-
-// @if babel
-If you touch `.babelrc` file, you'd better do clear cache.
-// @endif
 
 // @if jest || ava
 ## Nodejs test

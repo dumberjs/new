@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 // @if babel
 const babel = require('gulp-babel');
-const gulpCache = require('gulp-cache');
 // @endif
 // @if typescript
 const typescript = require('gulp-typescript');
@@ -33,11 +32,7 @@ const ts = typescript.createProject('tsconfig.json');
 
 function buildJs(src) {
   // @if babel
-  let transpile = babel();
-  // Use gulp-cache if not in production mode
-  if (!isProduction) {
-    transpile = gulpCache(transpile, {name: projectName});
-  }
+  const transpile = babel();
   // @endif
   // @if typescript
   const transpile = ts();
