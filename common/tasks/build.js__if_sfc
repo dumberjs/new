@@ -6,7 +6,6 @@ const gulpif = require('gulp-if');
 const autoprefixer = require('autoprefixer');
 const postcssUrl = require('postcss-url');
 const vue = require('gulp-vue-file');
-const projectName = require('../package.json').name;
 
 const {isProduction, isTest, outputDir} = require('./_env');
 const dr = require('./_dumber');
