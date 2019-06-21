@@ -26,7 +26,7 @@ Generates `scripts/*-bundle.[hash].js`, update index.html with hashed file name.
 
 ## To clear cache
 
-Clear tracing cache.
+Clear tracing cache. In rare situation, you might need to run clear-cache after upgrading to new version of dumber bundler.
 
     npm run clear-cache
 
