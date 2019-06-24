@@ -43,35 +43,9 @@ function reload(done) {
   done();
 }
 
-// Watch all js/html/scss files for rebuild and reload browserSync.
+// Watch all files for rebuild and reload browserSync.
 function watch() {
-  const exts = [
-    'json',
-    // @if sfc
-    'vue',
-    // @endif
-    // @if babel
-    'js/* @if react */x/* @endif */',
-    // @endif
-    // @if typescript
-    'ts/* @if react */x/* @endif */',
-    // @endif
-    // @if !sfc
-    // @if aurelia
-    'html',
-    // @endif
-    // @if less
-    'less'
-    // @endif
-    // @if sass
-    'scss'
-    // @endif
-    // @if css
-    'css'
-    // @endif
-    // @endif
-  ];
-  return gulp.watch(`src/**/*.{${exts.join()}}`, gulp.series(build, reload));
+  return gulp.watch('src/**/*', gulp.series(build, reload));
 }
 
 module.exports = gulp.series(
