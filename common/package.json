@@ -13,6 +13,10 @@
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "gulp-babel": "^8.0.0",
     "regenerator-runtime": "0.13.2",
+    // @if (jasmine || mocha || tape) && !sfc
+    "babel-plugin-istanbul": "^5.1.4",
+    "nyc": "^14.1.1",
+    // @endif
     // @endif
 
     // @if babel || cypress
@@ -37,7 +41,7 @@
     // @endif
 
     // @if jasmine || tape || mocha
-    "browser-do": "^0.2.0",
+    "browser-do": "^0.3.2",
     // @endif
 
     // @if !sfc
@@ -80,6 +84,9 @@
     // @if jasmine || tape || mocha
     "pretest": "npm run lint && npm run build:test",
     "build:test": "gulp clean && cross-env NODE_ENV=test gulp build",
+    // @if babel && !sfc
+    "coverage": "npm run test && nyc report --reporter=lcov --reporter=text",
+    // @endif
     // @endif
     "start": "gulp",
     "start:prod": "cross-env NODE_ENV=production gulp",

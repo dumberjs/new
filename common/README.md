@@ -52,3 +52,21 @@ This runs in Chrome, if you want to use other browser, update package.json "brow
 
 By default, browser-do closes the browser after tests finish, to keep browser running, use `--keep-open` option on browser-do command.
 // @endif
+
+// @if jest
+## Code coverage
+
+`npm test` already generetes code coverage report, you can open `coverage/lcov-report/index.html` for detailed report.
+
+// @endif
+// @if babel && (jasmine || mocha || tape) && !sfc
+## Code coverage
+
+    npm run coverage
+
+Then open `coverage/lcov-report/index.html` for detailed report.
+
+// @if react
+> Currently coverage doesn't work for out react setup. To be fixed.
+// @endif
+// @endif

@@ -10,5 +10,11 @@
     // @endif
     ["@babel/plugin-proposal-class-properties", { loose: true }],
     "@babel/plugin-syntax-dynamic-import"
-  ]
+  ]/* @if (jasmine || mocha || tape) && !sfc */,
+  "env": {
+    "test": {
+      "plugins": [ "istanbul" ]
+    }
+  }
+/* @endif */
 }

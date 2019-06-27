@@ -12,6 +12,8 @@ Thumbs.db
 # Compiled files
 /dist
 /index.html
+/.nyc_output
+/coverage
 
 // @if cypress
 /cypress/videos
