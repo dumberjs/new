@@ -7,7 +7,7 @@
     "react-test-renderer": "^16.8.6",
     // @if babel
     "@babel/preset-react": "^7.0.0",
-    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react": "^7.14.2",
     // @endif
   },
   "scripts": {
