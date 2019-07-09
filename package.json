@@ -16,7 +16,7 @@
     "del": "^4.1.1",
     "glob": "^7.1.4",
     "npm-check-updates": "^3.1.12",
-    "puppeteer": "^1.17.0",
+    "puppeteer": "^1.18.1",
     "standard-changelog": "^2.0.11"
   }
 }
