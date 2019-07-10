@@ -90,7 +90,7 @@ module.exports = dumber({
   //   "some-bundle.js": "some-bundle.1234.js",
   //   "other-bundle.js": "other-bundle.3455.js"
   // }
-  // Or when hash if off
+  // Or when hash is off
   // {
   //   "some-bundle.js": "some-bundle.js",
   //   "other-bundle.js": "other-bundle.js"
