@@ -186,8 +186,8 @@ skeletons.forEach((_f, i) => {
     await run(makeCmd);
     process.chdir(appFolder);
 
-    console.log('-npm i');
-    await run('npm i');
+    console.log('-yarn');
+    await run('yarn');
 
     console.log('-npm test');
     await run('npm test');
