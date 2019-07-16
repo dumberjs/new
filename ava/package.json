@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "ava": "^2.1.0",
+    "ava": "^2.2.0",
     // @if !aurelia
     "browser-env": "^3.2.6",
     // @endif

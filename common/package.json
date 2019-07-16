@@ -7,10 +7,10 @@
   "license": "UNLICENSED",
   "devDependencies": {
     // @if babel
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
     "gulp-babel": "^8.0.0",
     "regenerator-runtime": "0.13.2",
     // @if (jasmine || mocha || tape) && !sfc
@@ -25,7 +25,7 @@
     // @endif
 
     // @if typescript
-    "typescript": "^3.5.2",
+    "typescript": "^3.5.3",
     "gulp-typescript": "^5.0.1",
     "tslint": "5.18.0",
     // @endif
@@ -49,15 +49,15 @@
     // @endif
 
     "gulp-postcss": "^8.0.0",
-    "autoprefixer": "^9.6.0",
+    "autoprefixer": "^9.6.1",
     "postcss-url": "^8.0.0",
 
     "browser-sync": "^2.26.7",
     "connect-history-api-fallback": "^1.6.0",
     "cross-env": "^5.2.0",
-    "del": "^4.1.1",
+    "del": "^5.0.0",
     "gulp": "^4.0.2",
-    "gulp-dumber": "^0.11.0",
+    "gulp-dumber": "^0.11.1",
     "gulp-if": "^2.0.2",
     "gulp-plumber": "^1.2.1",
     "gulp-terser": "^1.2.0",
