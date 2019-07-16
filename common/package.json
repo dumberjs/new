@@ -65,16 +65,16 @@
   },
   "scripts": {
     // @if sass
-    "css-lint": "sass-lint -c .sass-lint.yml 'src/**/*.scss'",
+    "css-lint": "sass-lint -c .sass-lint.yml \"src/**/*.scss\"",
     // @endif
     // @if less
-    "css-lint": "lesshint 'src/**/*.less'",
+    "css-lint": "lesshint \"src/**/*.less\"",
     // @endif
     // @if babel
     "js-lint": "eslint src test",
     // @endif
     // @if typescript
-    "js-lint": "tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
+    "js-lint": "tslint -c tslint.json \"src/**/*.ts\" \"test/**/*.ts\"",
     // @endif
     // @if aurelia
     "html-lint": "htmlhint -c .htmlhintrc src",

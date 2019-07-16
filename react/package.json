@@ -12,10 +12,10 @@
   },
   "scripts": {
     // @if babel
-    "js-lint": "eslint 'src/**/*.js{,x}' 'test/**/*.js{,x}'",
+    "js-lint": "eslint \"src/**/*.js{,x}\" \"test/**/*.js{,x}\"",
     // @endif
     // @if typescript
-    "js-lint": "tslint -c tslint.json 'src/**/*.ts{,x}' 'test/**/*.ts{,x}'",
+    "js-lint": "tslint -c tslint.json \"src/**/*.ts{,x}\" \"test/**/*.ts{,x}\"",
     // @endif
   }
 }
