@@ -1,3 +1,4 @@
+// Common setup before all unit tests.
 // @if babel
 import 'regenerator-runtime/runtime';
 // @endif
