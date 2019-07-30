@@ -7,21 +7,21 @@
   "license": "UNLICENSED",
   "devDependencies": {
     // @if babel
-    "@babel/core": "^7.5.4",
-    "@babel/preset-env": "^7.5.4",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
-    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "gulp-babel": "^8.0.0",
     "regenerator-runtime": "0.13.2",
     // @if (jasmine || mocha || tape) && !sfc
-    "babel-plugin-istanbul": "^5.1.4",
+    "babel-plugin-istanbul": "^5.2.0",
     "nyc": "^14.1.1",
     // @endif
     // @endif
 
     // @if babel || cypress
     "babel-eslint": "^10.0.2",
-    "eslint": "^6.0.1",
+    "eslint": "^6.1.0",
     // @endif
 
     // @if typescript
@@ -58,7 +58,7 @@
     "del": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-dumber": "^0.11.1",
-    "gulp-if": "^2.0.2",
+    "gulp-if": "^3.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-terser": "^1.2.0",
     "promise-polyfill": "^8.1.3"

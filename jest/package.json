@@ -6,7 +6,7 @@
     "babel-jest": "^24.8.0",
     // @endif
     // @if typescript
-    "@types/jest": "^24.0.15",
+    "@types/jest": "^24.0.16",
     "ts-jest": "^24.0.2",
     // @endif
   },
