@@ -11,7 +11,15 @@ import React from "react";
 // all less files were transpiled to css files by
 // gulp-less before sending to dumber.
 // @endif
+// @if css
 import "./styles.css";
+// @endif
+// @if less
+import "./styles.less";
+// @endif
+// @if sass
+import "./styles.scss";
+// @endif
 
 const App = () => (
   <div className="app">

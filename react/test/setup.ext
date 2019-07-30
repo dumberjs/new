@@ -5,4 +5,6 @@ import 'regenerator-runtime/runtime';
 // @if ava
 // ignore css modules
 require.extensions['.css'] = () => '';
+require.extensions['.less'] = () => '';
+require.extensions['.scss'] = () => '';
 // @endif

@@ -39,15 +39,8 @@ module.exports = [
       {value: 'jasmine', title: 'Jasmine', hint: 'Runs in browser, a behavior-driven testing framework.'},
       {value: 'mocha', title: 'Mocha + Chai', hint: 'Runs in browser, a feature-rich JavaScript test framework for node and browsers.'},
       {value: 'tape', title: 'Tape', hint: 'Runs in browser, tap-producing test harness for node and browsers.'},
-
-      // Disable ava for now, there is one small issue I got no solution so far.
-      // When less/sass is chosen, `import './app.css';` throws out "Cannot find module" because
-      // app.css is resolved to compiled result of app.less/app.scss, but in Nodejs env,
-      // Nodejs doesn't know where to read module './app.css'.
-      // jest has a workaround through moduleNameMapper, but ava relies on Nodejs itself to resolve module.
-
-      // {if: '!aurelia', value: 'ava', title: 'Ava + browser-env', hint: 'Runs in Node.js, simulates browser (browser-env). A test runner for Node.js with a concise API, detailed error output, embrace of new language features and process isolation that let you write tests more effectively.'},
-      // {if: 'aurelia',  value: 'ava', title: 'Ava', hint: 'Runs in Node.js, simulates browser (aurelia-pal-nodejs). A test runner for Node.js with a concise API, detailed error output, embrace of new language features and process isolation that let you write tests more effectively.'}
+      {if: '!aurelia', value: 'ava', title: 'Ava + browser-env', hint: 'Runs in Node.js, simulates browser (browser-env). A test runner for Node.js with a concise API, detailed error output, embrace of new language features and process isolation that let you write tests more effectively.'},
+      {if: 'aurelia',  value: 'ava', title: 'Ava', hint: 'Runs in Node.js, simulates browser (aurelia-pal-nodejs). A test runner for Node.js with a concise API, detailed error output, embrace of new language features and process isolation that let you write tests more effectively.'}
     ]
   },
   {

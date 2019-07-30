@@ -10,7 +10,15 @@
 // all less files were transpiled to css files by
 // gulp-less before sending to dumber.
 // @endif
-import './App.css';
+// @if css
+import "./App.css";
+// @endif
+// @if less
+import "./App.less";
+// @endif
+// @if sass
+import "./App.scss";
+// @endif
 
 export default {
   template: `

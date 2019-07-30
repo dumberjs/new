@@ -1,5 +1,13 @@
 <template>
+  <!-- @if css -->
   <require from="./app.css"></require>
+  <!-- @endif -->
+  <!-- @if less -->
+  <require from="./app.less"></require>
+  <!-- @endif -->
+  <!-- @if sass -->
+  <require from="./app.scss"></require>
+  <!-- @endif -->
   <div class="app">
     <h1>${message}</h1>
   </div>
