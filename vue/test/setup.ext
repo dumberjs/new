@@ -3,8 +3,13 @@
 import 'regenerator-runtime/runtime';
 // @endif
 // @if ava
+
 // ignore css modules
-require.extensions['.css'] = () => '';
-require.extensions['.less'] = () => '';
-require.extensions['.scss'] = () => '';
+function skipCSS(module) {
+  module.exports = '';
+}
+
+require.extensions['.css'] = skipCSS;
+require.extensions['.less'] = skipCSS;
+require.extensions['.scss'] = skipCSS;
 // @endif
