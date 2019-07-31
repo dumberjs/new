@@ -1,3 +1,23 @@
+# [0.6.0](https://github.com/dumberjs/new/compare/v0.5.0...v0.6.0) (2019-07-31)
+
+
+### Bug Fixes
+
+* be nice to windows ([03161db](https://github.com/dumberjs/new/commit/03161db))
+* fix ava css module stub ([14142cb](https://github.com/dumberjs/new/commit/14142cb))
+* fix guide on here mode ([a8f4dd9](https://github.com/dumberjs/new/commit/a8f4dd9))
+* fix json format ([0f71f79](https://github.com/dumberjs/new/commit/0f71f79))
+* fix vue ava unit tests ([15e5fe5](https://github.com/dumberjs/new/commit/15e5fe5))
+* hide ava for vue-sfc, it doesn't work yet ([427296b](https://github.com/dumberjs/new/commit/427296b))
+
+
+### Features
+
+* code coverage support for babel+browser-do setup ([72447cd](https://github.com/dumberjs/new/commit/72447cd))
+* turn on ava option, dumber now supports `import 'a.less';` ([029d90f](https://github.com/dumberjs/new/commit/029d90f))
+
+
+
 # [0.5.0](https://github.com/dumberjs/new/compare/v0.4.0...v0.5.0) (2019-06-19)
 
 
