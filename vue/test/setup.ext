@@ -3,6 +3,7 @@
 import 'regenerator-runtime/runtime';
 // @endif
 // @if ava
+import 'jsdom-global/register';
 
 // ignore css modules
 function skipCSS(module) {
