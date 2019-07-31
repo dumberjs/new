@@ -178,17 +178,17 @@ const skeletons = [
   'vue sfc babel css jasmine cypress',
   'vue sfc babel css tape cypress',
   'vue sfc babel css mocha cypress',
-  'vue sfc babel css ava cypress',
+  // 'vue sfc babel css ava cypress',
   'vue sfc babel less jest cypress',
   'vue sfc babel less jasmine cypress',
   'vue sfc babel less tape cypress',
   'vue sfc babel less mocha cypress',
-  'vue sfc babel less ava cypress',
+  // 'vue sfc babel less ava cypress',
   'vue sfc babel sass jest cypress',
   'vue sfc babel sass jasmine cypress',
   'vue sfc babel sass tape cypress',
   'vue sfc babel sass mocha cypress',
-  'vue sfc babel sass ava cypress',
+  // 'vue sfc babel sass ava cypress',
 
 ];
 

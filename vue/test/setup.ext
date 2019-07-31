@@ -4,6 +4,19 @@ import 'regenerator-runtime/runtime';
 // @endif
 // @if ava
 import 'jsdom-global/register';
+// @if sfc
+// TODO ava and vue sfc is not yet working.
+import hooks from 'require-extension-hooks';
+import Vue from 'vue';
+
+// Setup Vue.js to remove production tip
+Vue.config.productionTip = false;
+
+// Setup vue files to be processed by `require-extension-hooks-vue`
+hooks('vue').plugin('vue').push();
+// Setup vue and js files to be processed by `require-extension-hooks-babel`
+hooks(['vue', 'js']).exclude(({filename}) => filename.match(/\/node_modules\//)).plugin('babel').push();
+// @endif
 
 // ignore css modules
 function skipCSS(module) {
