@@ -3,7 +3,7 @@
     "aurelia-bootstrapper": "^2.3.3"
   },
   "devDependencies": {
-    "aurelia-deps-finder": "^1.1.4",
+    "aurelia-deps-finder": "^1.2.0",
     "aurelia-testing": "^1.0.0",
     "gulp-preprocess": "^3.0.2",
     "htmlhint": "0.11.0",
