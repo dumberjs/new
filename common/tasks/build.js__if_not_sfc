@@ -5,9 +5,6 @@ const babel = require('gulp-babel');
 // @if typescript
 const typescript = require('gulp-typescript');
 // @endif
-// @if aurelia
-const preprocess = require('gulp-preprocess');
-// @endif
 // @if less
 const less = require('gulp-less');
 // @endif
@@ -39,14 +36,6 @@ function buildJs(src) {
 
   return gulp.src(src, {sourcemaps: !isProduction, since: gulp.lastRun(build)})
   .pipe(gulpif(!isProduction, plumber()))
-  // @if aurelia
-  // Read src/main.js
-  // We use gulp-preprocess to preprocess main.js. So we don't need any
-  // conditional plugin loading which creates extra trouble for tracer/bundler.
-  // With this preprocessed static plugin loading, aurelia-testing is
-  // auto-traced in test mode, but not in any other env.
-  .pipe(preprocess({context: {isProduction, isTest}}))
-  // @endif
   .pipe(transpile);
 }
 
