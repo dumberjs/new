@@ -1,3 +1,12 @@
+# [0.7.0](https://github.com/dumberjs/new/compare/v0.6.0...v0.7.0) (2019-08-09)
+
+
+### Features
+
+* get rid of gulp-preprocess, use latest dumber feature on process.env.NODE_ENV ([24dd7f0](https://github.com/dumberjs/new/commit/24dd7f0))
+
+
+
 # [0.6.0](https://github.com/dumberjs/new/compare/v0.5.0...v0.6.0) (2019-07-31)
 
 
