@@ -48,15 +48,7 @@ module.exports = dumber({
   ],
 
   // Explicit dependencies, can use either "deps" (short name) or "dependencies" (full name).
-  // @if aurelia
-  // Here we load Aurelia packages which are not explicitly required by user code.
-  // @endif
   deps: [
-    // @if aurelia
-    "aurelia-bootstrapper",
-    "aurelia-loader-default",
-    "aurelia-pal-browser"
-    // @endif
     // @if vue
     // This explicit dep overwrites vue's main file from 'dist/vue.runtime.esm.js' to 'dist/vue.js'.
     // We have to use dist/vue.js which includes template compiler.
