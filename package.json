@@ -11,11 +11,11 @@
     "postversion": "git push && git push --tags"
   },
   "devDependencies": {
-    "ava": "^2.2.0",
+    "ava": "^2.3.0",
     "cross-spawn": "^6.0.5",
-    "del": "^5.0.0",
+    "del": "^5.1.0",
     "glob": "^7.1.4",
-    "npm-check-updates": "^3.1.20",
+    "npm-check-updates": "^3.1.21",
     "puppeteer": "^1.19.0",
     "standard-changelog": "^2.0.13"
   }

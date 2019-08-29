@@ -3,7 +3,7 @@
     "aurelia-bootstrapper": "^2.3.3"
   },
   "devDependencies": {
-    "aurelia-deps-finder": "^1.4.0",
+    "aurelia-deps-finder": "^2.0.0",
     "aurelia-testing": "^1.0.0",
     "htmlhint": "0.11.0",
     // @if babel

@@ -20,15 +20,15 @@
     // @endif
 
     // @if babel || cypress
-    "babel-eslint": "^10.0.2",
-    "eslint": "^6.1.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.2.2",
     // @endif
 
     // @if typescript
-    "typescript": "^3.5.3",
+    "typescript": "^3.6.2",
     "gulp-typescript": "^5.0.1",
-    "tslint": "^5.18.0",
-    "@types/node": "^12.7.1"
+    "tslint": "^5.19.0",
+    "@types/node": "^12.7.2",
     // @endif
 
     // @if sass
@@ -56,9 +56,9 @@
     "browser-sync": "^2.26.7",
     "connect-history-api-fallback": "^1.6.0",
     "cross-env": "^5.2.0",
-    "del": "^5.0.0",
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
-    "gulp-dumber": "^0.13.0",
+    "gulp-dumber": "^1.0.0",
     "gulp-if": "^3.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-terser": "^1.2.0",
