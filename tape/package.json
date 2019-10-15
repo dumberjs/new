@@ -6,7 +6,13 @@
     // @endif
   },
   "scripts": {
+    // @if !plugin
     "test": "browser-do --tap < dist/entry-bundle.js",
     "browser-test": "npm run build:test && browser-do --tap --browser chrome < dist/entry-bundle.js"
+    // @endif
+    // @if plugin
+    "test": "browser-do --tap < scripts/entry-bundle.js",
+    "browser-test": "npm run build:test && browser-do --tap --browser chrome < scripts/entry-bundle.js"
+    // @endif
   }
 }
