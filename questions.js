@@ -8,6 +8,14 @@ module.exports = [
     ]
   },
   {
+    if: 'aurelia',
+    message: 'What kind of Aurelia project?',
+    choices: [
+      {title: 'App', hint: 'A normal single page application in Aurelia'},
+      {value: 'aurelia-plugin', title: 'Plugin Project', hint: 'An Aurelia plugin project'}
+    ]
+  },
+  {
     if: 'vue',
     message: 'Do you want to use Single File Components (.vue files)?',
     choices: [

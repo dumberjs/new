@@ -1,0 +1,10 @@
+// @if typescript
+import {FrameworkConfiguration} from 'aurelia-framework';
+// @endif
+import {PLATFORM} from 'aurelia-pal';
+
+export function configure(config/* @if typescript **: FrameworkConfiguration/* @endif */) {
+  config.globalResources([
+    PLATFORM.moduleName('./elements/hello-world')
+  ]);
+}

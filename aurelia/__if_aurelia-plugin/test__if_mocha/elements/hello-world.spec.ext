@@ -1,0 +1,35 @@
+import {expect} from 'chai';
+import {StageComponent} from 'aurelia-testing';
+import {bootstrap} from 'aurelia-bootstrapper';
+
+describe('Component hello-world', () => {
+  let component;
+  let model;
+
+  beforeEach(() => {
+    model = {};
+    component = StageComponent
+      .withResources('elements/hello-world')
+      .inView('<hello-world message.bind="message"></hello-world>')
+      .boundTo(model);
+  });
+
+  afterEach(() => {
+    if (component) {
+      component.dispose();
+      component = null;
+    }
+  });
+
+  it('should render message', done => {
+    model.message = 'from me';
+
+    component.create(bootstrap).then(() => {
+      const view = component.element;
+      expect(view.textContent.trim()).to.equal('Hello world from me');
+      done();
+    }).catch(e => {
+      done(e);
+    });
+  });
+});

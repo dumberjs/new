@@ -14,13 +14,13 @@ It updates index.html with hashed file name.
 
 ## Build in dev mode
 
-Generates `scripts/*-bundle.js`
+Generates `dist/*-bundle.js`
 
     npm run build:dev
 
 ## Build in production mode
 
-Generates `scripts/*-bundle.[hash].js`, update index.html with hashed file name.
+Generates `dist/*-bundle.[hash].js`, update index.html with hashed file name.
 
     npm run build
 

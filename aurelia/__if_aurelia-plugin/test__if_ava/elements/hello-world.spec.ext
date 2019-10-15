@@ -1,0 +1,20 @@
+import {StageComponent} from 'aurelia-testing';
+import {bootstrap} from 'aurelia-bootstrapper';
+import test from 'ava';
+
+test('should render message', async t => {
+  let model = {message: 'from me'};
+  let component = StageComponent
+      .withResources('elements/hello-world')
+      .inView('<hello-world message.bind="message"></hello-world>')
+      .boundTo({});
+
+  await component.create(bootstrap);
+
+  const view = component.element;
+  t.is(view.textContent.trim(), 'Hello world from me');
+
+  if (component) {
+    component.dispose();
+  }
+});

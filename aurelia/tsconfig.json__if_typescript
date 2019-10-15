@@ -2,5 +2,10 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
-  }
+  },
+  // @if aurelia-plugin
+  "include": [
+    "./dev-app/**/*.ts"
+  ]
+  // @endif
 }

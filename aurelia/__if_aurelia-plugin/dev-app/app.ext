@@ -1,0 +1,8 @@
+export class App {
+  // @if babel
+  message = 'from Aurelia!';
+  // @endif
+  // @if typescript
+  public message: string = 'from Aurelia!';
+  // @endif
+}
