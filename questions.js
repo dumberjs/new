@@ -11,8 +11,8 @@ module.exports = [
     if: 'aurelia',
     message: 'What kind of Aurelia project?',
     choices: [
-      {title: 'App', hint: 'A normal single page application in Aurelia'},
-      {value: 'plugin', title: 'Plugin Project', hint: 'An Aurelia plugin project'}
+      {title: 'An app', hint: 'A normal single page application in Aurelia'},
+      {value: 'plugin', title: 'A plugin', hint: 'An Aurelia plugin project'}
     ]
   },
   {
