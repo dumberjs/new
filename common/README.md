@@ -6,6 +6,7 @@ An app using dumber bundler to build. More details in `tasks/*.js` (loaded by `g
 
     npm start
 
+// @if !plugin
 ## Run in production mode, plus watch
 
 It updates index.html with hashed file name.
@@ -24,6 +25,21 @@ Generates `dist/*-bundle.[hash].js`, update index.html with hashed file name.
 
     npm run build
 
+// @endif
+// @if plugin
+## Build in dev mode
+
+Generates `dist/` files in commonjs format.
+
+    npm run build:dev
+
+## Build in production mode
+
+Generates `dist/` files in commonjs format, minified.
+
+    npm run build
+
+// @endif
 ## To clear cache
 
 Clear tracing cache. In rare situation, you might need to run clear-cache after upgrading to new version of dumber bundler.

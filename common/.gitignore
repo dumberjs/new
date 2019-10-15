@@ -11,6 +11,9 @@ Thumbs.db
 
 # Compiled files
 /dist
+// @if !plugin
+/scripts
+// @endif
 /index.html
 /.nyc_output
 /coverage

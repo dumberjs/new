@@ -74,6 +74,7 @@ function build() {
   // gulp-* plugins transpiled them into js/css/html before
   // sending to dumber.
   return merge2(
+  // @if !plugin
     gulp.src('src/**/*.json', {since: gulp.lastRun(build)}),
     // @if aurelia
     gulp.src('src/**/*.html', {since: gulp.lastRun(build)}),
@@ -103,6 +104,38 @@ function build() {
     // @if sass
     buildCss('src/**/*.scss')
     // @endif
+  // @endif
+  // @if plugin
+    gulp.src('{src,dev-app}/**/*.json', {since: gulp.lastRun(build)}),
+    // @if aurelia
+    gulp.src('{src,dev-app}/**/*.html', {since: gulp.lastRun(build)}),
+    // @endif
+    // @if babel
+    // @if !react
+    buildJs(/* @if jasmine || tape || mocha */isTest ? ['{src,dev-app}/**/*.js', 'test/**/*.js'] : /* @endif */'{src,dev-app}/**/*.js'),
+    // @endif
+    // @if react
+    buildJs(/* @if jasmine || tape || mocha */isTest ? ['{src,dev-app}/**/*.js{,x}', 'test/**/*.js{,x}'] : /* @endif */'{src,dev-app}/**/*.js{,x}'),
+    // @endif
+    // @endif
+    // @if typescript
+    // @if !react
+    buildJs(/* @if jasmine || tape || mocha */isTest ? ['{src,dev-app}/**/*.ts', 'test/**/*.ts'] : /* @endif */'{src,dev-app}/**/*.ts'),
+    // @endif
+    // @if react
+    buildJs(/* @if jasmine || tape || mocha */isTest ? ['{src,dev-app}/**/*.ts{,x}', 'test/**/*.ts{,x}'] : /* @endif */'{src,dev-app}/**/*.ts{,x}'),
+    // @endif
+    // @endif
+    // @if css
+    buildCss('{src,dev-app}/**/*.css')
+    // @endif
+    // @if less
+    buildCss('{src,dev-app}/**/*.less')
+    // @endif
+    // @if sass
+    buildCss('{src,dev-app}/**/*.scss')
+    // @endif
+  // @endif
   )
 
   // Note we did extra call `dr()` here, this is designed to cater watch mode.
@@ -118,3 +151,7 @@ function build() {
 }
 
 module.exports = build;
+// @if plugin
+module.exports.buildJs = buildJs;
+module.exports.buildCss = buildCss;
+// @endif

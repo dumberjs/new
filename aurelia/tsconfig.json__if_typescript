@@ -3,7 +3,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
-  // @if aurelia-plugin
+  // @if plugin
   "include": [
     "./dev-app/**/*.ts"
   ]

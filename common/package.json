@@ -49,6 +49,10 @@
     "merge2": "^1.2.4",
     // @endif
 
+    // @if plugin
+    "gulp-sourcemaps": "^2.6.5",
+    // @endif
+
     "gulp-postcss": "^8.0.0",
     "autoprefixer": "^9.6.1",
     "postcss-url": "^8.0.0",
@@ -90,9 +94,15 @@
     // @endif
     // @endif
     "start": "gulp",
+    // @if !plugin
     "start:prod": "cross-env NODE_ENV=production gulp",
     "build:dev": "gulp clean && gulp build",
     "build": "gulp clean && cross-env NODE_ENV=production gulp build",
+    // @endif
+    // @if plugin
+    "build:dev": "gulp clean && gulp build-plugin",
+    "build": "gulp clean && cross-env NODE_ENV=production gulp build-plugin",
+    // @endif
     "clear-cache": "gulp clear-cache"
   }
 }
