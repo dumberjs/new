@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    // @if plugin
+    "declaration": true,
+    "allowJs": false,
+    // @endif
   },
   // @if plugin
   "include": [
