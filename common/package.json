@@ -102,6 +102,8 @@
     // @if plugin
     "build:dev": "gulp clean && gulp build-plugin",
     "build": "gulp clean && cross-env NODE_ENV=production gulp build-plugin",
+    "prepare": "npm run build",
+    "preversion": "npm test",
     // @endif
     "clear-cache": "gulp clear-cache"
   }
