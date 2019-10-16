@@ -1,6 +1,6 @@
 const del = require('del');
-const {outputDir} = require('./_env');
+const {outputDir/* @if plugin */, pluginOutputDir/* @endif */} = require('./_env');
 
 module.exports = function() {
-  return del([outputDir]);
+  return del([outputDir/* @if plugin */, pluginOutputDir/* @endif */]);
 }

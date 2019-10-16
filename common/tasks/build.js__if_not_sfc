@@ -106,34 +106,34 @@ function build() {
     // @endif
   // @endif
   // @if plugin
-    gulp.src(/* @if jasmine || tape || mocha */isTest ? ['src/**/*.json', 'test/**/*.json'] : /* @endif */'{src,dev-app}/**/*.json', {since: gulp.lastRun(build)}),
+    gulp.src(/* @if jasmine || tape || mocha */isTest ? ['{src,dev-app}/**/*.json', 'test/**/*.json'] : /* @endif */'{src,dev-app}/**/*.json', {since: gulp.lastRun(build)}),
     // @if aurelia
-    gulp.src(/* @if jasmine || tape || mocha */isTest ? 'src/**/*.html' : /* @endif */'{src,dev-app}/**/*.html', {since: gulp.lastRun(build)}),
+    gulp.src(/* @if jasmine || tape || mocha */isTest ? '{src,dev-app}/**/*.html' : /* @endif */'{src,dev-app}/**/*.html', {since: gulp.lastRun(build)}),
     // @endif
     // @if babel
     // @if !react
-    buildJs(/* @if jasmine || tape || mocha */isTest ? ['src/**/*.js', 'test/**/*.js'] : /* @endif */'{src,dev-app}/**/*.js'),
+    buildJs(/* @if jasmine || tape || mocha */isTest ? ['{src,dev-app}/**/*.js', 'test/**/*.js'] : /* @endif */'{src,dev-app}/**/*.js'),
     // @endif
     // @if react
-    buildJs(/* @if jasmine || tape || mocha */isTest ? ['src/**/*.js{,x}', 'test/**/*.js{,x}'] : /* @endif */'{src,dev-app}/**/*.js{,x}'),
+    buildJs(/* @if jasmine || tape || mocha */isTest ? ['{src,dev-app}/**/*.js{,x}', 'test/**/*.js{,x}'] : /* @endif */'{src,dev-app}/**/*.js{,x}'),
     // @endif
     // @endif
     // @if typescript
     // @if !react
-    buildJs(/* @if jasmine || tape || mocha */isTest ? ['src/**/*.ts', 'test/**/*.ts'] : /* @endif */'{src,dev-app}/**/*.ts'),
+    buildJs(/* @if jasmine || tape || mocha */isTest ? ['{src,dev-app}/**/*.ts', 'test/**/*.ts'] : /* @endif */'{src,dev-app}/**/*.ts'),
     // @endif
     // @if react
-    buildJs(/* @if jasmine || tape || mocha */isTest ? ['src/**/*.ts{,x}', 'test/**/*.ts{,x}'] : /* @endif */'{src,dev-app}/**/*.ts{,x}'),
+    buildJs(/* @if jasmine || tape || mocha */isTest ? ['{src,dev-app}/**/*.ts{,x}', 'test/**/*.ts{,x}'] : /* @endif */'{src,dev-app}/**/*.ts{,x}'),
     // @endif
     // @endif
     // @if css
-    buildCss(/* @if jasmine || tape || mocha */isTest ? 'src/**/*.css' : /* @endif */'{src,dev-app}/**/*.css')
+    buildCss(/* @if jasmine || tape || mocha */isTest ? '{src,dev-app}/**/*.css' : /* @endif */'{src,dev-app}/**/*.css')
     // @endif
     // @if less
-    buildCss(/* @if jasmine || tape || mocha */isTest ? 'src/**/*.less' : /* @endif */'{src,dev-app}/**/*.less')
+    buildCss(/* @if jasmine || tape || mocha */isTest ? '{src,dev-app}/**/*.less' : /* @endif */'{src,dev-app}/**/*.less')
     // @endif
     // @if sass
-    buildCss(/* @if jasmine || tape || mocha */isTest ? 'src/**/*.scss' : /* @endif */'{src,dev-app}/**/*.scss')
+    buildCss(/* @if jasmine || tape || mocha */isTest ? '{src,dev-app}/**/*.scss' : /* @endif */'{src,dev-app}/**/*.scss')
     // @endif
   // @endif
   )
