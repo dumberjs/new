@@ -5,6 +5,7 @@
   "private": true,
   // @if plugin
   "main": "./dist/index.js",
+  "files": ["dist"],
   // @endif
   "version": "0.0.1",
   "license": "UNLICENSED",
