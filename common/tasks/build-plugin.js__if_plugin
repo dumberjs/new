@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
-const terser = require('gulp-terser');
 const gulpSourcemaps = require('gulp-sourcemaps');
 const {buildJs, buildCss} = require('./build');
 const merge2 = require('merge2');
@@ -10,10 +9,10 @@ function buildPlugin() {
   return merge2(
     gulp.src('src/**/*.{json,html}', {since: gulp.lastRun(buildPlugin)}),
     // @if babel
-    buildJs('src/**/*.js').pipe(gulpif(f => isProduction && f.extname === '.js', terser({compress: false}))),
+    buildJs('src/**/*.js'),
     // @endif
     // @if typescript
-    buildJs('src/**/*.ts').pipe(gulpif(f => isProduction && f.extname === '.js', terser({compress: false}))),
+    buildJs('src/**/*.ts'),
     // @endif
     // @if css
     buildCss('src/**/*.css')

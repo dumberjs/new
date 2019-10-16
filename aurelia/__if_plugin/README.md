@@ -30,7 +30,7 @@ If your plugin depends on other npm package, like `lodash` or `jquery`, **you ha
 
 ## Build Plugin
 
-Run `npm run build`. This will transpile all files from `src/` folder to `dist/` in minified commonjs format. If you want to build without minification, run `npm run build:dev`.
+Run `npm run build`. This will transpile all files from `src/` folder to `dist/`.
 
 For example, `src/index./* @if babel */js/* @endif *//* @if typescript */ts/* @endif */` will become `dist/index.js`.
 
