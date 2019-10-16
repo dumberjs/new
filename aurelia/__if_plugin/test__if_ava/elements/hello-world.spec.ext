@@ -7,7 +7,7 @@ test('should render message', async t => {
   let component = StageComponent
       .withResources('elements/hello-world')
       .inView('<hello-world message.bind="message"></hello-world>')
-      .boundTo({});
+      .boundTo(model);
 
   await component.create(bootstrap);
 

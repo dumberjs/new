@@ -1,4 +1,12 @@
 <template>
+  <!-- @if css -->
   <require from="./hello-world.css"></require>
+  <!-- @endif -->
+  <!-- @if less -->
+  <require from="./hello-world.less"></require>
+  <!-- @endif -->
+  <!-- @if sass -->
+  <require from="./hello-world.scss"></require>
+  <!-- @endif -->
   <h3 class="hello-world">Hello world ${message}</h3>
 </template>
