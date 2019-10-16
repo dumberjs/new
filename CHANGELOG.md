@@ -1,3 +1,12 @@
+# [0.8.0](https://github.com/dumberjs/new/compare/v0.7.0...v0.8.0) (2019-10-16)
+
+
+### Features
+
+* default aurelia deps are now added by aurelia-deps-finder ([3293871](https://github.com/dumberjs/new/commit/3293871f3fba30b533cf9ec8bdc3fe1cfde3b877))
+
+
+
 # [0.7.0](https://github.com/dumberjs/new/compare/v0.6.0...v0.7.0) (2019-08-09)
 
 
