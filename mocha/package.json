@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "mocha": "^6.2.0",
+    "mocha": "^6.2.1",
     "chai": "^4.2.0",
     // @if typescript
     "@types/mocha": "^5.2.7",

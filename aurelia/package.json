@@ -5,7 +5,7 @@
     "aurelia-testing": "^1.0.0",
     "htmlhint": "0.11.0",
     // @if babel
-    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.6.0",
     // @endif
 
     // @if jest || ava

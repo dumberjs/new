@@ -6,10 +6,10 @@
     // @if sfc
     "babel-core": "^7.0.0-bridge.0",
     "gulp-vue-file": "^0.1.5",
-    "vue-jest": "^3.0.4",
+    "vue-jest": "^3.0.5",
     // @endif
     // @if ava
-    "jsdom": "^15.1.1",
+    "jsdom": "^15.2.0",
     "jsdom-global": "^3.0.2",
     // @if sfc
     "require-extension-hooks": "^0.3.3",
