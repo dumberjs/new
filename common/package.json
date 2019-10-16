@@ -3,6 +3,9 @@
   "description": "",
   "keywords": [],
   "private": true,
+  // @if plugin
+  "main": "./dist/index.js",
+  // @endif
   "version": "0.0.1",
   "license": "UNLICENSED",
   "devDependencies": {
