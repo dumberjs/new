@@ -22,8 +22,8 @@ module.exports = dumber({
   // entryBundle: 'entry-bundle',
 
   // @if aurelia
-  // The special depsFinder to teach dumber about Aurelia convention.
-  // Aurelia needs this special treatment because heavy convention.
+  // The special depsFinder to teach dumber about the Aurelia convention.
+  // Aurelia needs this special treatment because of the heavy convention.
   // No need for other frameworks like Vue/React/...
   depsFinder: auDepsFinder,
   // @endif
