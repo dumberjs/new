@@ -110,6 +110,38 @@ const skeletons = [
   'aurelia typescript sass mocha cypress',
   'aurelia typescript sass ava cypress',
 
+  'aurelia plugin babel css jest cypress',
+  'aurelia plugin babel css jasmine cypress',
+  'aurelia plugin babel css tape cypress',
+  'aurelia plugin babel css mocha cypress',
+  'aurelia plugin babel css ava cypress',
+  'aurelia plugin babel less jest cypress',
+  'aurelia plugin babel less jasmine cypress',
+  'aurelia plugin babel less tape cypress',
+  'aurelia plugin babel less mocha cypress',
+  'aurelia plugin babel less ava cypress',
+  'aurelia plugin babel sass jest cypress',
+  'aurelia plugin babel sass jasmine cypress',
+  'aurelia plugin babel sass tape cypress',
+  'aurelia plugin babel sass mocha cypress',
+  'aurelia plugin babel sass ava cypress',
+
+  'aurelia plugin typescript css jest cypress',
+  'aurelia plugin typescript css jasmine cypress',
+  'aurelia plugin typescript css tape cypress',
+  'aurelia plugin typescript css mocha cypress',
+  'aurelia plugin typescript css ava cypress',
+  'aurelia plugin typescript less jest cypress',
+  'aurelia plugin typescript less jasmine cypress',
+  'aurelia plugin typescript less tape cypress',
+  'aurelia plugin typescript less mocha cypress',
+  'aurelia plugin typescript less ava cypress',
+  'aurelia plugin typescript sass jest cypress',
+  'aurelia plugin typescript sass jasmine cypress',
+  'aurelia plugin typescript sass tape cypress',
+  'aurelia plugin typescript sass mocha cypress',
+  'aurelia plugin typescript sass ava cypress',
+
   'react babel css jest cypress',
   'react babel css jasmine cypress',
   'react babel css tape cypress',
@@ -194,6 +226,7 @@ const skeletons = [
 
 skeletons.forEach((_f, i) => {
   const features = _f.split(' ');
+  const isPlugin = features.includes('plugin');
   const appName = features.join('-');
   const appFolder = path.join(folder, appName);
   const title = `App: ${i + 1}/${skeletons.length} ${appName}`;
@@ -220,7 +253,11 @@ skeletons.forEach((_f, i) => {
       }
     );
 
-    const entryPath = path.join(appFolder, 'dist', 'entry-bundle.js');
+    const entryPath = path.join(
+      appFolder,
+      'dist',
+      isPlugin ? 'index.js' : 'entry-bundle.js'
+    );
     const entryStat = fs.statSync(entryPath);
     t.truthy(entryStat.isFile());
 
