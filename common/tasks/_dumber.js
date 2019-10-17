@@ -8,9 +8,6 @@ const {isProduction, isTest, outputDir} = require('./_env');
 module.exports = dumber({
   // src folder is by default "src".
   // src: 'src',
-  // @if plugin
-  src: isTest ? 'src' : 'dev-app',
-  // @endif
 
   // requirejs baseUrl, dumber default is "/dist"
   baseUrl: '/' + outputDir,

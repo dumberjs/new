@@ -9,7 +9,7 @@ import {Aurelia} from 'aurelia-framework';
 // @endif
 export function configure(aurelia/* @if typescript */: Aurelia/* @endif */) {
   // Load local plugin from ../src
-  aurelia.use.feature('../src/index');
+  aurelia.use.feature('../src');
   aurelia.use.standardConfiguration();
   aurelia.use.developmentLogging('info');
   aurelia.use.plugin('aurelia-testing');
