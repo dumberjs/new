@@ -5,7 +5,7 @@ const auDepsFinder = require('aurelia-deps-finder');
 const fs = require('fs');
 const {isProduction, isTest, outputDir} = require('./_env');
 
-// Read more in https://dumberjs.github.io
+// Read more in https://dumber.js.org
 module.exports = dumber({
   // src folder is by default "src".
   // src: 'src',
