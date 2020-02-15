@@ -1,16 +1,16 @@
 {
   "devDependencies": {
     "aurelia-bootstrapper": "^2.3.3",
-    "aurelia-deps-finder": "^2.0.0",
+    "aurelia-deps-finder": "^2.1.0",
     "aurelia-testing": "^1.0.0",
     "htmlhint": "0.11.0",
     // @if babel
-    "@babel/plugin-proposal-decorators": "^7.6.0",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
     // @endif
 
     // @if jest || ava
     "aurelia-pal-nodejs": "^1.2.0",
-    "aurelia-loader-nodejs": "^1.0.1",
+    "aurelia-loader-nodejs": "^1.1.0",
     // @endif
   }
 }
