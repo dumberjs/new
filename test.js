@@ -4,12 +4,12 @@
 // it's not automatically triggered by "npm version patch".
 // Have to run "npm test" manually before a release.
 
-import spawn from 'cross-spawn';
-import fs from 'fs';
-import path from 'path';
-import del from 'del';
-import test from 'ava';
-import puppeteer from 'puppeteer';
+const spawn = require('cross-spawn');
+const fs = require('fs');
+const path = require('path');
+const del = require('del');
+const test = require('ava');
+const puppeteer = require('puppeteer');
 
 // Somehow taskkill on windows would not send SIGTERM signal to proc,
 // The proc killed by taskkill got null signal.
@@ -238,13 +238,16 @@ skeletons.forEach((_f, i) => {
     const makeCmd = `npx makes ${dir} ${appName} -s ${features.join(',')}`;
     console.log('-' + makeCmd);
     await run(makeCmd);
+    t.pass('made skeleton');
     process.chdir(appFolder);
 
     console.log('-yarn');
     await run('yarn');
+    t.pass('installed deps');
 
     console.log('-npm test');
     await run('npm test');
+    t.pass('finished unit tests');
 
     console.log('-npm run build:dev');
     await run('npm run build:dev', null,
@@ -252,6 +255,7 @@ skeletons.forEach((_f, i) => {
         t.fail('gulp build failed: ' + data.toString());
       }
     );
+    t.pass('made dev build');
 
     const entryPath = path.join(
       appFolder,

@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "ava -v test.js",
+    "test": "ava --timeout 300000 -v test.js",
     "check-upgrade": "node check-upgrade.js",
     "version": "standard-changelog && git add CHANGELOG.md",
     "postversion": "git push && git push --tags"

@@ -1,6 +1,17 @@
 export default {
-  compileEnhancements: false,
-  extensions: ['ts'/* @if react */, 'tsx'/* @endif */],
-  files: ['test/**/*.spec.ts/* @if react */{,x}/* @endif */'],
+  // @if react
+  files: ['test/**/*.spec.ts{,x}'],
+  typescript: {
+    extensions: ['ts', 'tsx'],
+    rewritePaths: {'src/': 'build/'}
+  },
+  // @endif
+  // @if !react
+  files: ['test/**/*.spec.ts'],
+  typescript: {
+    extensions: ['ts'],
+    rewritePaths: {'src/': 'build/'}
+  },
+  // @endif
   'require': ['ts-node/register', './test/setup.ts']
 }
