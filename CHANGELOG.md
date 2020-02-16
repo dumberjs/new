@@ -1,3 +1,15 @@
+# [0.9.0](https://github.com/dumberjs/new/compare/v0.8.0...v0.9.0) (2020-02-16)
+
+
+### Bug Fixes
+
+* fix sourcemap for browser test ([dcad468](https://github.com/dumberjs/new/commit/dcad468973c2c9589698e21e5bb51b14cdb89a22))
+* plugin needs a main ([d265f94](https://github.com/dumberjs/new/commit/d265f9474b46a1859c13bc6338a9028fe6fcf9cc))
+* plugin needs to publish dist files ([fd6a451](https://github.com/dumberjs/new/commit/fd6a451c15e32a59a73a048db591842a7efad268))
+* turn of minification in aurelia plugin ([bf6fb31](https://github.com/dumberjs/new/commit/bf6fb3104e3a97db1227afeb344e1cbfe6abc499))
+
+
+
 # [0.8.0](https://github.com/dumberjs/new/compare/v0.7.0...v0.8.0) (2019-10-16)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "dumberjs-new",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "'makes' skeleton for creating app using dumber bundler. This package.json file is not required by 'makes', it's only to enable testing on skeletons.",
   "license": "MIT",
   "private": true,
