@@ -46,7 +46,7 @@
     // @endif
 
     // @if jasmine || tape || mocha
-    "browser-do": "^1.0.0",
+    "browser-do": "^2.0.0",
     // @endif
 
     // @if !sfc
