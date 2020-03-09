@@ -1,13 +1,11 @@
 {
   "presets": [
-    ["@babel/preset-env", {"loose": true}]/* @if react */,
+    ["@babel/preset-env", {"loose": true, "exclude": ["@babel/plugin-proposal-dynamic-import"]}]/* @if react */,
     "@babel/preset-react"
 /* @endif */
   ],
   "plugins": [
-    // @if aurelia
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
-    // @endif
     ["@babel/plugin-proposal-class-properties", { "loose": true }],
     "@babel/plugin-syntax-dynamic-import"
   ]/* @if (jasmine || mocha || tape) && !sfc */,
