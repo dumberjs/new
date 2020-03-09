@@ -11,8 +11,8 @@
   "license": "UNLICENSED",
   "devDependencies": {
     // @if babel
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "gulp-babel": "^8.0.0",
@@ -24,15 +24,15 @@
     // @endif
 
     // @if babel || cypress
-    "babel-eslint": "^10.0.3",
+    "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     // @endif
 
     // @if typescript
-    "typescript": "^3.7.5",
+    "typescript": "^3.8.3",
     "gulp-typescript": "^5.0.1",
     "tslint": "^6.0.0",
-    "@types/node": "^13.7.1",
+    "@types/node": "^13.9.0",
     // @endif
 
     // @if sass
@@ -46,7 +46,7 @@
     // @endif
 
     // @if jasmine || tape || mocha
-    "browser-do": "^2.0.0",
+    "browser-do": "^2.0.1",
     // @endif
 
     // @if !sfc
@@ -63,10 +63,10 @@
 
     "browser-sync": "^2.26.7",
     "connect-history-api-fallback": "^1.6.0",
-    "cross-env": "^7.0.0",
+    "cross-env": "^7.0.2",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
-    "gulp-dumber": "^1.0.2",
+    "gulp-dumber": "^1.0.3",
     "gulp-if": "^3.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-terser": "^1.2.0",

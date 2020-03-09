@@ -9,7 +9,7 @@
     "vue-jest": "^3.0.5",
     // @endif
     // @if ava
-    "jsdom": "^16.1.0",
+    "jsdom": "^16.2.0",
     "jsdom-global": "^3.0.2",
     // @if sfc
     "require-extension-hooks": "^0.3.3",
