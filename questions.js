@@ -24,6 +24,13 @@ module.exports = [
     ]
   },
   {
+    message: 'What browsers to support?',
+    choices: [
+      {title: 'IE 11 :-(', hint: "No need to explain, we feel you!"},
+      {value: 'evergreen', title: 'Evergreen Browsers :-)', hint: 'Only for evergreen browsers like Chrome, Firefox, Edge and Safari.'}
+    ]
+  },
+  {
     message: 'What JavaScript transpiler to use?',
     choices: [
       {value: 'babel', title: 'ESNext (babel)', hint: 'Use next generation JavaScript, today.'},

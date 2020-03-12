@@ -1,3 +1,7 @@
+// @if babel && !evergreen
+// To support async/await in IE11
+import 'regenerator-runtime/runtime';
+// @endif
 import Vue from 'vue';
 import App from './App';
 

@@ -16,7 +16,9 @@
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "gulp-babel": "^8.0.0",
+    // @if !evergreen
     "regenerator-runtime": "0.13.2",
+    // @endif
     // @if (jasmine || mocha || tape) && !sfc
     "babel-plugin-istanbul": "^6.0.0",
     "nyc": "^15.0.0",

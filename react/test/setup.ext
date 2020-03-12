@@ -1,5 +1,6 @@
 // Common setup before all unit tests.
-// @if babel
+// @if babel && !evergreen
+// To support async/await in IE11
 import 'regenerator-runtime/runtime';
 // @endif
 // @if ava

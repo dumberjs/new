@@ -1,0 +1,4 @@
+defaults
+// @if evergreen
+not IE 11
+// @endif
