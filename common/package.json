@@ -33,7 +33,7 @@
     // @if typescript
     "typescript": "^3.8.3",
     "gulp-typescript": "^5.0.1",
-    "tslint": "^6.0.0",
+    "tslint": "^6.1.0",
     "@types/node": "^13.9.0",
     // @endif
 
