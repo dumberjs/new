@@ -27,6 +27,7 @@ function killProc(proc) {
 const dir = __dirname;
 
 const folder = path.join(dir, 'test-skeletons');
+console.log('- clear folder ' + folder);
 del.sync(folder);
 fs.mkdirSync(folder);
 
