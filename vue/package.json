@@ -6,7 +6,7 @@
     // @if sfc
     "babel-core": "^7.0.0-bridge.0",
     "gulp-vue-file": "^0.1.5",
-    "vue-jest": "^3.0.5",
+    "vue-jest": "^4.0.0-beta.2",
     // @endif
     // @if ava
     "jsdom": "^16.2.0",
