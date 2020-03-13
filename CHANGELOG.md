@@ -1,3 +1,22 @@
+## [0.9.1](https://github.com/dumberjs/new/compare/v0.9.0...v0.9.1) (2020-03-13)
+
+
+### Bug Fixes
+
+* babel-jest doesn't read .babelrc ([94c1e90](https://github.com/dumberjs/new/commit/94c1e906a630531ed6ae1cb96986945e5b91c4ea))
+* fix evergreen browser list ([5c02c60](https://github.com/dumberjs/new/commit/5c02c60a98117a0813d7921f8211d296afb47fca))
+* fix missing dep ([a6fa41b](https://github.com/dumberjs/new/commit/a6fa41b702110b0ab8434a4c5ef9665a7c4588b2))
+* fix vue-jest babel bug ([e569e7e](https://github.com/dumberjs/new/commit/e569e7e05defe5cdb82b5e8c6cd30613a773e30e))
+* remove vue-jest from non-jest setup  ([b4619d8](https://github.com/dumberjs/new/commit/b4619d830b6e75003ed249af56e1c74ffa2975c2))
+* retain dynamic import ([61a8768](https://github.com/dumberjs/new/commit/61a876882029f17bbfa2b16ed453c330981fded1))
+
+
+### Features
+
+* support browser choice, ie or evergreen ([730358e](https://github.com/dumberjs/new/commit/730358ebcadb91c7fc46441f5e2d39a4bc0da816))
+
+
+
 # [0.9.0](https://github.com/dumberjs/new/compare/v0.8.0...v0.9.0) (2020-02-16)
 
 
