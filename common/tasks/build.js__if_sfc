@@ -35,7 +35,7 @@ function build() {
   // sending to dumber.
   return gulp.src(/* @if jasmine || tape || mocha */isTest ? ['test/**/*.js', 'src/**/*.{json,js,vue}'] : /* @endif */'src/**/*.{json,js,vue}', {sourcemaps: !isProduction, since: gulp.lastRun(build)})
   // plumber does continue on failure for dev mode
-  .pipe(gulpif(!isProduction, plumber()))
+  .pipe(gulpif(!isProduction && !isTest, plumber()))
   .pipe(compileVue)
   // send all files through babel
   .pipe(babel())

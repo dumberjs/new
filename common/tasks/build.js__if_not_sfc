@@ -35,7 +35,7 @@ function buildJs(src) {
   // @endif
 
   return gulp.src(src, {sourcemaps:/* @if !plugin */ !isProduction/* @endif *//* @if plugin */ true/* @endif */, since: gulp.lastRun(build)})
-  .pipe(gulpif(!isProduction, plumber()))
+  .pipe(gulpif(!isProduction && !isTest, plumber()))
   .pipe(transpile);
 }
 
