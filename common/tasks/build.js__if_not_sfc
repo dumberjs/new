@@ -22,15 +22,12 @@ const postcssUrl = require('postcss-url');
 const {isProduction, isTest, outputDir} = require('./_env');
 const dr = require('./_dumber');
 
-// @if typescript
-const ts = typescript.createProject('tsconfig.json');
-// @endif
-
 function buildJs(src) {
   // @if babel
   const transpile = babel();
   // @endif
   // @if typescript
+  const ts = typescript.createProject('tsconfig.json');
   const transpile = ts();
   // @endif
 
