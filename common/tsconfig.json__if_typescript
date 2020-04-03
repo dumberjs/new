@@ -1,6 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "esModuleInterop": true,
 
     // @if evergreen
@@ -12,7 +14,20 @@
 
     "moduleResolution": "node",
     "baseUrl": "src",
-    "allowJs": true
+    "allowJs": true,
+
+
+    // @if cypress
+
+    // @if jasmine
+    "types": ["jasmine"],
+    // @endif
+
+    // @if jest
+    "types": ["node", "jest"],
+    // @endif
+
+    // @endif
   },
   "include": [
     "./src/**/*.ts",
