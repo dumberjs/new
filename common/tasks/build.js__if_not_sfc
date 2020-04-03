@@ -9,7 +9,7 @@ const typescript = require('gulp-typescript');
 const less = require('gulp-less');
 // @endif
 // @if sass
-const sass = require('gulp-sass');
+const sass = require('gulp-dart-sass');
 // @endif
 const plumber = require('gulp-plumber');
 const merge2 = require('merge2');
@@ -41,7 +41,7 @@ function buildCss(src) {
   // scss is not one-to-one transform, cannot use {since: lastRun} to check changed file
   // scss is many-to-one transform (muliple _partial.scss files)
   return gulp.src(src, {sourcemaps:/* @if !plugin */ !isProduction/* @endif *//* @if plugin */ true/* @endif */})
-  .pipe(sass().on('error', sass.logError))
+  .pipe(sass.sync().on('error', sass.logError))
   // @endif
   // @if less
   // less is not one-to-one transform, cannot use {since: lastRun} to check changed file
@@ -66,7 +66,7 @@ function buildCss(src) {
 
 function build() {
   // Merge all js/css/html file streams to feed dumber.
-  // Note scss was transpiled to css file by gulp-sass.
+  // Note scss was transpiled to css file by gulp-dart-sass.
   // dumber knows nothing about .ts/.less/.scss/.md files,
   // gulp-* plugins transpiled them into js/css/html before
   // sending to dumber.

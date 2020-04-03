@@ -29,7 +29,7 @@ function build() {
   });
 
   // Merge all js/css/html file streams to feed dumber.
-  // Note scss was transpiled to css file by gulp-sass.
+  // Note scss was transpiled to css file by gulp-dart-sass.
   // dumber knows nothing about .ts/.less/.scss/.md files,
   // gulp-* plugins transpiled them into js/css/html before
   // sending to dumber.

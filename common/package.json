@@ -39,7 +39,7 @@
     // @endif
 
     // @if sass
-    "gulp-sass": "^4.0.2",
+    "gulp-dart-sass": "^1.0.0",
     "sass-lint": "^1.13.1",
     // @endif
 
