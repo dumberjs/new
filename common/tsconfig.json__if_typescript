@@ -20,7 +20,7 @@
     // @if cypress
 
     // @if jasmine
-    "types": ["jasmine"],
+    "types": ["node", "jasmine"],
     // @endif
 
     // @if jest
