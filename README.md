@@ -13,3 +13,11 @@ Then follow the prompts.
 `package.json` and `test.js` are not required by "makes" at all, they are to support testing to ensure all the skeletons here do (kind of) work.
 
 "makes" uses `questions.js` (optional) and `transforms.js` (optional) to prompt user for questions and process the final app write-out.
+
+## Test
+
+    npm test
+
+Or test subset of skeletons.
+
+    env TARGET_FEATURES=aurelia,sass npm test

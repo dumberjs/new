@@ -78,7 +78,7 @@ async function takeScreenshot(url, filePath) {
   await browser.close();
 }
 
-const skeletons = [
+let skeletons = [
   'aurelia babel css jest cypress evergreen',
   'aurelia babel css jasmine cypress',
   'aurelia babel css tape cypress',
@@ -224,6 +224,11 @@ const skeletons = [
   // 'vue sfc babel sass ava cypress evergreen',
 
 ];
+
+if (process.env.TARGET_FEATURES) {
+  const targetFeatures = process.env.TARGET_FEATURES.split(',');
+  skeletons = skeletons.filter(s => targetFeatures.every(f => s.split(' ').includes(f)));
+}
 
 skeletons.forEach((_f, i) => {
   const features = _f.split(' ');
