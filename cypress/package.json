@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "cypress": "^4.1.0"
+    "cypress": "^4.3.0"
   },
   "scripts": {
     "test:e2e": "cypress run"

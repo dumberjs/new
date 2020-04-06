@@ -1,13 +1,13 @@
 {
   "devDependencies": {
-    "jest": "^25.1.0",
+    "jest": "^25.2.7",
     "jest-transform-stub": "^2.0.0",
     // @if babel
-    "babel-jest": "^25.1.0",
+    "babel-jest": "^25.2.6",
     // @endif
     // @if typescript
-    "@types/jest": "^25.1.4",
-    "ts-jest": "^25.2.1",
+    "@types/jest": "^25.2.1",
+    "ts-jest": "^25.3.1",
     // @endif
   },
   "scripts": {

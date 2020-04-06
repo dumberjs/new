@@ -11,8 +11,8 @@
   "license": "UNLICENSED",
   "devDependencies": {
     // @if babel
-    "@babel/core": "^7.8.7",
-    "@babel/preset-env": "^7.8.7",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.8.3",
@@ -22,7 +22,7 @@
     // @endif
     // @if (jasmine || mocha || tape) && !sfc
     "babel-plugin-istanbul": "^6.0.0",
-    "nyc": "^15.0.0",
+    "nyc": "^15.0.1",
     // @endif
     // @endif
 
@@ -34,8 +34,8 @@
     // @if typescript
     "typescript": "^3.8.3",
     "gulp-typescript": "^5.0.1",
-    "tslint": "^6.1.0",
-    "@types/node": "^13.9.0",
+    "tslint": "^6.1.1",
+    "@types/node": "^13.11.0",
     // @endif
 
     // @if sass
@@ -61,7 +61,7 @@
     // @endif
 
     "gulp-postcss": "^8.0.0",
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^9.7.5",
     "postcss-url": "^8.0.0",
 
     "browser-sync": "^2.26.7",
