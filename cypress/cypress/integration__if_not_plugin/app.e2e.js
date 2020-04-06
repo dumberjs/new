@@ -15,5 +15,8 @@ context('The app', () => {
     // @if vue
     cy.get('.app').contains('Hello Vue!');
     // @endif
+    // @if no-framework
+    cy.get('p').contains('Hello world!');
+    // @endif
   });
 });

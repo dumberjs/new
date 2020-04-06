@@ -2,5 +2,5 @@ import test from 'ava';
 import app from '../src/app';
 
 test('should render message', t => {
-  t.is(app.textContent, 'Hello Dumber Gist!');
+  t.is(app.textContent, 'Hello world!');
 });

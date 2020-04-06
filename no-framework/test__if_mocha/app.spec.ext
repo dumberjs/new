@@ -3,6 +3,6 @@ import app from '../src/app';
 
 describe('Component app', () => {
   it('should render message', () => {
-    expect(app.textContent).to.equal('Hello Dumber Gist!');
+    expect(app.textContent).to.equal('Hello world!');
   });
 });

@@ -79,6 +79,38 @@ async function takeScreenshot(url, filePath) {
 }
 
 let skeletons = [
+  'no-framework babel css jest cypress evergreen',
+  'no-framework babel css jasmine cypress',
+  'no-framework babel css tape cypress',
+  'no-framework babel css mocha cypress evergreen',
+  'no-framework babel css ava cypress',
+  'no-framework babel less jest cypress',
+  'no-framework babel less jasmine cypress evergreen',
+  'no-framework babel less tape cypress',
+  'no-framework babel less mocha cypress',
+  'no-framework babel less ava cypress evergreen',
+  'no-framework babel sass jest cypress',
+  'no-framework babel sass jasmine cypress',
+  'no-framework babel sass tape cypress evergreen',
+  'no-framework babel sass mocha cypress',
+  'no-framework babel sass ava cypress',
+
+  'no-framework typescript css jest cypress',
+  'no-framework typescript css jasmine cypress evergreen',
+  'no-framework typescript css tape cypress',
+  'no-framework typescript css mocha cypress',
+  'no-framework typescript css ava cypress evergreen',
+  'no-framework typescript less jest cypress',
+  'no-framework typescript less jasmine cypress',
+  'no-framework typescript less tape cypress evergreen',
+  'no-framework typescript less mocha cypress',
+  'no-framework typescript less ava cypress',
+  'no-framework typescript sass jest cypress evergreen',
+  'no-framework typescript sass jasmine cypress',
+  'no-framework typescript sass tape cypress',
+  'no-framework typescript sass mocha cypress evergreen',
+  'no-framework typescript sass ava cypress',
+
   'aurelia babel css jest cypress evergreen',
   'aurelia babel css jasmine cypress',
   'aurelia babel css tape cypress',
@@ -247,8 +279,8 @@ skeletons.forEach((_f, i) => {
     t.pass('made skeleton');
     process.chdir(appFolder);
 
-    console.log('-yarn');
-    await run('yarn');
+    console.log('-pnpm i');
+    await run('pnpm i');
     t.pass('installed deps');
 
     console.log('-npm test');
