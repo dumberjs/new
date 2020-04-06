@@ -5,7 +5,7 @@ module.exports = [
       {value: 'aurelia', title: 'Aurelia'},
       {value: 'react', title: 'React'},
       {value: 'vue', title: 'Vue'},
-      {value: 'no-framework', title: 'None', hit: 'User will manually add dependencies'}
+      {value: 'no-framework', title: 'None'}
     ]
   },
   {
