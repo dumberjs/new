@@ -1,0 +1,8 @@
+import {expect} from 'chai';
+import app from '../src/app';
+
+describe('Component app', () => {
+  it('should render message', () => {
+    expect(app.textContent).to.equal('Hello Dumber Gist!');
+  });
+});

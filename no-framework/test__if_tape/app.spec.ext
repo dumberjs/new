@@ -1,0 +1,7 @@
+import test from 'tape';
+import app from '../src/app';
+
+test('should render message', t => {
+  t.equal(app.textContent, 'Hello Dumber Gist!');
+  t.end();
+});
