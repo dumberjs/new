@@ -1,2 +1,6 @@
+// @if babel && !evergreen
+// To support async/await in IE11
+import 'regenerator-runtime/runtime';
+// @endif
 import app from './app';
 document.body.appendChild(app);
