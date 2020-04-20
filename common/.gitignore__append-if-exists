@@ -11,7 +11,7 @@ Thumbs.db
 
 # Compiled files
 /dist
-// @if !plugin
+// @if plugin
 /scripts
 // @endif
 /index.html
