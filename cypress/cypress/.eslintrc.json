@@ -1,9 +1,5 @@
 {
-  "plugins": [
-    "cypress"
-  ],
-  "env": {
-    "es6": true,
-    "cypress/globals": true
-  }
+  "extends": [
+    "plugin:cypress/recommended"
+  ]
 }
