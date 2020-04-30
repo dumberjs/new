@@ -1,3 +1,32 @@
+# [0.10.0](https://github.com/dumberjs/new/compare/v0.9.1...v0.10.0) (2020-04-30)
+
+
+### Bug Fixes
+
+* **ava:** fix ava setup for no-framework ([81ee963](https://github.com/dumberjs/new/commit/81ee963e1df6c74a12c9ddd0683bb081c9a19bd2))
+* **no-framework:** fix tests for no-framework option ([182cefe](https://github.com/dumberjs/new/commit/182cefe3a5e2a11f03828c45577ff3fe5037d0bc))
+* **react:** cleanup lint error ([604fc47](https://github.com/dumberjs/new/commit/604fc478d0f0189c97f49a35fc996221ff0f7c38))
+* **react:** remove tslint ([8e24448](https://github.com/dumberjs/new/commit/8e244486768fcf8fabc7da813e2f5b5ab8f4a653))
+* **typescript:** add resolveJsonModule ([6ada295](https://github.com/dumberjs/new/commit/6ada295100c188873367a4f43d48c10cbced3892))
+* **typescript:** fix tsconfig include ([2511261](https://github.com/dumberjs/new/commit/251126184ef8ecfba6ddf9fbcf593699100f1445))
+* **typescript:** remove unneeded dep ([06e26d2](https://github.com/dumberjs/new/commit/06e26d2bd3a07c987b124ccc87399aad1aafd356))
+* add node ts type when using jasmine ([4dd5f6f](https://github.com/dumberjs/new/commit/4dd5f6f58095f0f72ac18033f6d804c1f6a4f006))
+* fix cypress/jasmine/jest ts type conflicts ([ec2f6c5](https://github.com/dumberjs/new/commit/ec2f6c583215a247c5b149b06bb5eccbeb70d5eb))
+* fix eslint ext ([55e5608](https://github.com/dumberjs/new/commit/55e5608ea33947843bd88db0372300066f8775cf))
+* fix plugin gitignore ([1f82882](https://github.com/dumberjs/new/commit/1f8288240281606462a21214e0a525aa80be1b72))
+* fix plugin watch mode ([0823ef9](https://github.com/dumberjs/new/commit/0823ef937dade4e148746304cd1067ae315fd4d6))
+* recreate typescript.createProject to avoid gulp.watch edge case ([458867c](https://github.com/dumberjs/new/commit/458867c4d268c50a8e98c527d4386dca32939ea9))
+* should reject error in test mode ([eca08df](https://github.com/dumberjs/new/commit/eca08df396701f73728116e14897b00730c97c4e))
+
+
+### Features
+
+* **tape:** upgrade to tape v5 ([ec77ff4](https://github.com/dumberjs/new/commit/ec77ff492ddde1e512b7eb10bfc5b80032b3c08e))
+* add no-framework ([537a01e](https://github.com/dumberjs/new/commit/537a01e57a8867525465e4f95bba66efaedd860f))
+* switch from libsass to dart-sass ([7b9cd24](https://github.com/dumberjs/new/commit/7b9cd2436d6cea9867c9e6615433fc51ea04be83))
+
+
+
 ## [0.9.1](https://github.com/dumberjs/new/compare/v0.9.0...v0.9.1) (2020-03-13)
 
 
