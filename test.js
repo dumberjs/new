@@ -279,8 +279,8 @@ skeletons.forEach((_f, i) => {
     t.pass('made skeleton');
     process.chdir(appFolder);
 
-    console.log('-pnpm i');
-    await run('pnpm i');
+    console.log('-yarn');
+    await run('yarn');
     t.pass('installed deps');
 
     console.log('-npm test');
