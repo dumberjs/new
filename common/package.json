@@ -26,8 +26,11 @@
     // @endif
     // @endif
 
-    "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
+
+    // @if babel
+    "babel-eslint": "^10.1.0",
+    // @endif
 
     // @if typescript
     "typescript": "^3.8.3",
