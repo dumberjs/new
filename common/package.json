@@ -11,8 +11,8 @@
   "license": "UNLICENSED",
   "devDependencies": {
     // @if babel
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.8.3",
@@ -32,13 +32,13 @@
     // @if typescript
     "typescript": "^3.8.3",
     "gulp-typescript": "^5.0.1",
-    "@types/node": "^13.11.0",
+    "@types/node": "^13.13.4",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
     // @endif
 
     // @if sass
-    "gulp-dart-sass": "^1.0.0",
+    "gulp-dart-sass": "^1.0.2",
     "sass-lint": "^1.13.1",
     // @endif
 
@@ -60,7 +60,7 @@
     // @endif
 
     "gulp-postcss": "^8.0.0",
-    "autoprefixer": "^9.7.5",
+    "autoprefixer": "^9.7.6",
     "postcss-url": "^8.0.0",
 
     "browser-sync": "^2.26.7",
