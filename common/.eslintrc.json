@@ -41,11 +41,7 @@
       // @if react
       "jsx": true,
       // @endif
-    },
-    // @if typescript
-    "project": "./tsconfig.json",
-    "tsconfigRootDir": '.',
-    // @endif
+    }
   },
   "rules": {
     "no-console": 0
