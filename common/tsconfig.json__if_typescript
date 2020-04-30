@@ -29,8 +29,8 @@
     // @endif
   },
   "include": [
-    "./src/**/*.ts",
-    "./test/**/*.ts"
+    "src",
+    "test"
   ],
   "atom": {
     "rewriteTsconfig": false

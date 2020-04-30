@@ -7,7 +7,7 @@
   },
   // @if plugin
   "include": [
-    "./dev-app/**/*.ts"
+    "dev-app"
   ]
   // @endif
 }
