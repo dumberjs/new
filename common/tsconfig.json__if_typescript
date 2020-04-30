@@ -4,6 +4,10 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "baseUrl": "src",
+    "allowJs": true,
 
     // @if evergreen
     "target": "es2017",
@@ -11,11 +15,6 @@
     // @if !evergreen
     "target": "es5",
     // @endif
-
-    "moduleResolution": "node",
-    "baseUrl": "src",
-    "allowJs": true,
-
 
     // @if cypress
 
