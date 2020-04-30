@@ -8,7 +8,7 @@ describe('Component App', () => {
   it('should render message', () => {
     const renderer = new ShallowRenderer();
     renderer.render(<App />);
-    let result = renderer.getRenderOutput();
+    const result = renderer.getRenderOutput();
     expect(result.type).to.equal('div');
     expect(result.props.children).to.deep.equal(
       <h1>Hello React!</h1>
