@@ -3,8 +3,8 @@ import {bootstrap} from 'aurelia-bootstrapper';
 import test from 'tape';
 
 test('should render message', async t => {
-  let model = {message: 'from me'};
-  let component = StageComponent
+  const model = {message: 'from me'};
+  const component = StageComponent
       .withResources('elements/hello-world')
       .inView('<hello-world message.bind="message"></hello-world>')
       .boundTo(model);

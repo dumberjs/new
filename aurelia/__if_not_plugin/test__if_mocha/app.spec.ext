@@ -4,9 +4,10 @@ import {bootstrap} from 'aurelia-bootstrapper';
 
 describe('Component app', () => {
   let component;
-  let model = {};
+  let model;
 
   beforeEach(() => {
+    model = {};
     component = StageComponent
       .withResources('app')
       .inView('<app></app>')

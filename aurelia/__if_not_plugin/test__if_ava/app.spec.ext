@@ -3,7 +3,7 @@ import {bootstrap} from 'aurelia-bootstrapper';
 import test from 'ava';
 
 test('should render message', async t => {
-  let component = StageComponent
+  const component = StageComponent
       .withResources('app')
       .inView('<app></app>')
       .boundTo({});

@@ -4,10 +4,10 @@ import 'regenerator-runtime/runtime';
 
 // @endif
 // @if typescript
-import {Aurelia} from 'aurelia-framework';
+import { Aurelia } from 'aurelia-framework';
 
 // @endif
-export function configure(aurelia/* @if typescript */: Aurelia/* @endif */) {
+export function configure(aurelia/* @if typescript */: Aurelia/* @endif */)/* @if typescript */: void/* @endif */ {
   aurelia.use.feature('resources');
   aurelia.use.standardConfiguration();
   if (process.env.NODE_ENV === 'production') {
