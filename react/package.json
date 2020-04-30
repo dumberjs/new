@@ -3,17 +3,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1",
-    // @if babel
     "@babel/preset-react": "^7.9.4",
-    "eslint-plugin-react": "^7.19.0",
-    // @endif
-  },
-  "scripts": {
-    // @if babel
-    "js-lint": "eslint \"src/**/*.js{,x}\" \"test/**/*.js{,x}\"",
-    // @endif
-    // @if typescript
-    "js-lint": "tslint -c tslint.json \"src/**/*.ts{,x}\" \"test/**/*.ts{,x}\"",
-    // @endif
+    "eslint-plugin-react": "^7.19.0"
   }
 }
