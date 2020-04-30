@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "cypress": "^4.3.0"
+    "cypress": "^4.3.0",
+    "eslint-plugin-cypress": "^2.10.3"
   },
   "scripts": {
     "test:e2e": "cypress run"

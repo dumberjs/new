@@ -1,15 +1,27 @@
 {
   "root": true,
 
-  // @if !react
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    // @if react
+    "plugin:react/recommended",
+    // @endif
+    // @if typescript
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    // @endif
+  ],
+
+  // @if babel
+  "parser": "babel-eslint",
+  // @endif
+
+  // @if typescript
+  "parser": "@typescript-eslint/parser", // Specifies the ESLint parser
+  "plugins": ["@typescript-eslint"],
   // @endif
 
   // @if react
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended"
-  ],
   "settings": {
     "react": {
       "version": "detect"
@@ -17,7 +29,6 @@
   },
   // @endif
 
-  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -30,7 +41,11 @@
       // @if react
       "jsx": true,
       // @endif
-    }
+    },
+    // @if typescript
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": '.',
+    // @endif
   },
   "rules": {
     "no-console": 0
