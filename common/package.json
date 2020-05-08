@@ -35,9 +35,9 @@
     // @if typescript
     "typescript": "^3.8.3",
     "gulp-typescript": "^5.0.1",
-    "@types/node": "^13.13.4",
-    "@typescript-eslint/eslint-plugin": "^2.30.0",
-    "@typescript-eslint/parser": "^2.30.0",
+    "@types/node": "^13.13.5",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
     // @endif
 
     // @if sass
