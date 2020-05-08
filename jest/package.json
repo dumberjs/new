@@ -1,6 +1,11 @@
 {
   "devDependencies": {
+    // @if !sfc
     "jest": "^26.0.1",
+    // @endif
+    // @if sfc
+    "jest": "^24.9.0",
+    // @endif
     "jest-transform-stub": "^2.0.0",
     // @if babel
     "babel-jest": "^26.0.1",
