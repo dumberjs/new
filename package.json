@@ -1,22 +1,35 @@
 {
   "name": "dumberjs-new",
+  "private": true,
   "version": "0.10.0",
   "description": "'makes' skeleton for creating app using dumber bundler. This package.json file is not required by 'makes', it's only to enable testing on skeletons.",
   "license": "MIT",
-  "private": true,
-  "scripts": {
-    "test": "ava --timeout 3m -v test.js",
-    "check-upgrade": "node check-upgrade.js",
-    "version": "standard-changelog && git add CHANGELOG.md",
-    "postversion": "git push && git push --tags"
-  },
   "devDependencies": {
     "ava": "^3.8.1",
+    "cross-env": "^7.0.2",
     "cross-spawn": "^7.0.2",
     "del": "^5.1.0",
     "glob": "^7.1.6",
+    "makes": "^1.4.0",
     "npm-check-updates": "^4.1.2",
-    "puppeteer": "^3.0.2",
-    "standard-changelog": "^2.0.21"
+    "puppeteer": "^3.0.3",
+    "semver": "^7.3.2",
+    "standard-changelog": "^2.0.21",
+    "tree-kill": "^1.2.2",
+    "vinyl": "^2.2.0"
+  },
+  "scripts": {
+    "check-upgrade": "node check-upgrade.js",
+    "test": "ava \"__test__/**/*\"",
+    "test:e2e": "ava --fail-fast --timeout 8m -v e2e-test.js",
+    "preversion": "npm test",
+    "version": "standard-changelog && git add CHANGELOG.md",
+    "postversion": "git push && git push --tags"
+  },
+  "ava": {
+    "files": [
+      "__test__/**/*",
+      "e2e-test.js"
+    ]
   }
 }

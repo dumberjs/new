@@ -78,17 +78,17 @@
     "promise-polyfill": "^8.1.3"
   },
   "scripts": {
-    "js-lint": "eslint src test/* @if cypress */ cypress/* @endif *//* @if typescript */ --ext .js,.ts/* @if react */,.jsx,.tsx/* @endif *//* @endif *//* @if babel && react */ --ext .js,.jsx/* @endif */",
+    "lint:js": "eslint src test/* @if cypress */ cypress/* @endif *//* @if typescript */ --ext .js,.ts/* @if react */,.jsx,.tsx/* @endif *//* @endif *//* @if babel && react */ --ext .js,.jsx/* @endif */",
     // @if sass
-    "css-lint": "sass-lint -c .sass-lint.yml \"src/**/*.scss\"",
+    "lint:css": "sass-lint -c .sass-lint.yml \"src/**/*.scss\"",
     // @endif
     // @if less
-    "css-lint": "lesshint \"src/**/*.less\"",
+    "lint:css": "lesshint \"src/**/*.less\"",
     // @endif
     // @if aurelia
-    "html-lint": "htmlhint -c .htmlhintrc src",
+    "lint:html": "htmlhint -c .htmlhintrc src",
     // @endif
-    "lint": "npm run js-lint/* @if sass || less */ && npm run css-lint/* @endif *//* @if aurelia */ && npm run html-lint/* @endif */",
+    "lint": "npm run lint:js/* @if sass || less */ && npm run lint:css/* @endif *//* @if aurelia */ && npm run lint:html/* @endif */",
 
     // @if jasmine || tape || mocha
     "pretest": "npm run lint && npm run build:test",
