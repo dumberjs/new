@@ -162,6 +162,7 @@ skeletons.forEach((features, i) => {
             console.log('-- npm run test:e2e');
             await run(`npm run test:e2e`);
           }
+          kill();
         } catch (e) {
           t.fail(e.message);
           kill();
