@@ -1,8 +1,8 @@
-# ["makes"](https://github.com/makesjs/makes) skeleton for creating app using dumber bundler
+# JS SPA skeleton for Aurelia/Vue/React using dumber bundler
 
 ![CI](https://github.com/dumberjs/new/workflows/CI/badge.svg) ![E2E-Linux](https://github.com/dumberjs/new/workflows/E2E-Linux/badge.svg) ![E2E-Windows](https://github.com/dumberjs/new/workflows/E2E-Windows/badge.svg) ![E2E-macOS](https://github.com/dumberjs/new/workflows/E2E-macOS/badge.svg)
 
-To generate app, run
+To generate a JS SPA app, run
 ```sh
 npx makes dumberjs
 # or
@@ -28,7 +28,7 @@ GitHub Actions runs a subset of them for every PR or push to master.
 npm run test:e2e
 ```
 
-Always target a subset of skeletons, use env variable `TARGET_FEATURES`.
+Always target a subset of skeletons, use environment variable `TARGET_FEATURES`.
 
 ```bash
 # only test skeletons using aurelia and typescript features.
