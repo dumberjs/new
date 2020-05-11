@@ -12,7 +12,7 @@
     // @endif
     // @if typescript
     "@types/jest": "^25.2.1",
-    "ts-jest": "^25.5.0",
+    "ts-jest": "^25.5.1",
     // @endif
   },
   "scripts": {

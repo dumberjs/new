@@ -26,7 +26,7 @@
     // @endif
     // @endif
 
-    "eslint": "^6.8.0",
+    "eslint": "^7.0.0",
 
     // @if babel
     "babel-eslint": "^10.1.0",
