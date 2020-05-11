@@ -1,6 +1,6 @@
 # /* @echo name */
 
-An app using dumber bundler to build. More details in `tasks/*.js` (loaded by `gulpfile.js`).
+An app using dumber bundler to build. More details in `gulpfile.js`.
 
 ## Run in dev mode, plus watch
 
