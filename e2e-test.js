@@ -38,7 +38,7 @@ function run(command, dataCB, errorCB) {
   const [cmd, ...args] = command.split(' ');
   return new Promise((resolve, reject) => {
     const env = Object.create(process.env);
-    // use CI to turn off automatic browser opening in tasks/run.js
+    // use CI to turn off automatic browser opening
     env.CI = 'true';
     // need to reset NODE_ENV back to development because this whole
     // test is running in NODE_ENV=test which will affect gulp build
