@@ -31,6 +31,9 @@ const autoprefixer = require('autoprefixer');
 const postcssUrl = require('postcss-url');
 const bs = require('browser-sync').create();
 const historyApiFallback = require('connect-history-api-fallback/lib');
+// @if plugin
+const gulpSourcemaps = require('gulp-sourcemaps');
+// @endif
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isTest = process.env.NODE_ENV === 'test';
