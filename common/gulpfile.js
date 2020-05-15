@@ -14,10 +14,10 @@ const babel = require('gulp-babel');
 // @if typescript
 const typescript = require('gulp-typescript');
 // @endif
-// @if less
+// @if less && !sfc
 const less = require('gulp-less');
 // @endif
-// @if sass
+// @if sass && !sfc
 const sass = require('gulp-dart-sass');
 // @endif
 const plumber = require('gulp-plumber');
@@ -153,8 +153,8 @@ function buildJs(src) {
   // @endif
 
   return gulp.src(src, {sourcemaps:/* @if !plugin */ !isProduction/* @endif *//* @if plugin */ true/* @endif */, since: gulp.lastRun(build)})
-  .pipe(gulpif(!isProduction && !isTest, plumber()))
-  .pipe(transpile);
+    .pipe(gulpif(!isProduction && !isTest, plumber()))
+    .pipe(transpile);
 }
 
 function buildCss(src) {
@@ -162,27 +162,31 @@ function buildCss(src) {
   // scss is not one-to-one transform, cannot use {since: lastRun} to check changed file
   // scss is many-to-one transform (muliple _partial.scss files)
   return gulp.src(src, {sourcemaps:/* @if !plugin */ !isProduction/* @endif *//* @if plugin */ true/* @endif */})
-  .pipe(sass.sync().on('error', sass.logError))
+    .pipe(gulpif(
+      f => f.extname === '.less',
+      isProduction || isTest ? sass.sync(): sass.sync().on('error', sass.logError)
+    ))
   // @endif
   // @if less
   // less is not one-to-one transform, cannot use {since: lastRun} to check changed file
   // less is many-to-one transform (muliple _partial.less files)
   return gulp.src(src, {sourcemaps:/* @if !plugin */ !isProduction/* @endif *//* @if plugin */ true/* @endif */})
-  .pipe(less())
+    .pipe(gulpif(!isProduction && !isTest, plumber()))
+    .pipe(gulpif(f => f.extname === '.less', less()))
   // @endif
   // @if css
   return gulp.src(src, {sourcemaps:/* @if !plugin */ !isProduction/* @endif *//* @if plugin */ true/* @endif */})
   // @endif
-  .pipe(postcss([
-    autoprefixer(),
-    // use postcss-url to inline any image/font/svg.
-    // postcss-url by default use base64 for images, but
-    // encodeURIComponent for svg which does NOT work on
-    // some browsers.
-    // Here we enforce base64 encoding for all assets to
-    // improve compatibility on svg.
-    postcssUrl({url: 'inline', encodeType: 'base64'})
-  ]));
+    .pipe(postcss([
+      autoprefixer(),
+      // use postcss-url to inline any image/font/svg.
+      // postcss-url by default use base64 for images, but
+      // encodeURIComponent for svg which does NOT work on
+      // some browsers.
+      // Here we enforce base64 encoding for all assets to
+      // improve compatibility on svg.
+      postcssUrl({url: 'inline', encodeType: 'base64'})
+    ]));
 }
 
 function build() {
@@ -217,10 +221,10 @@ function build() {
     buildCss('src/**/*.css')
     // @endif
     // @if less
-    buildCss('src/**/*.less')
+    buildCss('src/**/*.{less,css}')
     // @endif
     // @if sass
-    buildCss('src/**/*.scss')
+    buildCss('src/**/*.{scss,css}')
     // @endif
   // @endif
   // @if plugin
@@ -248,10 +252,10 @@ function build() {
     buildCss(/* @if jasmine || tape || mocha */isTest ? '{src,dev-app}/**/*.css' : /* @endif */'{src,dev-app}/**/*.css')
     // @endif
     // @if less
-    buildCss(/* @if jasmine || tape || mocha */isTest ? '{src,dev-app}/**/*.less' : /* @endif */'{src,dev-app}/**/*.less')
+    buildCss(/* @if jasmine || tape || mocha */isTest ? '{src,dev-app}/**/*.{less,css}' : /* @endif */'{src,dev-app}/**/*.{less,css}')
     // @endif
     // @if sass
-    buildCss(/* @if jasmine || tape || mocha */isTest ? '{src,dev-app}/**/*.scss' : /* @endif */'{src,dev-app}/**/*.scss')
+    buildCss(/* @if jasmine || tape || mocha */isTest ? '{src,dev-app}/**/*.{scss,css}' : /* @endif */'{src,dev-app}/**/*.{scss,css}')
     // @endif
   // @endif
   )
@@ -299,27 +303,27 @@ function build() {
   // gulp-* plugins transpiled them into js/css/html before
   // sending to dumber.
   return gulp.src(/* @if jasmine || tape || mocha */isTest ? ['test/**/*.js', 'src/**/*.{json,js,vue}'] : /* @endif */'src/**/*.{json,js,vue}', {sourcemaps: !isProduction, since: gulp.lastRun(build)})
-  // plumber does continue on failure for dev mode
-  .pipe(gulpif(!isProduction && !isTest, plumber()))
-  .pipe(compileVue)
-  // send all files through babel
-  .pipe(babel())
+    // plumber does continue on failure for dev mode
+    .pipe(gulpif(!isProduction && !isTest, plumber()))
+    .pipe(compileVue)
+    // send all files through babel
+    .pipe(babel())
 
-  // Note we did extra call `dr()` here, this is designed to cater watch mode.
-  // dumber here consumes (swallows) all incoming Vinyl files,
-  // then generates new Vinyl files for all output bundle files.
-  .pipe(dr())
+    // Note we did extra call `dr()` here, this is designed to cater watch mode.
+    // dumber here consumes (swallows) all incoming Vinyl files,
+    // then generates new Vinyl files for all output bundle files.
+    .pipe(dr())
 
-  // Terser fast minify mode
-  // https://github.com/terser-js/terser#terser-fast-minify-mode
-  // It's a good balance on size and speed to turn off compress.
-  .pipe(gulpif(isProduction, terser({compress: false})))
-  // @if !jasmine && !mocha && !tape
-  .pipe(gulp.dest(outputDir, {sourcemaps: isProduction ? false : '.'}));
-  // @endif
-  // @if jasmine || mocha || tape
-  .pipe(gulp.dest(outputDir, {sourcemaps: isProduction ? false : (isTest ? true : '.')}));
-  // @endif
+    // Terser fast minify mode
+    // https://github.com/terser-js/terser#terser-fast-minify-mode
+    // It's a good balance on size and speed to turn off compress.
+    .pipe(gulpif(isProduction, terser({compress: false})))
+    // @if !jasmine && !mocha && !tape
+    .pipe(gulp.dest(outputDir, {sourcemaps: isProduction ? false : '.'}));
+    // @endif
+    // @if jasmine || mocha || tape
+    .pipe(gulp.dest(outputDir, {sourcemaps: isProduction ? false : (isTest ? true : '.')}));
+    // @endif
 }
 
 // @endif
@@ -337,10 +341,10 @@ function buildPlugin() {
     buildCss('src/**/*.css')
     // @endif
     // @if less
-    buildCss('src/**/*.less')
+    buildCss('src/**/*.{less,css}')
     // @endif
     // @if sass
-    buildCss('src/**/*.scss')
+    buildCss('src/**/*.{scss,css}')
     // @endif
   )
 
