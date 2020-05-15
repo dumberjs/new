@@ -261,7 +261,10 @@ function build() {
   // then generates new Vinyl files for all output bundle files.
   .pipe(dr())
 
-  .pipe(gulpif(isProduction, terser()))
+  // Terser fast minify mode
+  // https://github.com/terser-js/terser#terser-fast-minify-mode
+  // It's a good balance on size and speed to turn off compress.
+  .pipe(gulpif(isProduction, terser({compress: false})))
   // @if !jasmine && !mocha && !tape
   .pipe(gulp.dest(outputDir, {sourcemaps: isProduction ? false : '.'}));
   // @endif
@@ -307,7 +310,10 @@ function build() {
   // then generates new Vinyl files for all output bundle files.
   .pipe(dr())
 
-  .pipe(gulpif(isProduction, terser()))
+  // Terser fast minify mode
+  // https://github.com/terser-js/terser#terser-fast-minify-mode
+  // It's a good balance on size and speed to turn off compress.
+  .pipe(gulpif(isProduction, terser({compress: false})))
   // @if !jasmine && !mocha && !tape
   .pipe(gulp.dest(outputDir, {sourcemaps: isProduction ? false : '.'}));
   // @endif
