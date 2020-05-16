@@ -163,7 +163,7 @@ function buildCss(src) {
   // scss is many-to-one transform (muliple _partial.scss files)
   return gulp.src(src, {sourcemaps:/* @if !plugin */ !isProduction/* @endif *//* @if plugin */ true/* @endif */})
     .pipe(gulpif(
-      f => f.extname === '.less',
+      f => f.extname === '.scss',
       isProduction || isTest ? sass.sync(): sass.sync().on('error', sass.logError)
     ))
   // @endif
