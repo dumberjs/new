@@ -370,7 +370,8 @@ function clearCache() {
 const serve = gulp.series(
   build,
   function startServer(done) {
-    devServer.run();
+    // Open a browser window when not in CI environment.
+    devServer.run({ open: !process.env.CI });
     done();
   }
 )

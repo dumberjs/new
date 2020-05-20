@@ -4,7 +4,7 @@
 // Uses "socket.io" for live-reload in watch mode.
 // Uses "open" to automatically open user browser.
 const connect = require('connect');
-const open = require('open');
+const _open = require('open');
 const serveStatic = require('serve-static');
 const http = require('http');
 const _https = require('https');
@@ -27,7 +27,8 @@ let io;
 
 exports.run = function({
   port = 3000,
-  https = false
+  https = false,
+  open = false // automatically open a browser window
 } = {}) {
   const app = connect()
     // Inject socket.io snippet for live-reload.
@@ -60,7 +61,7 @@ exports.run = function({
   server.listen(port);
   const url = `http${https ? 's' : ''}://localhost:${port}`;
   console.log(`Dev server is started at: ${url}`);
-  if (!process.env.CI) open(url);
+  if (open) _open(url);
 };
 
 exports.reload = function() {
