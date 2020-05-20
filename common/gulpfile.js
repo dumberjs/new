@@ -29,8 +29,7 @@ const terser = require('gulp-terser');
 const gulpif = require('gulp-if');
 const autoprefixer = require('autoprefixer');
 const postcssUrl = require('postcss-url');
-const bs = require('browser-sync').create();
-const historyApiFallback = require('connect-history-api-fallback/lib');
+const devServer = require('./dev-server');
 // @if plugin
 const gulpSourcemaps = require('gulp-sourcemaps');
 // @endif
@@ -371,38 +370,15 @@ function clearCache() {
 const serve = gulp.series(
   build,
   function startServer(done) {
-    bs.init({
-      ghostMode: false,
-      online: false,
-      open: !process.env.CI,
-      logLevel: 'silent', // or 'debug'
-      server: {
-        baseDir: ['.'],
-        middleware: [
-          // connect-history-api-fallback is a tool to help SPA dev.
-          // So in dev mode, http://localhost:port/some/route will get
-          // the same /index.html as content, instead off 404 at /some/route.html
-          historyApiFallback(),
-          function(req, res, next) {
-            res.setHeader('Access-Control-Allow-Origin', '*');
-            next();
-          }
-        ]
-      }
-    }, function(err, bs) {
-      if (err) return done(err);
-      let urls = bs.options.get('urls').toJS();
-      console.log(`Application Available At: ${urls.local}`);
-      console.log(`BrowserSync Available At: ${urls.ui}`);
-      done();
-    });
+    devServer.run(3000);
+    done();
   }
 )
 
 // Reload browserSync
 function reload(done) {
-  console.log('Refreshing the browser');
-  bs.reload();
+  console.log('Reloading the browser');
+  devServer.reload();
   done();
 }
 

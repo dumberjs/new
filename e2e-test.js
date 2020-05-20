@@ -145,12 +145,10 @@ skeletons.forEach((features, i) => {
     console.log('-- npm start');
     await run(`npm start`,
       async (data, kill) => {
-        const m = data.toString().match(/Application Available At: (\S+)/);
+        const m = data.toString().match(/Dev server is started at: (\S+)/);
         if (!m) return;
         const url = m[1];
-        const message = 'Dev server is started at ' + url;
-        console.log(message);
-        t.pass(message);
+        t.pass(m[0]);
 
         try {
           if (!process.env.GITHUB_ACTIONS) {
