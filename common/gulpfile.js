@@ -370,7 +370,7 @@ function clearCache() {
 const serve = gulp.series(
   build,
   function startServer(done) {
-    devServer.run(3000);
+    devServer.run();
     done();
   }
 )

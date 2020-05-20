@@ -7,6 +7,7 @@ const connect = require('connect');
 const open = require('open');
 const serveStatic = require('serve-static');
 const http = require('http');
+const _https = require('https');
 const historyApiFallback = require('connect-history-api-fallback');
 const injector = require('connect-injector');
 const socketIO = require('socket.io');
@@ -24,7 +25,10 @@ const socketIOSnippet = `
 
 let io;
 
-exports.run = function(port = 3000) {
+exports.run = function({
+  port = 3000,
+  https = false
+} = {}) {
   const app = connect()
     // Inject socket.io snippet for live-reload.
     // Note connect-injector is a special middleware,
@@ -49,10 +53,12 @@ exports.run = function(port = 3000) {
     })
     .use(serveStatic('.'));
 
-  const server = http.createServer(app);
+  const server = https ?
+    _https.createServer({key: localKey, cert: localCert}, app) :
+    http.createServer(app);
   io = socketIO(server);
   server.listen(port);
-  const url = `http://localhost:${port}`;
+  const url = `http${https ? 's' : ''}://localhost:${port}`;
   console.log(`Dev server is started at: ${url}`);
   if (!process.env.CI) open(url);
 };
@@ -61,13 +67,7 @@ exports.reload = function() {
   io && io.emit('reload');
 };
 
-/*
-For https dev server, use https to boot up server.
-
-const https = require('https');
-const server = https.createServer({key: localKey, cert: localCert}, app);
-
-// An example of self-signed certificate
+// An example of self-signed certificate.
 // Expires: Tuesday, 29 January 2030
 const localCert = `-----BEGIN CERTIFICATE-----
 MIICpDCCAYwCCQDn7uXANbZ/wzANBgkqhkiG9w0BAQsFADAUMRIwEAYDVQQDDAls
@@ -116,4 +116,3 @@ T5wCqfxtcUza62Pa+hwhP4DewAbCosedAhNb7UOqwYXjMR5262ecNqhL3biguD0i
 YaFo2iRA3JVA7Nd6a/Q4JbDXJWeKxR+LD35etO20vrqz2jj61pfClw==
 -----END RSA PRIVATE KEY-----
 `;
-*/
