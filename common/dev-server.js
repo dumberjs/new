@@ -12,17 +12,20 @@ const historyApiFallback = require('connect-history-api-fallback');
 const injector = require('connect-injector');
 const socketIO = require('socket.io');
 
+// Use dedicated path for the dev server socket.io.
+// In order to avoid possible conflict with user app socket.io.
+const socketIOPath = '/__dev_socket.io';
+// Tell user browser to reload.
 const socketIOSnippet = `
-<script src="/socket.io/socket.io.js"></script>
+<script src="${socketIOPath}/socket.io.js"></script>
 <script>
-  var socket = io();
+  var socket = io({path: '${socketIOPath}'});
   socket.on('reload', function() {
-    console.log('Reloading the page');
+    console.log('Reload the page');
     window.location.reload();
   });
 </script>
 `;
-
 let io;
 
 exports.run = function({
@@ -57,7 +60,7 @@ exports.run = function({
   const server = https ?
     _https.createServer({key: localKey, cert: localCert}, app) :
     http.createServer(app);
-  io = socketIO(server);
+  io = socketIO(server, {path: socketIOPath});
   server.listen(port);
   const url = `http${https ? 's' : ''}://localhost:${port}`;
   console.log(`Dev server is started at: ${url}`);
