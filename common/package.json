@@ -66,8 +66,13 @@
     "autoprefixer": "^9.7.6",
     "postcss-url": "^8.0.0",
 
-    "browser-sync": "^2.26.7",
+    "connect": "^3.7.0",
     "connect-history-api-fallback": "^1.6.0",
+    "connect-injector": "^0.4.4",
+    "serve-static": "^1.14.1",
+    "socket.io": "^2.3.0",
+    "open": "^7.0.4",
+
     "cross-env": "^7.0.2",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
