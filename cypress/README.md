@@ -6,7 +6,7 @@ Run e2e tests with:
 
     npm run test:e2e
 
-Note the `test:e2e` script uses start-server-and-test to boot up dev server on port 3000 first, then run cypress test, it will automatically shutdown the dev server after test was finished.
+Note the `test:e2e` script uses start-server-and-test to boot up dev server on port 9000 first, then run cypress test, it will automatically shutdown the dev server after test was finished.
 
 To run Cypress interactively, do
 
