@@ -156,10 +156,6 @@ skeletons.forEach((features, i) => {
             await takeScreenshot(url, path.join(folder, appName + '.png'));
           }
 
-          if (features.includes('cypress')) {
-            console.log('-- npm run test:e2e');
-            await run(`npm run test:e2e`);
-          }
           kill();
         } catch (e) {
           t.fail(e.message);
@@ -167,6 +163,11 @@ skeletons.forEach((features, i) => {
         }
       }
     );
+
+    if (features.includes('cypress')) {
+      console.log('-- npm run test:e2e');
+      await run(`npm run test:e2e`);
+    }
 
     console.log('-- remove folder ' + appName);
     process.chdir(folder);

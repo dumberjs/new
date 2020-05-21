@@ -1,9 +1,11 @@
 {
   "devDependencies": {
     "cypress": "^4.5.0",
-    "eslint-plugin-cypress": "^2.10.3"
+    "eslint-plugin-cypress": "^2.10.3",
+    "start-server-and-test": "^1.11.0"
   },
   "scripts": {
-    "test:e2e": "cypress run"
+    "cypress": "cypress run",
+    "test:e2e": "cross-env CI=1 start-server-and-test start http://localhost:3000 cypress"
   }
 }
