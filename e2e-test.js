@@ -46,7 +46,7 @@ function run(command, dataCB, errorCB) {
     const proc = spawn(cmd, args, {env});
     proc.on('exit', (code, signal) => {
       if (code && signal !== 'SIGTERM' && !win32Killed.has(proc.pid)) {
-        if (process.platform === 'win32' && args[1] === 'test:e2e' && code === 3221226356) {
+        if (process.platform === 'win32' && (args[1] === 'test:e2e' || args[1] === 'cypress') && code === 3221226356) {
           // There is random cypress ELIFECYCLE (3221226356) issue on Windows.
           // Probably related to https://github.com/cypress-io/cypress/pull/2011
           resolve();
@@ -157,8 +157,8 @@ skeletons.forEach((features, i) => {
           }
 
           if (features.includes('cypress')) {
-            console.log('-- npm run test:e2e');
-            await run(`npm run test:e2e`);
+            console.log('-- npm run cypress');
+            await run(`npm run cypress`);
           }
           kill();
         } catch (e) {

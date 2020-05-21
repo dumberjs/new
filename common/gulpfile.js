@@ -371,7 +371,10 @@ const serve = gulp.series(
   build,
   function startServer(done) {
     // Open a browser window when not in CI environment.
-    devServer.run({ open: !process.env.CI });
+    devServer.run({
+      port: 3000,
+      open: !process.env.CI
+    });
     done();
   }
 )
