@@ -4,7 +4,13 @@ Thumbs.db
 
 # Editors
 .idea
-.vscode
+.chrome
+/*.log
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # Dependencies
 /node_modules
