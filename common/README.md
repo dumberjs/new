@@ -25,6 +25,7 @@ Generates `dist/*-bundle.[hash].js`, update index.html with hashed file name.
 
     npm run build
 
+To deploy to production server, copy over both the generated `index.html` and all the `dist/*` files.
 // @endif
 ## To clear cache
 
