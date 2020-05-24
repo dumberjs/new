@@ -21,11 +21,20 @@ Generates `dist/*-bundle.js`
 
 ## Build in production mode
 
-Generates `dist/*-bundle.[hash].js`, update index.html with hashed file name.
-
     npm run build
 
-To deploy to production server, copy over both the generated `index.html` and all the `dist/*` files.
+It builds `dist/*-bundle.[hash].js`, updates index.html with hashed js bundle file name. To deploy to production server, copy over both the generated `index.html` and all the `dist/*` files.
+
+For example
+```
+index.html
+dist/entry-bundle.12345.js
+```
+Copy to production root folder
+```
+root_folder/index.html
+root_folder/dist/entry-bundle.12345.js
+```
 // @endif
 ## To clear cache
 
