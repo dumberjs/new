@@ -147,7 +147,7 @@ function buildJs(src) {
   const transpile = babel();
   // @endif
   // @if typescript
-  const ts = typescript.createProject('tsconfig.json');
+  const ts = typescript.createProject('tsconfig.json', {noEmitOnError: true});
   const transpile = ts();
   // @endif
 
