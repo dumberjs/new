@@ -1,4 +1,4 @@
-name: E2E-Windows
+name: E2E-macOS
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
           # - 10
           - 12
         os:
-          - windows-latest
+          - macOS-latest
         target_features:
           - no-framework,babel
           - no-framework,typescript
@@ -36,7 +36,6 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
       - run: npm install
-      - run: npm run test:e2e
+      - run: xvfb-run -a -s '-screen 0 1024x768x24' npm run test:e2e
         env:
           TARGET_FEATURES: ${{ matrix.target_features }}
-
