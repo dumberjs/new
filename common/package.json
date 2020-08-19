@@ -11,33 +11,33 @@
   "license": "UNLICENSED",
   "devDependencies": {
     // @if babel
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
     "gulp-babel": "^8.0.0",
     // @if !evergreen
     "regenerator-runtime": "0.13.2",
     // @endif
     // @if (jasmine || mocha || tape) && !sfc
     "babel-plugin-istanbul": "^6.0.0",
-    "nyc": "^15.0.1",
+    "nyc": "^15.1.0",
     // @endif
     // @endif
 
-    "eslint": "^7.0.0",
+    "eslint": "^7.7.0",
 
     // @if babel
     "babel-eslint": "^10.1.0",
     // @endif
 
     // @if typescript
-    "typescript": "^3.8.3",
+    "typescript": "^3.9.7",
     "gulp-typescript": "^5.0.1",
-    "@types/node": "^13.13.5",
-    "@typescript-eslint/eslint-plugin": "^2.31.0",
-    "@typescript-eslint/parser": "^2.31.0",
+    "@types/node": "^14.6.0",
+    "@typescript-eslint/eslint-plugin": "^3.9.1",
+    "@typescript-eslint/parser": "^3.9.1",
     // @endif
 
     // @if sass
@@ -51,11 +51,11 @@
     // @endif
 
     // @if jasmine || tape || mocha
-    "browser-do": "^2.0.1",
+    "browser-do": "^3.0.0",
     // @endif
 
     // @if !sfc
-    "merge2": "^1.3.0",
+    "merge2": "^1.4.1",
     // @endif
 
     // @if plugin
@@ -63,7 +63,7 @@
     // @endif
 
     "gulp-postcss": "^8.0.0",
-    "autoprefixer": "^9.7.6",
+    "autoprefixer": "^9.8.6",
     "postcss-url": "^8.0.0",
 
     "connect": "^3.7.0",
@@ -71,7 +71,7 @@
     "connect-injector": "^0.4.4",
     "serve-static": "^1.14.1",
     "socket.io": "^2.3.0",
-    "open": "^7.0.4",
+    "open": "^7.1.0",
 
     "cross-env": "^7.0.2",
     "del": "^5.1.0",
@@ -79,7 +79,7 @@
     "gulp-dumber": "^1.0.3",
     "gulp-if": "^3.0.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-terser": "^1.2.0",
+    "gulp-terser": "^1.3.2",
     "promise-polyfill": "^8.1.3"
   },
   "scripts": {

@@ -1,8 +1,8 @@
 {
   "devDependencies": {
-    "cypress": "^4.5.0",
-    "eslint-plugin-cypress": "^2.10.3",
-    "start-server-and-test": "^1.11.0"
+    "cypress": "^5.0.0",
+    "eslint-plugin-cypress": "^2.11.1",
+    "start-server-and-test": "^1.11.3"
   },
   "scripts": {
     "cypress": "cypress run",
