@@ -36,6 +36,6 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
       - run: npm install
-      - run: xvfb-run -a -s '-screen 0 1024x768x24' npm run test:e2e
+      - run: npm run test:e2e
         env:
           TARGET_FEATURES: ${{ matrix.target_features }}
