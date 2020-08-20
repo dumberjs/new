@@ -1,17 +1,17 @@
 {
   "devDependencies": {
-    "@vue/test-utils": "^1.0.2",
+    "@vue/test-utils": "^1.0.4",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11",
     // @if sfc
     "babel-core": "^7.0.0-bridge.0",
     "gulp-vue-file": "^0.1.5",
     // @if jest
-    "vue-jest": "^4.0.0-beta.2",
+    "vue-jest": "^4.0.0-beta.5",
     // @endif
     // @endif
     // @if ava
-    "jsdom": "^16.2.2",
+    "jsdom": "^16.4.0",
     "jsdom-global": "^3.0.2",
     // @if sfc
     "require-extension-hooks": "^0.3.3",

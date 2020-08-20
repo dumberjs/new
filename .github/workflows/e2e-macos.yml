@@ -1,4 +1,4 @@
-name: E2E-Windows
+name: E2E-macOS
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
           # - 10
           - 12
         os:
-          - windows-latest
+          - macOS-latest
         target_features:
           - no-framework,babel
           - no-framework,typescript
@@ -39,4 +39,3 @@ jobs:
       - run: npm run test:e2e
         env:
           TARGET_FEATURES: ${{ matrix.target_features }}
-
