@@ -4,7 +4,7 @@
     "jest": "^26.4.0",
     // @endif
     // @if sfc
-    "jest": "^25.5.4",
+    "jest": "^24.9.0",
     // @endif
     "jest-transform-stub": "^2.0.0",
     // @if babel
