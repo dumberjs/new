@@ -2,7 +2,7 @@
 
 ![CI](https://github.com/dumberjs/new/workflows/CI/badge.svg) ![E2E-Linux](https://github.com/dumberjs/new/workflows/E2E-Linux/badge.svg) ![E2E-Windows](https://github.com/dumberjs/new/workflows/E2E-Windows/badge.svg) ![E2E-macOS](https://github.com/dumberjs/new/workflows/E2E-macOS/badge.svg)
 
-To generate a JS SPA app, run
+To generate a JS SPA app through [makes](https://makes.js.org), run
 ```sh
 npx makes dumberjs
 # or
