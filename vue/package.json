@@ -1,8 +1,8 @@
 {
   "devDependencies": {
-    "@vue/test-utils": "^1.0.4",
-    "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11",
+    "@vue/test-utils": "^1.1.0",
+    "vue": "^2.6.12",
+    "vue-template-compiler": "^2.6.12",
     // @if sfc
     "babel-core": "^7.0.0-bridge.0",
     "gulp-vue-file": "^0.1.5",

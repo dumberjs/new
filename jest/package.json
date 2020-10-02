@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     // @if !sfc
-    "jest": "^26.4.0",
+    "jest": "^26.4.2",
     // @endif
     // @if sfc
     "jest": "^24.9.0",
@@ -11,8 +11,8 @@
     "babel-jest": "^26.3.0",
     // @endif
     // @if typescript
-    "@types/jest": "^26.0.10",
-    "ts-jest": "^26.2.0",
+    "@types/jest": "^26.0.14",
+    "ts-jest": "^26.4.1",
     // @endif
   },
   "scripts": {
