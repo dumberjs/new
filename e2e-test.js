@@ -101,6 +101,7 @@ const skeletons = allSkeletons.filter(features =>
 
 skeletons.forEach((features, i) => {
   const isPlugin = features.includes('plugin');
+  const hasUnitTests = !features.includes('no-unit-tests');
   const appName = features.join('-');
   const appFolder = path.join(folder, appName);
   const title = `App: ${i + 1}/${skeletons.length} ${appName}`;
@@ -119,9 +120,11 @@ skeletons.forEach((features, i) => {
     await run('yarn');
     t.pass('installed deps');
 
-    console.log('-- npm test');
-    await run('npm test');
-    t.pass('finished unit tests');
+    if (hasUnitTests) {
+      console.log('-- npm test');
+      await run('npm test');
+      t.pass('finished unit tests');
+    }
 
     console.log('-- npm run build:dev');
     await run('npm run build:dev', null,

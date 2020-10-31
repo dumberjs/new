@@ -50,6 +50,7 @@ module.exports = [
   {
     message: 'What unit testing framework to use?',
     choices: [
+      {value: 'no-unit-tests', title: 'None', hint: 'No unit testing'},
       {if: '!aurelia', value: 'jest', title: 'Jest', hint: 'Runs in Node.js, simulates browser, with a focus on simplicity.'},
       {if: 'aurelia',  value: 'jest', title: 'Jest', hint: 'Runs in Node.js, simulates browser (aurelia-pal-nodejs), with a focus on simplicity.'},
       {value: 'jasmine', title: 'Jasmine', hint: 'Runs in browser, a behavior-driven testing framework.'},
