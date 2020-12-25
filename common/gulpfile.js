@@ -19,6 +19,7 @@ const less = require('gulp-less');
 // @endif
 // @if sass && !sfc
 const sass = require('gulp-dart-sass');
+const sassPackageImporter = require('node-sass-package-importer');
 // @endif
 const plumber = require('gulp-plumber');
 // @if !sfc
@@ -165,7 +166,11 @@ function buildCss(src) {
   return gulp.src(src, {sourcemaps:/* @if !plugin */ !isProduction/* @endif *//* @if plugin */ true/* @endif */})
     .pipe(gulpif(
       f => f.extname === '.scss',
-      isProduction || isTest ? sass.sync(): sass.sync().on('error', sass.logError)
+      // sassPackageImporter handles @import "~bootstrap"
+      // https://github.com/maoberlehner/node-sass-magic-importer/tree/master/packages/node-sass-package-importer
+      isProduction || isTest ?
+        sass.sync({importer: sassPackageImporter()}) :
+        sass.sync({importer: sassPackageImporter()}).on('error', sass.logError)
     ))
   // @endif
   // @if less
