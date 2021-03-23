@@ -11,11 +11,11 @@
   "license": "UNLICENSED",
   "devDependencies": {
     // @if babel
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/plugin-proposal-decorators": "^7.12.12",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-decorators": "^7.13.5",
     "gulp-babel": "^8.0.0",
     // @if !evergreen
     "regenerator-runtime": "0.13.2",
@@ -26,18 +26,18 @@
     // @endif
     // @endif
 
-    "eslint": "^7.18.0",
+    "eslint": "^7.22.0",
 
     // @if babel
     "babel-eslint": "^10.1.0",
     // @endif
 
     // @if typescript
-    "typescript": "^4.1.3",
+    "typescript": "^4.2.3",
     "gulp-typescript": "^5.0.1",
-    "@types/node": "^14.14.21",
-    "@typescript-eslint/eslint-plugin": "^4.13.0",
-    "@typescript-eslint/parser": "^4.13.0",
+    "@types/node": "^14.14.35",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
     // @endif
 
     // @if sass
@@ -65,9 +65,9 @@
 
     // @if !sfc
     "gulp-postcss": "^9.0.0",
-    "postcss": "^8.2.4",
-    "autoprefixer": "^10.2.1",
-    "postcss-url": "^10.1.1",
+    "postcss": "^8.2.8",
+    "autoprefixer": "^10.2.5",
+    "postcss-url": "^10.1.3",
     // @endif
 
     // @if sfc
@@ -81,8 +81,8 @@
     "connect-history-api-fallback": "^1.6.0",
     "connect-injector": "^0.4.4",
     "serve-static": "^1.14.1",
-    "socket.io": "^3.1.0",
-    "open": "^7.3.1",
+    "socket.io": "^4.0.0",
+    "open": "^8.0.4",
 
     "cross-env": "^7.0.3",
     "del": "^6.0.0",
