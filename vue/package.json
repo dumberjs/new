@@ -11,7 +11,7 @@
     // @endif
     // @endif
     // @if ava
-    "jsdom": "^16.5.1",
+    "jsdom": "^16.5.2",
     "jsdom-global": "^3.0.2",
     // @if sfc
     "require-extension-hooks": "^0.3.3",
