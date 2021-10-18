@@ -8,8 +8,8 @@ import { Aurelia } from 'aurelia-framework';
 
 // @endif
 export function configure(aurelia/* @if typescript */: Aurelia/* @endif */)/* @if typescript */: void/* @endif */ {
-  aurelia.use.feature('resources');
   aurelia.use.standardConfiguration();
+  aurelia.use.feature('resources');
   if (process.env.NODE_ENV === 'production') {
     aurelia.use.developmentLogging('warn');
   } else {
