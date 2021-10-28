@@ -5,11 +5,11 @@
     "browser-env": "^3.3.0",
     // @endif
     // @if babel
-    "@ava/babel": "^1.0.1",
-    "@babel/register": "^7.13.16",
+    "@ava/babel": "^2.0.0",
+    "@babel/register": "^7.15.3",
     // @endif
     // @if typescript
-    "@ava/typescript": "^1.1.1",
+    "@ava/typescript": "^2.0.0",
     "ts-node": "^9.1.1",
     // @endif
   },

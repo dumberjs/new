@@ -13,7 +13,7 @@
   ],
 
   // @if babel
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   // @endif
 
   // @if typescript
