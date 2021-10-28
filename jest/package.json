@@ -1,11 +1,6 @@
 {
   "devDependencies": {
-    // @if !sfc
     "jest": "^27.3.1",
-    // @endif
-    // @if sfc
-    "jest": "^24.9.0",
-    // @endif
     "jest-transform-stub": "^2.0.0",
     // @if babel
     "babel-jest": "^27.3.1",
@@ -54,7 +49,7 @@
       "^.+\\.jsx?$": "babel-jest",
       // @endif
       // @if sfc
-      "^.+\\.vue$": "vue-jest",
+      "^.+\\.vue$": "@vue/vue2-jest",
       // @endif
     },
 
@@ -67,14 +62,14 @@
     // @endif
 
     // @if typescript
-    "preset": 'ts-jest',
+    "preset": "ts-jest",
     // @endif
 
     "collectCoverage": true,
     "collectCoverageFrom": [
-      'src/**/*./* @if babel */js{,x}/* @endif *//* @if typescript */ts{,x}/* @endif */',
+      "src/**/*./* @if babel */js{,x}/* @endif *//* @if typescript */ts{,x}/* @endif */",
       // @if sfc
-      'src/**/*.vue',
+      "src/**/*.vue",
       // @endif
     ]
   }
