@@ -28,7 +28,9 @@
       "<rootDir>/src",
       "<rootDir>/node_modules"
     ],
-    "testEnvironment": "node",
+    // @endif
+    // @if !aurelia
+    "testEnvironment": "jsdom",
     // @endif
 
     "setupFiles": [
