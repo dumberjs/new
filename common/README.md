@@ -42,7 +42,7 @@ Clear tracing cache. In rare situation, you might need to run clear-cache after 
 
     npm run clear-cache
 
-// @if jest || ava
+// @if jest
 ## Nodejs test
 
     npm test

@@ -10,14 +10,5 @@
     "vue-jest": "^4.0.0-beta.5",
     // @endif
     // @endif
-    // @if ava
-    "jsdom": "^18.0.0",
-    "jsdom-global": "^3.0.2",
-    // @if sfc
-    "require-extension-hooks": "^0.3.3",
-    "require-extension-hooks-vue": "^3.0.0",
-    "require-extension-hooks-babel": "^1.0.0",
-    // @endif
-    // @endif
   }
 }

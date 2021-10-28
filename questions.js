@@ -55,11 +55,7 @@ module.exports = [
       {if: 'aurelia',  value: 'jest', title: 'Jest', hint: 'Runs in Node.js, simulates browser (aurelia-pal-nodejs), with a focus on simplicity.'},
       {value: 'jasmine', title: 'Jasmine', hint: 'Runs in browser, a behavior-driven testing framework.'},
       {value: 'mocha', title: 'Mocha + Chai', hint: 'Runs in browser, a feature-rich JavaScript test framework for node and browsers.'},
-      {value: 'tape', title: 'Tape', hint: 'Runs in browser, tap-producing test harness for node and browsers.'},
-      // TODO ava and vue sfc is not yet working.
-      // See vue/test/setup.ext for more details
-      {if: 'no-framework || (vue && !sfc)', value: 'ava', title: 'Ava + jsdom-global', hint: 'Runs in Node.js, simulates browser (jsdom-global). A test runner for Node.js with a concise API, detailed error output, embrace of new language features and process isolation that let you write tests more effectively.'},
-      {if: 'aurelia || react',  value: 'ava', title: 'Ava', hint: 'Runs in Node.js, simulates browser (aurelia-pal-nodejs). A test runner for Node.js with a concise API, detailed error output, embrace of new language features and process isolation that let you write tests more effectively.'}
+      {value: 'tape', title: 'Tape', hint: 'Runs in browser, tap-producing test harness for node and browsers.'}
     ]
   },
   {
