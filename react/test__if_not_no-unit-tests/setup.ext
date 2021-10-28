@@ -3,14 +3,3 @@
 // To support async/await in IE11
 import 'regenerator-runtime/runtime';
 // @endif
-// @if ava
-
-// ignore css modules
-function skipCSS(module) {
-  module.exports = '';
-}
-
-require.extensions['.css'] = skipCSS;
-require.extensions['.less'] = skipCSS;
-require.extensions['.scss'] = skipCSS;
-// @endif

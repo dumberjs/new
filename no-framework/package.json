@@ -1,8 +1,0 @@
-{
-  "devDependencies": {
-    // @if ava
-    "jsdom": "^18.0.0",
-    "jsdom-global": "^3.0.2",
-    // @endif
-  }
-}
