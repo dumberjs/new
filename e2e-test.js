@@ -116,8 +116,8 @@ skeletons.forEach((features, i) => {
     t.pass('made skeleton');
     process.chdir(appFolder);
 
-    console.log('-- yarn');
-    await run('yarn');
+    console.log('-- npm i');
+    await run('npm i');
     t.pass('installed deps');
 
     if (hasUnitTests) {
