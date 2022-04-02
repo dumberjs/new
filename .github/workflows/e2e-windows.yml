@@ -17,7 +17,7 @@ jobs:
       matrix:
         node_version:
           # - 10
-          - 12
+          - 16
         os:
           - windows-latest
         target_features:
