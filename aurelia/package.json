@@ -1,9 +1,9 @@
 {
   "devDependencies": {
-    "aurelia-bootstrapper": "^2.3.3",
-    "aurelia-deps-finder": "^2.1.3",
-    "aurelia-testing": "^1.0.0",
-    "htmlhint": "^1.1.3",
+    "aurelia-bootstrapper": "^2.4.0",
+    "aurelia-deps-finder": "^2.1.4",
+    "aurelia-testing": "^1.1.0",
+    "htmlhint": "^1.1.4",
     // @if jest
     "aurelia-pal-nodejs": "^2.0.0",
     "aurelia-loader-nodejs": "^1.1.0",
