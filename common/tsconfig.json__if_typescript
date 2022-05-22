@@ -6,8 +6,13 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "importHelpers": true,
     "baseUrl": "src",
     "allowJs": true,
+
+    // @if !jest
+    "module": "esnext",
+    // @endif
 
     // @if evergreen
     "target": "es2017",
