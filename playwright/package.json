@@ -3,6 +3,6 @@
     "@playwright/test": "^1.22.2",
   },
   "scripts": {
-    "test:e2e": "cross-env CI=1 playwright test"
+    "test:e2e": "playwright test"
   }
 }

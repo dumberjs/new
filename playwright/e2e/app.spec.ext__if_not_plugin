@@ -24,7 +24,7 @@ test.describe('The app', () => {
     await expect(page.locator('.app')).toHaveText('Hello Vue!');
     // @endif
     // @if no-framework
-    await expect(page.locator('.app')).toHaveText('Hello world!');
+    await expect(page.locator('p')).toHaveText('Hello world!');
     // @endif
   });
 });
