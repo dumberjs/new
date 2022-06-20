@@ -54,7 +54,9 @@ module.exports = async function({
 
   _log(`\n${c.underline.bold('Get Started')}`);
   if (!here) _log('cd ' + properties.name);
-  if (!depsInstalled) _log('npm install');
-  if (features.includes('playwright')) _log('npx playwright install --with-deps');
+  if (!depsInstalled) {
+    _log('npm install');
+    if (features.includes('playwright')) _log('npx playwright install --with-deps');
+  }
   _log('npm start\n');
 };
