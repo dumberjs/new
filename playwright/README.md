@@ -12,4 +12,4 @@ Run e2e tests with:
 
 Note the test:e2e script (in package.json) automatically runs "npm start" before playwright.
 
-For more information, visit https://playwright.dev
+For more information, visit https://playwright.dev/docs/test-cli
