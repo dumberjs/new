@@ -26,4 +26,5 @@ Thumbs.db
 
 // @if playwright
 /test-results
+/playwright-report
 // @endif
