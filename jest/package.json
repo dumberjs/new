@@ -35,7 +35,12 @@
     // @endif
 
     "setupFiles": [
+      // @if react
+      "<rootDir>/test/setup./* @if babel */jsx/* @endif *//* @if typescript */tsx/* @endif */"
+      // @endif
+      // @if !react
       "<rootDir>/test/setup./* @if babel */js/* @endif *//* @if typescript */ts/* @endif */"
+      // @endif
     ],
 
     "moduleNameMapper": {
