@@ -170,9 +170,9 @@ import('makes').then(makesNS => {
       );
 
       if (features.includes('playwright')) {
-        console.log('-- npm run test:e2e');
+        console.log('-- npx playwright test --project chromium');
         await run('npx playwright install --with-deps');
-        await run('npm run test:e2e');
+        await run('npx playwright test --project chromium');
       }
 
       await wait();
