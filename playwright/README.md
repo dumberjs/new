@@ -1,5 +1,9 @@
 ## Playwright e2e test
 
+You may need to install playwright test browsers if have not.
+
+   npx playwright install --with-deps
+
 All e2e tests are in `e2e/`.
 
 Run e2e tests with:
