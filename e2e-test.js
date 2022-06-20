@@ -165,7 +165,8 @@ import('makes').then(makesNS => {
 
       if (features.includes('playwright')) {
         console.log('-- npm run test:e2e');
-        await run(`npm run test:e2e`);
+        await run('npx playwright install');
+        await run('npm run test:e2e');
       }
 
       console.log('-- remove folder ' + appName);
