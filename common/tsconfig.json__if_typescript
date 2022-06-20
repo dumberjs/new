@@ -20,18 +20,6 @@
     // @if !evergreen
     "target": "es5",
     // @endif
-
-    // @if cypress
-
-    // @if jasmine
-    "types": ["node", "jasmine"],
-    // @endif
-
-    // @if jest
-    "types": ["node", "jest"],
-    // @endif
-
-    // @endif
   },
   "include": [
     "src",

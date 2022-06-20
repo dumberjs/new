@@ -95,7 +95,7 @@
     "promise-polyfill": "^8.2.3"
   },
   "scripts": {
-    "lint:js": "eslint src test/* @if cypress */ cypress/* @endif *//* @if typescript */ --ext .js,.ts/* @if react */,.jsx,.tsx/* @endif *//* @endif *//* @if babel && react */ --ext .js,.jsx/* @endif */",
+    "lint:js": "eslint src test/* @if playwright */ e2e/* @endif *//* @if typescript */ --ext .js,.ts/* @if react */,.jsx,.tsx/* @endif *//* @endif *//* @if babel && react */ --ext .js,.jsx/* @endif */",
     // @if sass
     "lint:css": "sass-lint -c .sass-lint.yml \"src/**/*.scss\"",
     // @endif

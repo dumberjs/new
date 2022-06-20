@@ -49,12 +49,6 @@ import('makes').then(makesNS => {
       const proc = spawn(cmd, args, {env});
       proc.on('exit', (code, signal) => {
         if (code && signal !== 'SIGTERM' && !win32Killed.has(proc.pid)) {
-          if (isWin32 && (args[1] === 'test:e2e' || args[1] === 'cypress') && code === 3221226356) {
-            // There is random cypress ELIFECYCLE (3221226356) issue on Windows.
-            // Probably related to https://github.com/cypress-io/cypress/pull/2011
-            resolve();
-            return;
-          }
           reject(new Error(cmd + ' ' + args.join(' ') + ' process exit code: ' + code + ' signal: ' + signal));
         } else {
           resolve();
@@ -93,8 +87,8 @@ import('makes').then(makesNS => {
   }
 
   const targetFeatures = (process.env.TARGET_FEATURES || '').toLowerCase().split(',').filter(p => p);
-  if (!targetFeatures.includes('cypress')) {
-    targetFeatures.push('cypress');
+  if (!targetFeatures.includes('playwright')) {
+    targetFeatures.push('playwright');
   }
 
   const skeletons = allSkeletons.filter(features =>
@@ -161,13 +155,6 @@ import('makes').then(makesNS => {
               console.log('-- take screenshot');
               await takeScreenshot(url, path.join(folder, appName + '.png'));
             }
-
-            if (isWin32 && features.includes('cypress')) {
-              // Have to by pass start-server-and-test on win32
-              // due to cypress issue (3221226356, search above)
-              console.log('-- npm run cypress');
-              await run(`npm run cypress`);
-            }
             kill();
           } catch (e) {
             t.fail(e.message);
@@ -176,7 +163,7 @@ import('makes').then(makesNS => {
         }
       );
 
-      if (!isWin32 && features.includes('cypress')) {
+      if (features.includes('playwright')) {
         console.log('-- npm run test:e2e');
         await run(`npm run test:e2e`);
       }

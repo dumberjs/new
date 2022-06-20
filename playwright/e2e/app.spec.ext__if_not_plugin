@@ -1,0 +1,30 @@
+// @if typescript
+import { test, expect } from '@playwright/test';
+// @endif
+// @if babel
+const { test, expect } = require('@playwright/test');
+// @endif
+
+test.beforeEach(async ({ page }) => {
+  await page.goto('http//localhost:9000');
+});
+
+test.describe('The app', () => {
+  test('shows message', async ({ page }) => {
+    // @if aurelia
+    await expect(page.locator('.app')).toHaveText('Hello Aurelia!');
+    // @endif
+    // @if inferno
+    await expect(page.locator('.app')).toHaveText('Hello Inferno!');
+    // @endif
+    // @if react
+    await expect(page.locator('.app')).toHaveText('Hello React!');
+    // @endif
+    // @if vue
+    await expect(page.locator('.app')).toHaveText('Hello Vue!');
+    // @endif
+    // @if no-framework
+    await expect(page.locator('.app')).toHaveText('Hello world!');
+    // @endif
+  });
+});
