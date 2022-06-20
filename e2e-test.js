@@ -13,6 +13,12 @@ const puppeteer = require('puppeteer');
 const kill = require('tree-kill');
 const questions = require('./questions');
 
+async function wait() {
+  return new Promise(resolve => {
+    setTimeout(resolve, 1000);
+  });
+}
+
 import('makes').then(makesNS => {
   const {possibleFeatureSelections} = makesNS;
   const allSkeletons = possibleFeatureSelections(questions);
@@ -169,6 +175,7 @@ import('makes').then(makesNS => {
         await run('npm run test:e2e');
       }
 
+      await wait();
       console.log('-- remove folder ' + appName);
       process.chdir(folder);
       await del(appFolder);
