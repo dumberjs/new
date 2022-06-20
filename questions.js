@@ -62,7 +62,7 @@ module.exports = [
     message: 'Do you want to setup e2e test?',
     choices: [
       {title: 'No'},
-      {value: 'cypress', title: 'Yes (Cypress)', hint: 'Cypress offers fast, easy and reliable testing for anything that runs in a browser.'}
+      {value: 'playwright', title: 'Yes (Playwright)', hint: 'Playwright enables reliable end-to-end testing for modern web apps.'}
     ]
   }
 ];

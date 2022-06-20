@@ -24,7 +24,6 @@ Thumbs.db
 /.nyc_output
 /coverage
 
-// @if cypress
-/cypress/videos
-/cypress/screenshots
+// @if playwright
+/test-results
 // @endif

@@ -18,6 +18,14 @@
     "test": "jest"
   },
   "jest": {
+    "testMatch": [
+      // @if react
+      "<rootDir>/test/**/*.spec./* @if babel */jsx/* @endif *//* @if typescript */tsx/* @endif */",
+      // @endif
+      // @if !react
+      "<rootDir>/test/**/*.spec./* @if babel */js/* @endif *//* @if typescript */ts/* @endif */"
+      // @endif
+    ],
     // @if aurelia
     // This is to teach jest(actually NODE_PATH) where to load an aurelia module,
     // when aurelia-loader requests module "a/b",
