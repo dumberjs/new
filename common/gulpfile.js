@@ -373,7 +373,6 @@ function clearCache() {
   return dr.clearCache();
 }
 
-// Use browserSync as dev server
 const serve = gulp.series(
   build,
   function startServer(done) {
