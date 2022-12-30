@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "aurelia-bootstrapper": "^2.4.0",
-    "aurelia-deps-finder": "^2.1.4",
+    "aurelia-deps-finder": "^2.1.6",
     "aurelia-testing": "^1.1.0",
     "htmlhint": "^1.1.4",
     // @if jest
