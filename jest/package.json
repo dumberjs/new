@@ -1,16 +1,16 @@
 {
   "devDependencies": {
-    "jest": "^28.1.0",
+    "jest": "^29.3.1",
     // @if !aurelia
-    "jest-environment-jsdom": "^28.1.0",
+    "jest-environment-jsdom": "^29.3.1",
     // @endif
     "jest-transform-stub": "^2.0.0",
     // @if babel
-    "babel-jest": "^28.1.0",
+    "babel-jest": "^29.3.1",
     // @endif
     // @if typescript
-    "@types/jest": "^27.5.1",
-    "ts-jest": "^28.0.2",
+    "@types/jest": "^29.2.4",
+    "ts-jest": "^29.0.3",
     // @endif
   },
   "scripts": {
