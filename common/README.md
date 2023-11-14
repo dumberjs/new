@@ -71,7 +71,7 @@ By default, browser-do closes the browser after tests finish, to keep browser ru
 `npm test` already generetes code coverage report, you can open `coverage/lcov-report/index.html` for detailed report.
 
 // @endif
-// @if babel && (jasmine || mocha || tape) && !sfc
+// @if babel && (jasmine || mocha || tape)
 ## Code coverage
 
     npm run coverage

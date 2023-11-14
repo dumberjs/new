@@ -1,9 +1,0 @@
-import test from 'tape';
-import { mount } from '@vue/test-utils';
-import App from '../src/App';
-
-test('should render message', t => {
-  const wrapper = mount(App);
-  t.equal(wrapper.text(), 'Hello Vue!');
-  t.end();
-});

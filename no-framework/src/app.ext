@@ -1,3 +1,13 @@
+// @if css
+import "./app.css";
+// @endif
+// @if less
+import "./app.less";
+// @endif
+// @if sass
+import "./app.scss";
+// @endif
+
 const app = document.createElement('p');
 app.textContent = 'Hello world!';
 export default app;

@@ -8,7 +8,7 @@
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
     ["@babel/plugin-proposal-class-properties", { "loose": true }],
     "@babel/plugin-syntax-dynamic-import"
-  ]/* @if (jasmine || mocha || tape) && !sfc */,
+  ]/* @if jasmine || mocha || tape */,
   "env": {
     "test": {
       "plugins": [ "istanbul" ]

@@ -2,9 +2,6 @@ const dumber = require('gulp-dumber');
 // @if aurelia
 const auDepsFinder = require('aurelia-deps-finder');
 // @endif
-// @if sfc
-const vue = require('gulp-vue-file');
-// @endif
 const fs = require('fs');
 const gulp = require('gulp');
 const del = require('del');
@@ -14,18 +11,16 @@ const babel = require('gulp-babel');
 // @if typescript
 const typescript = require('gulp-typescript');
 // @endif
-// @if less && !sfc
+// @if less
 const less = require('gulp-less');
 // @endif
-// @if sass && !sfc
+// @if sass
 const sass = require('gulp-dart-sass');
 const sassPackageImporter = require('node-sass-package-importer');
 // @endif
 const plumber = require('gulp-plumber');
-// @if !sfc
 const merge2 = require('merge2');
 const postcss = require('gulp-postcss');
-// @endif
 const terser = require('gulp-terser');
 const gulpif = require('gulp-if');
 const autoprefixer = require('autoprefixer');
@@ -62,7 +57,7 @@ const dr = dumber({
   // @if aurelia
   // The special depsFinder to teach dumber about the Aurelia convention.
   // Aurelia needs this special treatment because of the heavy convention.
-  // No need for other frameworks like Vue/React/...
+  // No need for other frameworks like React/...
   depsFinder: auDepsFinder,
   // @endif
 
@@ -89,13 +84,8 @@ const dr = dumber({
   ],
 
   // Explicit dependencies, can use either "deps" (short name) or "dependencies" (full name).
-  deps: [
-    // @if vue
-    // This explicit dep overwrites vue's main file from 'dist/vue.runtime.esm.js' to 'dist/vue.js'.
-    // We have to use dist/vue.js which includes template compiler.
-    {name: 'vue', main: isProduction ? 'dist/vue.min.js' : 'dist/vue.js'}
-    // @endif
-  ],
+  // deps: [
+  // ],
 
   // Code split is intuitive and flexible.
   // https://dumber.js.org/options/code-split
@@ -144,7 +134,6 @@ const dr = dumber({
   }
 });
 
-// @if !sfc
 function buildJs(src) {
   // @if babel
   const transpile = babel();
@@ -283,56 +272,6 @@ function build() {
   // @endif
 }
 
-// @endif
-// @if sfc
-function build() {
-  // see https://github.com/dumberjs/gulp-vue-file
-  // for how to use gulp-vue-file plugin
-  const compileVue = vue({
-    style: {
-      postcssPlugins: [
-        autoprefixer(),
-        // use postcss-url to inline any image/font/svg.
-        // postcss-url by default use base64 for images, but
-        // encodeURIComponent for svg which does NOT work on
-        // some browsers.
-        // Here we enforce base64 encoding for all assets to
-        // improve compatibility on svg.
-        postcssUrl({url: 'inline', encodeType: 'base64'})
-      ]
-    }
-  });
-
-  // Merge all js/css/html file streams to feed dumber.
-  // Note scss was transpiled to css file by gulp-dart-sass.
-  // dumber knows nothing about .ts/.less/.scss/.md files,
-  // gulp-* plugins transpiled them into js/css/html before
-  // sending to dumber.
-  return gulp.src(/* @if jasmine || tape || mocha */isTest ? ['test/**/*.js', 'src/**/*.{json,js,vue}'] : /* @endif */'src/**/*.{json,js,vue}', {sourcemaps: !isProduction, since: gulp.lastRun(build)})
-    // plumber does continue on failure for dev mode
-    .pipe(gulpif(!isProduction && !isTest, plumber()))
-    .pipe(compileVue)
-    // send all files through babel
-    .pipe(babel())
-
-    // Note we did extra call `dr()` here, this is designed to cater watch mode.
-    // dumber here consumes (swallows) all incoming Vinyl files,
-    // then generates new Vinyl files for all output bundle files.
-    .pipe(dr())
-
-    // Terser fast minify mode
-    // https://github.com/terser-js/terser#terser-fast-minify-mode
-    // It's a good balance on size and speed to turn off compress.
-    .pipe(gulpif(isProduction, terser({compress: false})))
-    // @if !jasmine && !mocha && !tape
-    .pipe(gulp.dest(outputDir, {sourcemaps: isProduction ? false : '.'}));
-    // @endif
-    // @if jasmine || mocha || tape
-    .pipe(gulp.dest(outputDir, {sourcemaps: isProduction ? false : (isTest ? true : '.')}));
-    // @endif
-}
-
-// @endif
 // @if plugin
 function buildPlugin() {
   return merge2(

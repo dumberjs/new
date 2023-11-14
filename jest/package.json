@@ -59,18 +59,7 @@
       // @if babel
       "^.+\\.jsx?$": "babel-jest",
       // @endif
-      // @if sfc
-      "^.+\\.vue$": "@vue/vue2-jest",
-      // @endif
     },
-
-    // @if sfc
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "vue"
-    ],
-    // @endif
 
     // @if typescript
     "preset": "ts-jest",
@@ -79,9 +68,6 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*./* @if babel */js{,x}/* @endif *//* @if typescript */ts{,x}/* @endif */",
-      // @if sfc
-      "src/**/*.vue",
-      // @endif
     ]
   }
 }
