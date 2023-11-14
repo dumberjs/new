@@ -14,14 +14,8 @@ test.describe('The app', () => {
     // @if aurelia
     await expect(page.locator('.app')).toHaveText('Hello Aurelia!');
     // @endif
-    // @if inferno
-    await expect(page.locator('.app')).toHaveText('Hello Inferno!');
-    // @endif
     // @if react
     await expect(page.locator('.app')).toHaveText('Hello React!');
-    // @endif
-    // @if vue
-    await expect(page.locator('.app')).toHaveText('Hello Vue!');
     // @endif
     // @if no-framework
     await expect(page.locator('p')).toHaveText('Hello world!');

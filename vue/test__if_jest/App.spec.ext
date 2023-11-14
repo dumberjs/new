@@ -1,9 +1,0 @@
-import { mount } from '@vue/test-utils';
-import App from '../src/App';
-
-describe('Component App', () => {
-  it('should render message', () => {
-    const wrapper = mount(App);
-    expect(wrapper.text()).toBe('Hello Vue!');
-  });
-});

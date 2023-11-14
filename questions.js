@@ -4,7 +4,6 @@ module.exports = [
     choices: [
       {value: 'aurelia', title: 'Aurelia'},
       {value: 'react', title: 'React'},
-      {value: 'vue', title: 'Vue'},
       {value: 'no-framework', title: 'None'}
     ]
   },
@@ -14,14 +13,6 @@ module.exports = [
     choices: [
       {title: 'App', hint: 'A normal single page application in Aurelia'},
       {value: 'plugin', title: 'Plugin', hint: 'An Aurelia plugin project'}
-    ]
-  },
-  {
-    if: 'vue',
-    message: 'Do you want to use Single File Components (.vue files)?',
-    choices: [
-      {title: 'No', hint: 'string template + runtime template compiler'},
-      {value: 'sfc', title: 'Yes', hint: '.vue file contains html template, scoped css, and JavaScript component'}
     ]
   },
   {
@@ -35,8 +26,7 @@ module.exports = [
     message: 'What JavaScript transpiler to use?',
     choices: [
       {value: 'babel', title: 'ESNext (babel)', hint: 'Use next generation JavaScript, today.'},
-      // have trouble to support TS in .vue file (gulp-vue-file) due to handling of decorator.
-      {if: '!sfc', value: 'typescript', title: 'TypeScript', hint: 'TypeScript is a typed superset of Javascript that compiles to plain JavaScript.'}
+      {value: 'typescript', title: 'TypeScript', hint: 'TypeScript is a typed superset of Javascript that compiles to plain JavaScript.'}
     ]
   },
   {

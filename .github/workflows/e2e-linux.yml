@@ -27,8 +27,6 @@ jobs:
           - no-framework,typescript
           - aurelia,babel
           - aurelia,typescript
-          - vue,babel
-          - vue,typescript
           - react,babel
           - react,typescript
     steps:
