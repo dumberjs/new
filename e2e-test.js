@@ -42,7 +42,7 @@ function killProc(proc) {
 }
 
 
-function run(command, dataCB, errorCB) {
+function run(command, cwd, dataCB, errorCB) {
   const [cmd, ...args] = command.split(' ');
   return new Promise((resolve, reject) => {
     const env = Object.create(process.env);
@@ -51,7 +51,7 @@ function run(command, dataCB, errorCB) {
     // need to reset NODE_ENV back to development because this whole
     // test is running in NODE_ENV=test which will affect gulp build
     env.NODE_ENV = 'development';
-    const proc = spawn(cmd, args, {env});
+    const proc = spawn(cmd, args, {env, cwd});
     proc.on('exit', (code, signal) => {
       if (code && signal !== 'SIGTERM' && !win32Killed.has(proc.pid)) {
         reject(new Error(cmd + ' ' + args.join(' ') + ' process exit code: ' + code + ' signal: ' + signal));
@@ -109,26 +109,24 @@ skeletons.forEach((features, i) => {
 
   test.serial(title, async t => {
     console.log(title);
-    process.chdir(folder);
 
     const makeCmd = `npx makes ${dir} ${appName} -s ${features.join(',')}`;
     console.log('-- ' + makeCmd);
-    await run(makeCmd);
+    await run(makeCmd, folder);
     t.pass('made skeleton');
-    process.chdir(appFolder);
 
     console.log('-- npm i');
-    await run('npm i');
+    await run('npm i', appFolder);
     t.pass('installed deps');
 
     if (hasUnitTests) {
       console.log('-- npm test');
-      await run('npm test');
+      await run('npm test', appFolder);
       t.pass('finished unit tests');
     }
 
     console.log('-- npm run build:dev');
-    await run('npm run build:dev', null,
+    await run('npm run build:dev', appFolder, null,
       (data, kill) => {
         t.fail('gulp build failed: ' + data.toString());
       }
@@ -144,11 +142,11 @@ skeletons.forEach((features, i) => {
     t.truthy(entryStat.isFile());
 
     console.log('-- npx gulp clean');
-    await run('npx gulp clean');
-    t.throws(() => fs.statSync(entryPath), null, 'cleaned bundle files');
+    await run('npx gulp clean', appFolder);
+    t.throws(() => fs.statSync(entryPath), undefined, 'cleaned bundle files');
 
     console.log('-- npm start');
-    await run(`npm start`,
+    await run(`npm start`, appFolder,
       async (data, kill) => {
         const m = data.toString().match(/Dev server is started at: (\S+)/);
         if (!m) return;
@@ -170,13 +168,12 @@ skeletons.forEach((features, i) => {
 
     if (features.includes('playwright')) {
       console.log('-- npx playwright test --project chromium');
-      await run('npx playwright install --with-deps');
-      await run('npx playwright test --project chromium');
+      await run('npx playwright install --with-deps', appFolder);
+      await run('npx playwright test --project chromium', appFolder);
     }
 
     await wait();
     console.log('-- remove folder ' + appName);
-    process.chdir(folder);
     await del(appFolder);
   });
 });
